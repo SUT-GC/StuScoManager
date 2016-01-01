@@ -74,3 +74,39 @@ hr{
 .addteacher_context h2{
 	text-align: center;
 }
+
+/*addteacourse_context start*/
+.addteacourse_context{
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-top: 50px;
+	margin-bottom: 100px;
+}
+.addteacourse_context h2{
+	text-align: center;
+}
+.addteacourse_context span{
+	font-size: 16px;
+}
+.teacher_name_list  button{
+	width: 100%;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	border-bottom:1px dashed #DDDDDD;
+	background-color: #FFFFFF;
+}
+.teacher_name_list{
+	border: 1px solid #CCCCCC;
+}
+.course_name_list{
+	border: 1px solid #CCCCCC;
+}
+.course_name_list button{
+	width: 100%;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	border-bottom:1px dashed #DDDDDD;
+	background-color: #FFFFFF;
+}
