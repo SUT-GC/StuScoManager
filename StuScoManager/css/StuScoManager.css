@@ -61,3 +61,16 @@ hr{
 hr{
 	margin-top: 20px;
 }
+/*addteacher_context start*/
+.addteacher_context{
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-top: 50px;
+	margin-bottom: 100px;
+}
+.addteacher_context  span{
+	font-size: 20px;
+}
+.addteacher_context h2{
+	text-align: center;
+}
