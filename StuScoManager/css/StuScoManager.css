@@ -38,7 +38,26 @@ hr{
 .ablock{
 	margin-top: 20px;
 }
+.twoblock{
+	margin-top: 20px;
+}
 .button_submit_reset{
 	text-align: right;
 	margin-top: 50px;
 }	
+/*addstudent_context*/
+.addstudent_context{
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-top: 50px;
+	margin-bottom: 100px;
+}
+.addstudent_context h2{
+	text-align: center;
+}
+.addstudent_context span{
+	font-size: 20px;
+}
+hr{
+	margin-top: 20px;
+}
