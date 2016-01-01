@@ -2,3 +2,43 @@ hr{
 	margin-top: 10px;
 	margin-bottom: 10px;
 }
+/*addadmin_context start*/
+.addadmin_context{
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-top: 50px;
+	margin-bottom: 100px;
+}
+.addadmin_context h2{
+	text-align: center;
+}
+.addadmin_context span{
+	font-size: 20px;
+}
+.addadmin_context input{
+	margin-top: 10px;
+}
+/*addcourse_context start*/
+.addcourse_context{
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-top: 50px;
+	margin-bottom: 100px;
+}
+.addcourse_context h2{
+	text-align: center;
+}
+.addcourse_context span{
+	font-size: 20px;
+}
+.addcourse_context input{
+	margin-top: 10px;
+}
+
+.ablock{
+	margin-top: 20px;
+}
+.button_submit_reset{
+	text-align: right;
+	margin-top: 50px;
+}	
