@@ -75,19 +75,19 @@
                                 <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
                                   <div class="panel-body">
                                      <li >
-                                        <a href="index.html"><i class="glyphicon glyphicon-chevron-right"></i> 添加学生信息</a>
+                                        <a href="admin_addstudent.html"><i class="glyphicon glyphicon-chevron-right"></i> 添加学生信息</a>
                                      </li>
                                      <hr/>
                                      <li >
-                                        <a href="index.html"><i class="glyphicon glyphicon-chevron-right"></i> 添加教师信息</a>
+                                        <a href="admin_addteacher.html"><i class="glyphicon glyphicon-chevron-right"></i> 添加教师信息</a>
                                      </li>
                                      <hr/>
                                     <li >
-                                        <a href="index.html"><i class="glyphicon glyphicon-chevron-right"></i> 添加课程信息</a>
+                                        <a href="admin_addcourse.html"><i class="glyphicon glyphicon-chevron-right"></i> 添加课程信息</a>
                                      </li>
                                      <hr/>
                                     <li >
-                                        <a href="index.html"><i class="glyphicon glyphicon-chevron-right"></i> 添加管理员</a>
+                                        <a href="admin_addadmin.html"><i class="glyphicon glyphicon-chevron-right"></i> 添加管理员</a>
                                      </li>
                                   </div>
                                 </div>
@@ -103,19 +103,23 @@
                                 <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
                                   <div class="panel-body">
                                      <li >
-                                        <a href="index.html"><i class="glyphicon glyphicon-chevron-right"></i> 编辑学生信息</a>
+                                        <a href="admin_editstudent.html"><i class="glyphicon glyphicon-chevron-right"></i> 编辑学生信息</a>
                                      </li>
                                      <hr/>
                                      <li >
-                                        <a href="index.html"><i class="glyphicon glyphicon-chevron-right"></i> 编辑教师信息</a>
+                                        <a href="admin_editteacher.html"><i class="glyphicon glyphicon-chevron-right"></i> 编辑教师信息</a>
                                      </li>
                                      <hr/>
                                     <li >
-                                        <a href="index.html"><i class="glyphicon glyphicon-chevron-right"></i> 编辑课程信息</a>
+                                        <a href="admin_editcoutse.html"><i class="glyphicon glyphicon-chevron-right"></i> 编辑课程信息</a>
                                      </li>
                                      <hr/>
                                     <li class="active">
                                         <a href="#"><i class="glyphicon glyphicon-chevron-right"></i> 编辑管理员</a>
+                                     </li>
+                                     <hr/>
+                                     <li >
+                                        <a href="admin_editteacourse.html"><i class="glyphicon glyphicon-chevron-right"></i> 编辑教课信息</a>
                                      </li>
                                   </div>
                                 </div>
@@ -131,9 +135,44 @@
                     <div class="row">
                         <div class="panel panel-default bootstrap-admin-no-table-panel">
                             <div class="panel-heading">
-                                <div class="text-muted bootstrap-admin-box-title">统计</div>
+                                <div class="text-muted bootstrap-admin-box-title">所有管理员信息   </div>
                             </div>
-                            ddd
+                            <div class="row search_admin twoblock">
+                              <div class="col-lg-8">
+                                <span>您可以输入管理员的相关信息进行查询  ：</span>
+                              </div><!-- /.col-lg-6 -->
+                              <div class="col-lg-4">
+                                <div class="input-group">
+                                  <input type="text" class="form-control" placeholder="输入相关信息进行查询">
+                                  <span class="input-group-btn">
+                                    <button class="btn btn-default" type="button">Go!</button>
+                                  </span>
+                                </div><!-- /input-group -->
+                              </div><!-- /.col-lg-6 -->
+                            </div><!-- /.row -->
+                            <table class="table table-hover mytable">
+                              <thead>
+                                <th>#</th><th>编号</th><th>姓名</th><th>编辑</th><th>删除</th>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                    <td class="teacher_id">1</td><td class="teacher_num">1230125</td><td class="teacher_name">张赛</td><td class="teacher_edit"><button class="btn btn-primary" type="submit">edit</button></td><td class="teacher_delete"><button class="btn btn-danger" type="submit">delete</button></td>
+                                </tr>
+                                <tr>
+                                    <td class="teacher_id">1</td><td class="teacher_num">1230125</td><td class="teacher_name">张赛</td><td class="teacher_edit"><button class="btn btn-primary" type="submit">edit</button></td><td class="teacher_delete"><button class="btn btn-danger" type="submit">delete</button></td>
+                                </tr>
+                                <tr>
+                                    <td class="teacher_id">1</td><td class="teacher_num">1230125</td><td class="teacher_name">张赛</td><td class="teacher_edit"><button class="btn btn-primary" type="submit">edit</button></td><td class="teacher_delete"><button class="btn btn-danger" type="submit">delete</button></td>
+                                </tr>
+                                <tr>
+                                    <td class="teacher_id">1</td><td class="teacher_num">1230125</td><td class="teacher_name">张赛</td><td class="teacher_edit"><button class="btn btn-primary" type="submit">edit</button></td><td class="teacher_delete"><button class="btn btn-danger" type="submit">delete</button></td>
+                                </tr>
+                                <tr>
+                                    <td class="teacher_id">1</td><td class="teacher_num">1230125</td><td class="teacher_name">张赛</td><td class="teacher_edit"><button class="btn btn-primary" type="submit">edit</button></td><td class="teacher_delete"><button class="btn btn-danger" type="submit">delete</button></td>
+                                </tr>
+                                
+                              </tbody>
+                            </table>
                         </div>
                     </div>
 
@@ -143,7 +182,7 @@
             <div class="row">
                 <hr>
                 <footer role="contentinfo">
-                    <p>&copy; 2016 <a href="#" target="_blank">GC</a></p>
+                    <p>&copy; 2016 <a href="#" target="_blank">GC & ZTT & GSM</a></p>
                 </footer>
             </div>
         </div>

@@ -119,3 +119,25 @@ hr{
 	margin-left: 10px;
 	margin-right: 10px;
 }
+
+/*admin_editadmin*/
+.teacher_id{
+	width: 100px;
+}
+.teacher_edit{
+	width: 100px;
+}
+.teacher_delete{
+	width: 100px;
+}
+.mytable{
+	margin-top: 30px;
+	font-size: 16px;
+}
+.search_admin span{
+	font-size: 20px;
+}
+.search_admin{
+	margin-left: 20px;
+	margin-right: 20px;
+}
