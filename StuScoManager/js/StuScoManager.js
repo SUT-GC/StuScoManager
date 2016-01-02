@@ -61,4 +61,39 @@ $(document).ready(function(){
 		$(".edit_onecourse").hide();
 		$(".show_allcourse").slideDown(200);
 	});
+	/*admin_editstudent*/
+	$(".show_onestudent").hide();
+	$(".student_edit").click(function(){
+		$(".show_allstudent").hide();
+		$(".show_onestudent").slideDown(200);
+		var parenttr = $(this).parent();
+		var newstudentnum = parenttr.find(".student_num").text();
+		var newstudentname = parenttr.find(".student_name").text();
+		var newstudentsex = parenttr.find(".student_sex").text();
+		var newstudentage = parenttr.find(".student_age").text();
+		var newstudentcollage = parenttr.find(".student_collage").text();
+		var newstudentmajor = parenttr.find(".student_major").text();
+		var newstudentclass = parenttr.find(".student_class").text();
+		$(".newstudentnum").val(newstudentnum);
+		$(".newstudentname").val(newstudentname);
+		$(".newstudentage").val(newstudentage);
+		if(newstudentsex == "女"){
+			$("#inlineRadio2").attr("checked","checked");
+		}else{
+			$("#inlineRadio1").attr("checked","checked");
+		}
+		if(newstudentclass == "1301"){
+			$(".class_t1").attr("selected","selected");
+		}else if(newstudentclass == "1302"){
+			$(".class_t2").attr("selected","selected");
+		}else{
+			$(".class_t3").attr("selected","selected");
+		}
+	});
+	$(".return_show_allstudent").click(function(){
+		$(".show_onestudent").hide();
+		$(".show_allstudent").slideDown(200);
+	});
 });
+
+
