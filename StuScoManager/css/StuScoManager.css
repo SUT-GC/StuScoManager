@@ -184,3 +184,18 @@ hr{
 	border: none;
 	background-color: #EEEEEE;	
 }
+/*student_selectcourse*/
+.selectcourse_context{
+	margin-top: 30px;
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-bottom: 50px;
+}
+.submit_selectcourse{
+	text-align: right;
+	margin-right: 50px;
+}
+/*student_selectscore*/
+.scoretable{
+	margin: 20px;
+}
