@@ -54,8 +54,14 @@ $(document).ready(function(){
 		var parenttr = $(this).parent();
 		var newcoursenum = parenttr.find(".course_num").text();
 		var newcoursename = parenttr.find(".course_name").text();
+		var newcourseattr = parenttr.find(".course_attr").text();
 		$(".new_coursename").val(newcoursename);
 		$(".new_coursenum").val(newcoursenum);
+		if(newcourseattr == "选修"){
+			$(".course_attr_notrequired").attr("selected", "selected");
+		}else{
+			$(".course_attr_required").attr("selected","selected");
+		}
 	});
 	$(".return_show_allcourse").click(function(){
 		$(".edit_onecourse").hide();
@@ -78,8 +84,12 @@ $(document).ready(function(){
 		$(".newstudentname").val(newstudentname);
 		$(".newstudentage").val(newstudentage);
 		if(newstudentsex == "女"){
+			$("#inlineRadio2").removeAttr("checked");
+			$("#inlineRadio1").removeAttr("checked");
 			$("#inlineRadio2").attr("checked","checked");
 		}else{
+			$("#inlineRadio2").removeAttr("checked");
+			$("#inlineRadio1").removeAttr("checked");
 			$("#inlineRadio1").attr("checked","checked");
 		}
 		if(newstudentclass == "1301"){
@@ -94,6 +104,35 @@ $(document).ready(function(){
 		$(".show_onestudent").hide();
 		$(".show_allstudent").slideDown(200);
 	});
+	/*admin_editteacher*/
+	$(".show_oneteacher").hide();
+	$(".teacher_edit").click(function(){
+		$(".show_oneteacher").slideDown(200);
+		$(".show_allteacher").hide();
+		var parenttr = $(this).parent();
+		var newteachernum = parenttr.find(".teacher_num").text();
+		var newteachername = parenttr.find(".teacher_name").text();
+		var newteachersex = parenttr.find(".teacher_sex").text();
+		var newteachercollage = parenttr.find(".teacher_collage").text();
+		var newteacherage = parenttr.find(".teacher_age").text();
+		$(".newteachernum").val(newteachernum);
+		$(".newteachername").val(newteachername);
+		$(".newteacherage").val(newteacherage);
+		if(newteachersex == "女"){
+			$("#inlineRadio2").removeAttr("checked");
+			$("#inlineRadio1").removeAttr("checked");
+			$("#inlineRadio2").attr("checked","true");
+		}else{
+			$("#inlineRadio2").removeAttr("checked");
+			$("#inlineRadio1").removeAttr("checked");
+			$("#inlineRadio1").attr("checked","true");
+		}
+	});
+	$(".return_show_allteacher").click(function(){
+		$(".show_allteacher").slideDown(200);
+		$(".show_oneteacher").hide();
+	});
+
 });
 
 
