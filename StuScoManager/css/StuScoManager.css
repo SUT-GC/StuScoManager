@@ -110,3 +110,12 @@ hr{
 	border-bottom:1px dashed #DDDDDD;
 	background-color: #FFFFFF;
 }
+
+/*admin_index start*/
+.admin_loginsuccess{
+	text-align:  center;
+	font-size: 25px;
+	margin-top: 20px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
