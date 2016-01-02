@@ -34,6 +34,9 @@ hr{
 .addcourse_context input{
 	margin-top: 10px;
 }
+.addcourse_context textarea{
+	margin-top: 10px;
+}
 
 .ablock{
 	margin-top: 20px;
@@ -140,4 +143,34 @@ hr{
 .search_admin{
 	margin-left: 20px;
 	margin-right: 20px;
+}
+.return_show_alladmin{
+	border: none;
+	background-color: #EEEEEE;
+}
+.edit_admincontext{
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-top: 50px;
+	margin-bottom: 100px;
+}
+.edit_admincontext h2{
+	text-align: center;
+}
+.edit_admincontext span{
+	font-size: 17px;
+}
+/*admin_editcourse*/
+.course_id{
+	width: 100px;
+}
+.course_edit{
+	width: 100px;
+}
+.course_delete{
+	width: 100px;
+}
+.return_show_allcourse{
+	border: none;
+	background-color: #EEEEEE;
 }

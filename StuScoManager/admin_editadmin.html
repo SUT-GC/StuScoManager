@@ -89,6 +89,10 @@
                                     <li >
                                         <a href="admin_addadmin.html"><i class="glyphicon glyphicon-chevron-right"></i> 添加管理员</a>
                                      </li>
+                                      <hr/>
+                                     <li >
+                                        <a href="admin_addteacourse.html"><i class="glyphicon glyphicon-chevron-right"></i> 添加教课信息</a>
+                                     </li>
                                   </div>
                                 </div>
                               </div>
@@ -111,7 +115,7 @@
                                      </li>
                                      <hr/>
                                     <li >
-                                        <a href="admin_editcoutse.html"><i class="glyphicon glyphicon-chevron-right"></i> 编辑课程信息</a>
+                                        <a href="admin_editcourse.html"><i class="glyphicon glyphicon-chevron-right"></i> 编辑课程信息</a>
                                      </li>
                                      <hr/>
                                     <li class="active">
@@ -131,7 +135,7 @@
 
                 <!-- content -->
                 <div class="col-md-10">
-
+                  <div class="show_alladmin">
                     <div class="row">
                         <div class="panel panel-default bootstrap-admin-no-table-panel">
                             <div class="panel-heading">
@@ -175,7 +179,35 @@
                             </table>
                         </div>
                     </div>
-
+                  </div>
+                   <div class="edit_oneadmin">
+                    <div class="row">
+                        <div class="panel panel-default bootstrap-admin-no-table-panel">
+                            <div class="panel-heading">
+                                <div class="text-muted bootstrap-admin-box-title"><button class="return_show_alladmin"><a>返回</a> </button>/ <a >编辑信息页面  </a></div>
+                            </div>
+                            <div class="edit_admincontext">
+                              <form>
+                                    <h2>请编辑管理员信息</h2>
+                                    <div class="ablock">
+                                        <span>管理员姓名</span>
+                                       <input type="text" class="form-control new_adminname" >
+                                    </div>
+                                     <div class="ablock">
+                                        <span>管理员账号</span>
+                                       <input type="text" class="form-control new_adminnum" >
+                                   </div>
+                                    <div class="ablock">
+                                        <span>管理员密码</span>
+                                       <input type="text" class="form-control new_adminpass" placeholder="如果什么都不输入，则不修改原来的密码">
+                                   </div>
+                                   <div class="button_submit_reset">
+                                    <button class="btn btn-success" type="submit">提交</button>
+                               </form>
+                             </div>
+                        </div>
+                    </div>
+                  </div>
                 </div>
             </div>
 
@@ -194,7 +226,7 @@
         <script type="text/javascript" src="js/bootstrap.min.js"></script>
         <script type="text/javascript" src="js/twitter-bootstrap-hover-dropdown.min.js"></script>
         <script type="text/javascript" src="vendors/easypiechart/jquery.easy-pie-chart.js"></script>
-
+         <script type="text/javascript" src="js/StuScoManager.js"></script>
         <script type="text/javascript">
             $(function() {
                 // Easy pie charts

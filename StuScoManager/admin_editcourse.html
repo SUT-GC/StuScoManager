@@ -75,19 +75,23 @@
                                 <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
                                   <div class="panel-body">
                                      <li >
-                                        <a href="index.html"><i class="glyphicon glyphicon-chevron-right"></i> 添加学生信息</a>
+                                        <a href="admin_addstudent.html"><i class="glyphicon glyphicon-chevron-right"></i> 添加学生信息</a>
                                      </li>
                                      <hr/>
                                      <li >
-                                        <a href="index.html"><i class="glyphicon glyphicon-chevron-right"></i> 添加教师信息</a>
+                                        <a href="admin_addteacher.html"><i class="glyphicon glyphicon-chevron-right"></i> 添加教师信息</a>
                                      </li>
                                      <hr/>
                                     <li >
-                                        <a href="index.html"><i class="glyphicon glyphicon-chevron-right"></i> 添加课程信息</a>
+                                        <a href="admin_addcourse.html"><i class="glyphicon glyphicon-chevron-right"></i> 添加课程信息</a>
                                      </li>
                                      <hr/>
                                     <li >
-                                        <a href="index.html"><i class="glyphicon glyphicon-chevron-right"></i> 添加管理员</a>
+                                        <a href="admin_addadmin.html"><i class="glyphicon glyphicon-chevron-right"></i> 添加管理员</a>
+                                     </li>
+                                      <hr/>
+                                     <li >
+                                        <a href="admin_addteacourse.html"><i class="glyphicon glyphicon-chevron-right"></i> 添加教课信息</a>
                                      </li>
                                   </div>
                                 </div>
@@ -103,19 +107,23 @@
                                 <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
                                   <div class="panel-body">
                                      <li >
-                                        <a href="index.html"><i class="glyphicon glyphicon-chevron-right"></i> 编辑学生信息</a>
+                                        <a href="admin_editstudent.html"><i class="glyphicon glyphicon-chevron-right"></i> 编辑学生信息</a>
                                      </li>
                                      <hr/>
                                      <li >
-                                        <a href="index.html"><i class="glyphicon glyphicon-chevron-right"></i> 编辑教师信息</a>
+                                        <a href="admin_editteacher.html"><i class="glyphicon glyphicon-chevron-right"></i> 编辑教师信息</a>
                                      </li>
                                      <hr/>
                                     <li class="active">
-                                        <a href="index.html"><i class="glyphicon glyphicon-chevron-right"></i> 编辑课程信息</a>
+                                        <a href="admin_editcourse.html"><i class="glyphicon glyphicon-chevron-right"></i> 编辑课程信息</a>
                                      </li>
                                      <hr/>
                                     <li >
-                                        <a href="#"><i class="glyphicon glyphicon-chevron-right"></i> 编辑管理员</a>
+                                        <a href="admin_editadmin.html"><i class="glyphicon glyphicon-chevron-right"></i> 编辑管理员</a>
+                                     </li>
+                                     <hr/>
+                                     <li >
+                                        <a href="admin_editteacourse.html"><i class="glyphicon glyphicon-chevron-right"></i> 编辑教课信息</a>
                                      </li>
                                   </div>
                                 </div>
@@ -127,23 +135,82 @@
 
                 <!-- content -->
                 <div class="col-md-10">
-
+                    <div class="show_allcourse">
+                        <div class="row">
+                            <div class="panel panel-default bootstrap-admin-no-table-panel">
+                                <div class="panel-heading">
+                                    <div class="text-muted bootstrap-admin-box-title">所有课程信息</div>
+                                </div>
+                                <div class="row search_admin twoblock">
+                                  <div class="col-lg-8">
+                                    <span>您可以输入课程的相关信息进行查询  ：</span>
+                                  </div><!-- /.col-lg-6 -->
+                                  <div class="col-lg-4">
+                                    <div class="input-group">
+                                      <input type="text" class="form-control" placeholder="输入相关信息进行查询">
+                                      <span class="input-group-btn">
+                                        <button class="btn btn-default" type="button">Go!</button>
+                                      </span>
+                                    </div><!-- /input-group -->
+                                  </div><!-- /.col-lg-6 -->
+                                </div><!-- /.row -->
+                                <table class="table table-hover mytable">
+                                  <thead>
+                                    <th>#</th><th>编号</th><th>课程名称</th><th>编辑</th><th>删除</th>
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+                                        <td class="course_id">1</td><td class="course_num">1230125</td><td class="course_name">java程序设计</td><td class="course_edit"><button class="btn btn-primary" type="submit">edit</button></td><td class="course_delete"><button class="btn btn-danger" type="submit">delete</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="course_id">1</td><td class="course_num">1230125</td><td class="course_name">java</td><td class="course_edit"><button class="btn btn-primary" type="submit">edit</button></td><td class="course_delete"><button class="btn btn-danger" type="submit">delete</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="course_id">1</td><td class="course_num">1230125</td><td class="course_name">C程序设计</td><td class="course_edit"><button class="btn btn-primary" type="submit">edit</button></td><td class="course_delete"><button class="btn btn-danger" type="submit">delete</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="course_id">1</td><td class="course_num">1230125</td><td class="course_name">java程序设计</td><td class="course_edit"><button class="btn btn-primary" type="submit">edit</button></td><td class="course_delete"><button class="btn btn-danger" type="submit">delete</button></td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="edit_onecourse">
                     <div class="row">
                         <div class="panel panel-default bootstrap-admin-no-table-panel">
                             <div class="panel-heading">
-                                <div class="text-muted bootstrap-admin-box-title">统计</div>
+                                <div class="text-muted bootstrap-admin-box-title"><button class="return_show_allcourse"><a>返回</a> </button>/ <a >编辑信息页面  </a></div>
                             </div>
-                            ddd
+                            <div class="edit_admincontext">
+                              <form>
+                                    <h2>请输入新的课程信息</h2>
+                                    <div class="ablock">
+                                        <span>课程编号</span>
+                                       <input type="text" class="form-control new_coursenum"  placeholder="请输入新课程的编号">
+                                    </div>
+                                     <div class="ablock">
+                                        <span>课程名称</span>
+                                       <input type="text" class="form-control new_coursename" placeholder="请输入新课程的名称">
+                                   </div>
+                                    <div class="ablock">
+                                        <span>课程描述</span>
+                                        <textarea class="form-control new_coursedescribe" rows="3" placeholder="请输入新课程的描述"></textarea>
+                                   </div>
+                                   <div class="button_submit_reset">
+                                    <button class="btn btn-success" type="submit">提交</button>
+                               </form>
+                             </div>
                         </div>
                     </div>
-
+                  </div>
                 </div>
             </div>
 
             <div class="row">
                 <hr>
                 <footer role="contentinfo">
-                    <p>&copy; 2016 <a href="#" target="_blank">GC</a></p>
+                    <p>&copy; 2016 <a href="#" target="_blank">GC & ZTT & GSM </a></p>
                 </footer>
             </div>
         </div>
@@ -153,6 +220,7 @@
 
         <!-- Include all compiled plugins (below), or include individual files as needed -->
         <script type="text/javascript" src="js/bootstrap.min.js"></script>
+         <script type="text/javascript" src="js/StuScoManager.js"></script>
         <script type="text/javascript" src="js/twitter-bootstrap-hover-dropdown.min.js"></script>
         <script type="text/javascript" src="vendors/easypiechart/jquery.easy-pie-chart.js"></script>
 

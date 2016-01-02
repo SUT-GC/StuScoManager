@@ -31,4 +31,34 @@ $(document).ready(function(){
 		$(".input_course_name").val(name);
 		$(".input_course_id").val(id);
 	});
+	/*admin_editadmin*/
+	$(".edit_oneadmin").hide();
+	$(".teacher_edit").click(function(){
+		$(".show_alladmin").hide();
+		$(".edit_oneadmin").slideDown(200);
+		var parenttr = $(this).parent();
+		var newadminnum = parenttr.find(".teacher_num").text();
+		var newadminname = parenttr.find(".teacher_name").text();
+		$(".new_adminname").val(newadminname);
+		$(".new_adminnum").val(newadminnum);
+	});
+	$(".return_show_alladmin").click(function(){
+		$(".edit_oneadmin").hide();
+		$(".show_alladmin").slideDown(200);
+	});
+	/*admin_editcourse*/
+	$(".edit_onecourse").hide();
+	$(".course_edit").click(function(){
+		$(".show_allcourse").hide();
+		$(".edit_onecourse").slideDown(200);
+		var parenttr = $(this).parent();
+		var newcoursenum = parenttr.find(".course_num").text();
+		var newcoursename = parenttr.find(".course_name").text();
+		$(".new_coursename").val(newcoursename);
+		$(".new_coursenum").val(newcoursenum);
+	});
+	$(".return_show_allcourse").click(function(){
+		$(".edit_onecourse").hide();
+		$(".show_allcourse").slideDown(200);
+	});
 });
