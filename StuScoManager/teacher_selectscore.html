@@ -8,7 +8,6 @@
         <!-- Bootstrap -->
         <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
         <link href="css/bootstrap-theme.min.css" rel="stylesheet" media="screen">
-        <link href="css/StuScoManager.css" rel="stylesheet" media="screen">
 
         <!-- Bootstrap Admin Theme -->
         <link href="css/bootstrap-admin-theme.css" rel="stylesheet" media="screen">
@@ -63,13 +62,13 @@
                 <div class="col-md-2 bootstrap-admin-col-left">
                      <ul class="nav navbar-collapse collapse bootstrap-admin-navbar-side">
                        <!--菜单栏start-->
-                         <li >
+                       <li >
                             <a href="teacher_index.html"><i class="glyphicon glyphicon-chevron-right"></i> 首页</a>
                         </li>
-                        <li class="active">
+                        <li >
                             <a href="teacher_enterscore.html"><i class="glyphicon glyphicon-chevron-right"></i> 录入成绩</a>
                         </li>
-                        <li>
+                        <li class="active">
                             <a href="teacher_selectscore.html"><i class="glyphicon glyphicon-chevron-right"></i> 查询成绩</a>
                         </li>
                        <!--菜单栏end-->
@@ -79,12 +78,12 @@
                 <!-- content -->
                 <div class="col-md-10">
 
-                    
+                    <div class="row">
                         <div class="panel panel-default bootstrap-admin-no-table-panel">
                             <div class="panel-heading">
-                                <div class="text-muted bootstrap-admin-box-title">录入成绩</div>
+                                <div class="text-muted bootstrap-admin-box-title">查询成绩</div>
                             </div>
-                            <div class="row enterscore_context">
+                            <div class="teacher_selectscorecontext">
                                 <div class="twoblock" >
                                          <div class="row">
                                             <div class="col-md-1">
@@ -129,39 +128,26 @@
                                         </div>
                                     </div>
                                 </div>  
-                                <hr/>
-                                    <table class="table table-hover">
-                                      <thead>
-                                        <th >#</th><th >学号</th><th >姓名</th><th >成绩</th><th >状态</th>
-                                      </thead>
-                                      <tbody>
-                                        <tr>
-                                            <td class="input_scoreid">1</td><td class="input_studentnum">130405211</td><td class="input_studentname">GC</td><td class="input_score"><input class="inputtext_score" type="text" /></td><td class="input_scorestate" style="color:#FF6600">未录入</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="input_scoreid">1</td><td class="input_studentnum">130405211</td><td class="input_studentname">GC</td><td class="input_score"><input class="inputtext_score" type="text" /></td><td class="input_scorestate" style="color:#FF6600">未录入</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="input_scoreid">1</td><td class="input_studentnum">130405211</td><td class="input_studentname">GC</td><td class="input_score"><input class="inputtext_score" type="text" /></td><td class="input_scorestate" style="color:#FF6600">未录入</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="input_scoreid">1</td><td class="input_studentnum">130405211</td><td class="input_studentname">GC</td><td class="input_score"><input class="inputtext_score" type="text" /></td><td class="input_scorestate" style="color:#FF6600">未录入</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="input_scoreid">1</td><td class="input_studentnum">130405211</td><td class="input_studentname">GC</td><td class="input_score"><input class="inputtext_score" type="text" /></td><td class="input_scorestate" style="color:#FF6600">未录入</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="input_scoreid">1</td><td class="input_studentnum">130405211</td><td class="input_studentname">GC</td><td class="input_score"><input class="inputtext_score" type="text" /></td><td class="input_scorestate" style="color:#FF6600">未录入</td>
-                                        </tr>
-                                      </tbody>
-                                    </table>
 
+                                <hr/>
+                            <div class="teacher_selectscoretable">
+                                <table class="table table-hover">
+                                  <thead>
+                                    <th >#</th><th >学号</th><th >姓名</th><th >成绩</th><th >状态</th>
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+                                        <td class="input_scoreid">1</td><td class="input_studentnum">130405211</td><td class="input_studentname">GC</td><td class="input_score">88</td><td class="input_scorestate" style="color:#FF6600">未录入</td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                                      </div>
                             </div>
+                        </div>
                     </div>
 
                 </div>
             </div>
-
             <div class="row">
                 <hr>
                 <footer role="contentinfo">
@@ -175,7 +161,6 @@
 
         <!-- Include all compiled plugins (below), or include individual files as needed -->
         <script type="text/javascript" src="js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="js/StuScoManager.js"></script>
         <script type="text/javascript" src="js/twitter-bootstrap-hover-dropdown.min.js"></script>
         <script type="text/javascript" src="vendors/easypiechart/jquery.easy-pie-chart.js"></script>
 

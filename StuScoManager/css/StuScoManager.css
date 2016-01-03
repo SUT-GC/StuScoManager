@@ -199,3 +199,35 @@ hr{
 .scoretable{
 	margin: 20px;
 }
+/*teacher_enterscore*/
+.enterscore_context{
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-bottom: 20px;
+}
+.enterscore_context .row{
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+.input_scoreid{
+	width: 50px;
+}
+.input_studentnum{
+	width:150px;
+}
+.input_studentname{
+	width: 100px;
+}
+.input_scorestate{
+	width: 200px;
+}
+/*teacher_selectscore*/
+.teacher_selectscorecontext .row{
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-bottom: 20px;
+}
+.teacher_selectscoretable{
+	margin-left: 20px;
+	margin-right: 20px;
+}

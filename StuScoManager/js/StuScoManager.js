@@ -132,6 +132,12 @@ $(document).ready(function(){
 		$(".show_allteacher").slideDown(200);
 		$(".show_oneteacher").hide();
 	});
+	/*teacher_enterscore*/
+	$(".inputtext_score").blur(function(){
+		var scorestate = $(this).parent().parent().find(".input_scorestate");
+		scorestate.css("color","#00FF00");
+		scorestate.html("<span class='glyphicon glyphicon-ok form-control-feedback' aria-hidden='true'></span >&nbsp;&nbsp;&nbsp;&nbsp;录入成功");
+	});
 
 });
 
