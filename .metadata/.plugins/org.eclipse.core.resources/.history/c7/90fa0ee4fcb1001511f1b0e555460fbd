@@ -1,9 +1,0 @@
-package test;
-
-import entity.Admin;
-
-public class TestSHibernateUtilAndAdmin {
-	public static void main(String[] args) {
-		Admin admin = new Admin("11111", "gc", "11111");
-	}
-}

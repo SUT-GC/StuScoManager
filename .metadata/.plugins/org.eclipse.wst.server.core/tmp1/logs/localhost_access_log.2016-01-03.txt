@@ -361,3 +361,7 @@
 0:0:0:0:0:0:0:1 - - [03/Jan/2016:19:18:23 +0800] "POST /StuScoManage/logincheck HTTP/1.1" 200 2911
 0:0:0:0:0:0:0:1 - - [03/Jan/2016:19:18:23 +0800] "GET /StoScoManage/js/bootstrap.min.js HTTP/1.1" 404 1058
 0:0:0:0:0:0:0:1 - - [03/Jan/2016:19:18:29 +0800] "POST /StuScoManage/logincheck HTTP/1.1" 200 9239
+0:0:0:0:0:0:0:1 - - [03/Jan/2016:19:19:43 +0800] "GET /StuScoManage/login HTTP/1.1" 200 2899
+0:0:0:0:0:0:0:1 - - [03/Jan/2016:19:19:43 +0800] "GET /StoScoManage/js/bootstrap.min.js HTTP/1.1" 404 1058
+0:0:0:0:0:0:0:1 - - [03/Jan/2016:19:19:47 +0800] "POST /StuScoManage/logincheck HTTP/1.1" 200 2911
+0:0:0:0:0:0:0:1 - - [03/Jan/2016:19:19:47 +0800] "GET /StoScoManage/js/bootstrap.min.js HTTP/1.1" 404 1058
