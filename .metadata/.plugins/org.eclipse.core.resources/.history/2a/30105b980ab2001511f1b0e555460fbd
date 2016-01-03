@@ -1,0 +1,7 @@
+package dao;
+/*
+ * 对MANAGER表进行操作
+ */
+public class AdminDao {
+	
+}

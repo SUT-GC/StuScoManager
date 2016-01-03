@@ -1,0 +1,8 @@
+package util;
+import org.hibernate.cfg.*;
+import org.hibernate.service.*;
+import org.hibernate.boot.registry.*;
+public class HibernateUtil
+{
+	
+}

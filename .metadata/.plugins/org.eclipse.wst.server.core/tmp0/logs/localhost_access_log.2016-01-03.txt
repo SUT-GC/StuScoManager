@@ -1,0 +1,7 @@
+127.0.0.1 - - [03/Jan/2016:18:26:08 +0800] "GET / HTTP/1.1" 404 994
+0:0:0:0:0:0:0:1 - - [03/Jan/2016:18:26:15 +0800] "GET /StuScoManage/WEB-INF/jsp/error.jsp HTTP/1.1" 404 1062
+0:0:0:0:0:0:0:1 - - [03/Jan/2016:18:26:16 +0800] "GET /favicon.ico HTTP/1.1" 404 1016
+0:0:0:0:0:0:0:1 - - [03/Jan/2016:18:26:20 +0800] "GET /StuScoManage/login HTTP/1.1" 404 1030
+0:0:0:0:0:0:0:1 - - [03/Jan/2016:18:26:53 +0800] "GET /StuScoManage/login HTTP/1.1" 404 1030
+0:0:0:0:0:0:0:1 - - [03/Jan/2016:18:26:54 +0800] "GET /StuScoManage/login HTTP/1.1" 404 1030
+0:0:0:0:0:0:0:1 - - [03/Jan/2016:18:26:55 +0800] "GET /StuScoManage/login HTTP/1.1" 404 1030

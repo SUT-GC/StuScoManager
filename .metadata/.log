@@ -1,0 +1,205 @@
+!SESSION 2016-01-03 16:31:39.487 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=zh_CN
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.jface 2 0 2016-01-03 16:31:48.647
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2016-01-03 16:31:48.647
+!MESSAGE A conflict occurred for ALT+SHIFT+D R:
+Binding(ALT+SHIFT+D R,
+	ParameterizedCommand(Command(org.eclipse.rap.tools.launch.RAPLaunchShortcut.debug,Debug RAP Application,
+		Debug RAP Application,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@55d8f6bb,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+SHIFT+D R,
+	ParameterizedCommand(Command(org.eclipse.wst.server.launchShortcut.debug,Debug on Server,
+		Debug the current selection on a server,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@56b48163,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2016-01-03 16:31:48.648
+!MESSAGE A conflict occurred for ALT+SHIFT+X R:
+Binding(ALT+SHIFT+X R,
+	ParameterizedCommand(Command(org.eclipse.rap.tools.launch.RAPLaunchShortcut.run,Run RAP Application,
+		Run RAP Application,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@eb6ccbc,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+SHIFT+X R,
+	ParameterizedCommand(Command(org.eclipse.wst.server.launchShortcut.run,Run on Server,
+		Run the current selection on a server,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@5eae392d,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.jst.jsp.core 2 2 2016-01-03 16:55:48.759
+!MESSAGE Taglib Index ZipException: /home/gc/web/StuScoManager/StuScoManager/WebContent/WEB-INF/lib/hibernate-core-4.3.5.Final.jar error in opening zip file
+
+!ENTRY org.eclipse.jst.jsp.core 2 2 2016-01-03 16:57:23.611
+!MESSAGE Taglib Index ZipException: /home/gc/web/StuScoManager/StuScoManager/WebContent/WEB-INF/lib/freemarker-2.3.22.jar error in opening zip file
+
+!ENTRY org.eclipse.jdt.core 4 0 2016-01-03 16:58:27.863
+!MESSAGE Invalid ZIP archive: /home/gc/web/StuScoManager/StuScoManager/WebContent/WEB-INF/lib/bcprov-jdk16-146.jar
+
+!ENTRY org.eclipse.jdt.core 4 0 2016-01-03 16:58:27.867
+!MESSAGE Invalid ZIP archive: /home/gc/web/StuScoManager/StuScoManager/WebContent/WEB-INF/lib/freemarker-2.3.22.jar
+
+!ENTRY org.eclipse.jdt.core 4 0 2016-01-03 16:58:27.868
+!MESSAGE Invalid ZIP archive: /home/gc/web/StuScoManager/StuScoManager/WebContent/WEB-INF/lib/hibernate-core-4.3.5.Final.jar
+
+!ENTRY org.eclipse.jdt.core 4 0 2016-01-03 16:58:27.890
+!MESSAGE Invalid ZIP archive: WebContent/WEB-INF/lib/bcprov-jdk16-146.jar [in StuScoManager]
+
+!ENTRY org.eclipse.jdt.core 4 0 2016-01-03 16:58:27.895
+!MESSAGE Invalid ZIP archive: WebContent/WEB-INF/lib/hibernate-core-4.3.5.Final.jar [in StuScoManager]
+
+!ENTRY org.eclipse.jdt.core 4 0 2016-01-03 16:58:29.792
+!MESSAGE Invalid ZIP archive: /home/gc/web/StuScoManager/StuScoManager/WebContent/WEB-INF/lib/bcprov-jdk16-146.jar
+
+!ENTRY org.eclipse.jdt.core 4 0 2016-01-03 16:58:29.799
+!MESSAGE Invalid ZIP archive: /home/gc/web/StuScoManager/StuScoManager/WebContent/WEB-INF/lib/freemarker-2.3.22.jar
+
+!ENTRY org.eclipse.jdt.core 4 0 2016-01-03 16:58:29.800
+!MESSAGE Invalid ZIP archive: /home/gc/web/StuScoManager/StuScoManager/WebContent/WEB-INF/lib/hibernate-core-4.3.5.Final.jar
+
+!ENTRY org.eclipse.jdt.core 4 0 2016-01-03 16:58:29.833
+!MESSAGE Invalid ZIP archive: WebContent/WEB-INF/lib/bcprov-jdk16-146.jar [in StuScoManager]
+
+!ENTRY org.eclipse.jdt.core 4 0 2016-01-03 16:58:29.847
+!MESSAGE Invalid ZIP archive: WebContent/WEB-INF/lib/hibernate-core-4.3.5.Final.jar [in StuScoManager]
+
+!ENTRY org.eclipse.jdt.core 4 0 2016-01-03 17:01:03.712
+!MESSAGE Invalid ZIP archive: /home/gc/web/StuScoManager/StuScoManager/WebContent/WEB-INF/lib/bcprov-jdk16-146.jar
+
+!ENTRY org.eclipse.jdt.core 4 0 2016-01-03 17:01:03.727
+!MESSAGE Invalid ZIP archive: /home/gc/web/StuScoManager/StuScoManager/WebContent/WEB-INF/lib/freemarker-2.3.22.jar
+
+!ENTRY org.eclipse.jdt.core 4 0 2016-01-03 17:01:03.729
+!MESSAGE Invalid ZIP archive: /home/gc/web/StuScoManager/StuScoManager/WebContent/WEB-INF/lib/hibernate-core-4.3.5.Final.jar
+
+!ENTRY org.eclipse.jdt.core 4 0 2016-01-03 17:01:03.794
+!MESSAGE Invalid ZIP archive: WebContent/WEB-INF/lib/bcprov-jdk16-146.jar [in StuScoManager]
+
+!ENTRY org.eclipse.jdt.core 4 0 2016-01-03 17:01:03.803
+!MESSAGE Invalid ZIP archive: WebContent/WEB-INF/lib/hibernate-core-4.3.5.Final.jar [in StuScoManager]
+
+!ENTRY org.eclipse.jdt.core 4 0 2016-01-03 17:15:17.679
+!MESSAGE Invalid ZIP archive: /home/gc/web/StuScoManager/StuScoManager/WebContent/WEB-INF/lib/bcprov-jdk16-146.jar
+
+!ENTRY org.eclipse.jdt.core 4 0 2016-01-03 17:15:17.691
+!MESSAGE Invalid ZIP archive: /home/gc/web/StuScoManager/StuScoManager/WebContent/WEB-INF/lib/freemarker-2.3.22.jar
+
+!ENTRY org.eclipse.jdt.core 4 0 2016-01-03 17:15:17.693
+!MESSAGE Invalid ZIP archive: /home/gc/web/StuScoManager/StuScoManager/WebContent/WEB-INF/lib/hibernate-core-4.3.5.Final.jar
+
+!ENTRY org.eclipse.jdt.core 4 0 2016-01-03 17:15:17.728
+!MESSAGE Invalid ZIP archive: WebContent/WEB-INF/lib/bcprov-jdk16-146.jar [in StuScoManager]
+
+!ENTRY org.eclipse.jdt.core 4 0 2016-01-03 17:15:17.742
+!MESSAGE Invalid ZIP archive: WebContent/WEB-INF/lib/hibernate-core-4.3.5.Final.jar [in StuScoManager]
+
+!ENTRY org.eclipse.jdt.core 4 0 2016-01-03 17:15:26.779
+!MESSAGE Invalid ZIP archive: /home/gc/web/StuScoManager/StuScoManager/WebContent/WEB-INF/lib/bcprov-jdk16-146.jar
+
+!ENTRY org.eclipse.jdt.core 4 0 2016-01-03 17:15:26.785
+!MESSAGE Invalid ZIP archive: /home/gc/web/StuScoManager/StuScoManager/WebContent/WEB-INF/lib/freemarker-2.3.22.jar
+
+!ENTRY org.eclipse.jdt.core 4 0 2016-01-03 17:15:26.786
+!MESSAGE Invalid ZIP archive: /home/gc/web/StuScoManager/StuScoManager/WebContent/WEB-INF/lib/hibernate-core-4.3.5.Final.jar
+
+!ENTRY org.eclipse.jdt.core 4 0 2016-01-03 17:15:26.805
+!MESSAGE Invalid ZIP archive: WebContent/WEB-INF/lib/bcprov-jdk16-146.jar [in StuScoManager]
+
+!ENTRY org.eclipse.jdt.core 4 0 2016-01-03 17:15:26.808
+!MESSAGE Invalid ZIP archive: WebContent/WEB-INF/lib/hibernate-core-4.3.5.Final.jar [in StuScoManager]
+
+!ENTRY org.eclipse.jdt.core 4 0 2016-01-03 17:18:19.377
+!MESSAGE Invalid ZIP archive: /home/gc/web/StuScoManager/StuScoManager/WebContent/WEB-INF/lib/bcprov-jdk16-146.jar
+
+!ENTRY org.eclipse.jdt.core 4 0 2016-01-03 17:18:19.381
+!MESSAGE Invalid ZIP archive: /home/gc/web/StuScoManager/StuScoManager/WebContent/WEB-INF/lib/freemarker-2.3.22.jar
+
+!ENTRY org.eclipse.jdt.core 4 0 2016-01-03 17:18:19.383
+!MESSAGE Invalid ZIP archive: /home/gc/web/StuScoManager/StuScoManager/WebContent/WEB-INF/lib/hibernate-core-4.3.5.Final.jar
+
+!ENTRY org.eclipse.jdt.core 4 0 2016-01-03 17:18:19.400
+!MESSAGE Invalid ZIP archive: WebContent/WEB-INF/lib/bcprov-jdk16-146.jar [in StuScoManager]
+
+!ENTRY org.eclipse.jdt.core 4 0 2016-01-03 17:18:19.402
+!MESSAGE Invalid ZIP archive: WebContent/WEB-INF/lib/hibernate-core-4.3.5.Final.jar [in StuScoManager]
+
+!ENTRY org.eclipse.jdt.core 4 0 2016-01-03 17:18:40.939
+!MESSAGE Invalid ZIP archive: /home/gc/web/StuScoManager/StuScoManager/WebContent/WEB-INF/lib/bcprov-jdk16-146.jar
+
+!ENTRY org.eclipse.jdt.core 4 0 2016-01-03 17:18:40.943
+!MESSAGE Invalid ZIP archive: /home/gc/web/StuScoManager/StuScoManager/WebContent/WEB-INF/lib/freemarker-2.3.22.jar
+
+!ENTRY org.eclipse.jdt.core 4 0 2016-01-03 17:18:40.944
+!MESSAGE Invalid ZIP archive: /home/gc/web/StuScoManager/StuScoManager/WebContent/WEB-INF/lib/hibernate-core-4.3.5.Final.jar
+
+!ENTRY org.eclipse.jdt.core 4 0 2016-01-03 17:18:40.956
+!MESSAGE Invalid ZIP archive: WebContent/WEB-INF/lib/bcprov-jdk16-146.jar [in StuScoManager]
+
+!ENTRY org.eclipse.jdt.core 4 0 2016-01-03 17:18:40.958
+!MESSAGE Invalid ZIP archive: WebContent/WEB-INF/lib/hibernate-core-4.3.5.Final.jar [in StuScoManager]
+
+!ENTRY org.eclipse.jdt.core 4 0 2016-01-03 17:18:45.062
+!MESSAGE Invalid ZIP archive: /home/gc/web/StuScoManager/StuScoManager/WebContent/WEB-INF/lib/bcprov-jdk16-146.jar
+
+!ENTRY org.eclipse.jdt.core 4 0 2016-01-03 17:18:45.066
+!MESSAGE Invalid ZIP archive: /home/gc/web/StuScoManager/StuScoManager/WebContent/WEB-INF/lib/freemarker-2.3.22.jar
+
+!ENTRY org.eclipse.jdt.core 4 0 2016-01-03 17:18:45.067
+!MESSAGE Invalid ZIP archive: /home/gc/web/StuScoManager/StuScoManager/WebContent/WEB-INF/lib/hibernate-core-4.3.5.Final.jar
+
+!ENTRY org.eclipse.jdt.core 4 0 2016-01-03 17:18:45.079
+!MESSAGE Invalid ZIP archive: WebContent/WEB-INF/lib/bcprov-jdk16-146.jar [in StuScoManager]
+
+!ENTRY org.eclipse.jdt.core 4 0 2016-01-03 17:18:45.081
+!MESSAGE Invalid ZIP archive: WebContent/WEB-INF/lib/hibernate-core-4.3.5.Final.jar [in StuScoManager]
+
+!ENTRY org.eclipse.jdt.core 4 0 2016-01-03 17:19:04.332
+!MESSAGE Invalid ZIP archive: /home/gc/web/StuScoManager/StuScoManager/WebContent/WEB-INF/lib/bcprov-jdk16-146.jar
+
+!ENTRY org.eclipse.jdt.core 4 0 2016-01-03 17:19:04.359
+!MESSAGE Invalid ZIP archive: /home/gc/web/StuScoManager/StuScoManager/WebContent/WEB-INF/lib/freemarker-2.3.22.jar
+
+!ENTRY org.eclipse.jdt.core 4 0 2016-01-03 17:19:04.362
+!MESSAGE Invalid ZIP archive: /home/gc/web/StuScoManager/StuScoManager/WebContent/WEB-INF/lib/hibernate-core-4.3.5.Final.jar
+
+!ENTRY org.eclipse.jdt.core 4 0 2016-01-03 17:19:04.570
+!MESSAGE Invalid ZIP archive: WebContent/WEB-INF/lib/bcprov-jdk16-146.jar [in StuScoManager]
+
+!ENTRY org.eclipse.jdt.core 4 0 2016-01-03 17:19:04.585
+!MESSAGE Invalid ZIP archive: WebContent/WEB-INF/lib/hibernate-core-4.3.5.Final.jar [in StuScoManager]
+
+!ENTRY org.eclipse.jdt.core 4 0 2016-01-03 17:20:38.511
+!MESSAGE Invalid ZIP archive: /home/gc/web/StuScoManager/StuScoManager/WebContent/WEB-INF/lib/bcprov-jdk16-146.jar
+
+!ENTRY org.eclipse.jdt.core 4 0 2016-01-03 17:20:38.516
+!MESSAGE Invalid ZIP archive: /home/gc/web/StuScoManager/StuScoManager/WebContent/WEB-INF/lib/freemarker-2.3.22.jar
+
+!ENTRY org.eclipse.jdt.core 4 0 2016-01-03 17:20:38.517
+!MESSAGE Invalid ZIP archive: /home/gc/web/StuScoManager/StuScoManager/WebContent/WEB-INF/lib/hibernate-core-4.3.5.Final.jar
+
+!ENTRY org.eclipse.jdt.core 4 0 2016-01-03 17:20:38.528
+!MESSAGE Invalid ZIP archive: WebContent/WEB-INF/lib/bcprov-jdk16-146.jar [in StuScoManager]
+
+!ENTRY org.eclipse.jdt.core 4 0 2016-01-03 17:20:38.530
+!MESSAGE Invalid ZIP archive: WebContent/WEB-INF/lib/hibernate-core-4.3.5.Final.jar [in StuScoManager]
+
+!ENTRY org.eclipse.ui.browser 2 0 2016-01-03 18:26:08.909
+!MESSAGE Internal browser is not available: No more handles [Unknown Mozilla path (MOZILLA_FIVE_HOME not set)]
