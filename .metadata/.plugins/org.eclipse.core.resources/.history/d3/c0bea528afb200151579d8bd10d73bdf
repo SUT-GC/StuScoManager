@@ -1,0 +1,17 @@
+package entity;
+
+import javax.annotation.Generated;
+import javax.persistence.*;
+
+@Entity
+@Table(name="COURSE")
+public class Course {
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="C_ID")
+	private String id;
+	private String name;
+	private String attr;
+	private String description;
+	
+}

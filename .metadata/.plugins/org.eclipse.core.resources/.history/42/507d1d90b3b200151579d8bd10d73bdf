@@ -1,0 +1,8 @@
+package dao;
+
+/*
+ * 修改STUCOURSE表
+ */
+public class SelectCourseDao {
+	
+}

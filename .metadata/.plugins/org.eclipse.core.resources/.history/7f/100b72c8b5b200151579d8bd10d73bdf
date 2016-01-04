@@ -1,0 +1,11 @@
+package test;
+
+import entity.SelectCourse;
+
+public class TestSelectCourseDao {
+
+	public static void main(String[] args) {
+		SelectCourse selectCourse = new SelectCourse("130405211", "1001", "16001", 88);
+	}
+
+}

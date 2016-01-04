@@ -1,0 +1,59 @@
+package dao;
+
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
+import util.HibernateUtil;
+import entity.SelectCourse;
+import entity.Student;
+
+/*
+ * 修改STUCOURSE表
+ */
+public class SelectCourseDao {
+	/*
+	 * 插入选课记录 1:插入成功 -1:学号不存在 -2:课程号不存在 -3:教师号不存在
+	 */
+	public static int insertSelectCourse(SelectCourse selectCourse) {
+		Session session = HibernateUtil.currentSession();
+		Transaction transaction = session.beginTransaction();
+		if (session.get(SelectCourse.class, selectCourse.getCourse_id()) == null) {
+			HibernateUtil.closeSession();
+			return -2;
+		}
+		if (session.get(SelectCourse.class, selectCourse.getStudent_id()) == null) {
+			HibernateUtil.closeSession();
+			return -1;
+		}
+		if (session.get(SelectCourse.class, selectCourse.getTeacher_id()) == null) {
+			HibernateUtil.closeSession();
+			return -3;
+		}
+		session.save(selectCourse);
+		transaction.commit();
+		HibernateUtil.closeSession();
+		return 1;
+	}
+
+	/*
+	 * 根据Student_id查询SelectCourse
+	 */
+	public static SelectCourse selectSelectCourseByStudentId(String id) {
+		SelectCourse selectCourse = null;
+		Session session = HibernateUtil.currentSession();
+		Transaction transaction = session.beginTransaction();
+		selectCourse = (SelectCourse) session.get(SelectCourse.class, id);
+		return selectCourse;
+	}
+
+	/*
+	 * 根据Teacher_id查询SelectCourse
+	 */
+	public static SelectCourse selectSelectCourseByStudentId(String id) {
+		SelectCourse selectCourse = null;
+		Session session = HibernateUtil.currentSession();
+		Transaction transaction = session.beginTransaction();
+		selectCourse = (SelectCourse) session.get(SelectCourse.class, id);
+		return selectCourse;
+	}
+}

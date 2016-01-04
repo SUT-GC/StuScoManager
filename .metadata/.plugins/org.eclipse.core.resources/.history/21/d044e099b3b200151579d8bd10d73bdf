@@ -1,0 +1,29 @@
+package dao;
+
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
+import util.HibernateUtil;
+import entity.SelectCourse;
+import entity.Student;
+
+/*
+ * 修改STUCOURSE表
+ */
+public class SelectCourseDao {
+	/*
+	 * 插入选课记录
+	 * 1:插入成功
+	 * -1:学号不存在
+	 * -2:课程号不存在
+	 * -3:教师号不存在
+	 */
+	public static int insertSelectCourse(SelectCourse selectCourse){
+		Session session = HibernateUtil.currentSession();
+		Transaction transaction = session. beginTransaction();
+		if(session.get(SelectCourse.class, selectCourse.getCourse_id()) == null){
+			return -2;
+			HibernateUtil.closeSession();
+		}
+	}
+}

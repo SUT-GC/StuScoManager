@@ -1,0 +1,16 @@
+package entity;
+
+import javax.persistence.*;
+
+@Entity
+@Table(name="STUCOUR")
+public class SelectCourse {
+	@Id
+	@Column(name="SC_ID")
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private int id;
+	private String student_id;
+	private String course_id;
+	private String teacher_id;
+	private int grade;
+}

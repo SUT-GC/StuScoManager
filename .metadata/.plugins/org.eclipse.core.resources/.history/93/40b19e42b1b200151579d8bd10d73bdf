@@ -1,0 +1,70 @@
+package entity;
+
+import javax.annotation.Generated;
+import javax.persistence.*;
+
+@Entity
+@Table(name = "COURSE")
+public class Course {
+	
+	@Id
+	@Column(name = "C_ID")
+	private String id;
+	@Column(name = "C_NAME")
+	private String name;
+	@Column(name = "C_ATTR")
+	private int attr;
+	@Column(name = "C_DESCRIPTION")
+	private String description;
+
+	public Course() {
+		super();
+	}
+
+	public Course(String id, String name, int attr, String description) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.attr = attr;
+		this.description = description;
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getAttr() {
+		return attr;
+	}
+
+	public void setAttr(int attr) {
+		this.attr = attr;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	@Override
+	public String toString() {
+		return "Course [id=" + id + ", name=" + name + ", attr=" + attr
+				+ ", description=" + description + "]";
+	}
+
+}

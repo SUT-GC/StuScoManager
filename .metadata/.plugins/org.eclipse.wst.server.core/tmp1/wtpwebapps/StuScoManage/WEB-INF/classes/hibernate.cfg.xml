@@ -35,5 +35,7 @@
 		<mapping class="entity.Admin"/>
 		<mapping class="entity.Teacher"/>
 		<mapping class="entity.Student"/>
+		<mapping class="entity.Course"/>
+		<mapping class="entity.SelectCourse"/>
 	</session-factory>
 </hibernate-configuration>

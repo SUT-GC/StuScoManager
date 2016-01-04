@@ -1,0 +1,15 @@
+package test;
+
+import java.util.List;
+
+import dao.SelectCourseDao;
+import entity.SelectCourse;
+
+public class TestSelectCourseDao {
+
+	public static void main(String[] args) {
+		List sc = SelectCourseDao.selectSelectCourseByStudentId("130405212");
+		System.out.println(sc.size());
+	}
+
+}

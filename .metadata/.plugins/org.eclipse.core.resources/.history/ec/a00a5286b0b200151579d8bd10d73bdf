@@ -1,0 +1,13 @@
+package test;
+
+import dao.CourseDao;
+import entity.Course;
+
+public class TestCourseDao {
+
+	public static void main(String[] args) {
+		Course course = new Course("1001", "java 程序设计", 1, "test");
+		CourseDao.insertCourse(course);
+	}
+
+}
