@@ -1,0 +1,11 @@
+127.0.0.1 - - [04/Jan/2016:13:03:35 +0800] "GET / HTTP/1.1" 404 994
+0:0:0:0:0:0:0:1 - - [04/Jan/2016:13:03:44 +0800] "GET /StuScoManage/login HTTP/1.1" 200 2447
+0:0:0:0:0:0:0:1 - - [04/Jan/2016:13:03:44 +0800] "GET /StoScoManage/js/bootstrap.min.js HTTP/1.1" 404 1058
+0:0:0:0:0:0:0:1 - - [04/Jan/2016:13:03:57 +0800] "POST /StuScoManage/logincheck HTTP/1.1" 200 2477
+0:0:0:0:0:0:0:1 - - [04/Jan/2016:13:03:57 +0800] "GET /StoScoManage/js/bootstrap.min.js HTTP/1.1" 404 1058
+0:0:0:0:0:0:0:1 - - [04/Jan/2016:13:04:03 +0800] "POST /StuScoManage/logincheck HTTP/1.1" 200 2477
+0:0:0:0:0:0:0:1 - - [04/Jan/2016:13:04:03 +0800] "GET /StoScoManage/js/bootstrap.min.js HTTP/1.1" 404 1058
+0:0:0:0:0:0:0:1 - - [04/Jan/2016:13:04:08 +0800] "POST /StuScoManage/logincheck HTTP/1.1" 200 5180
+0:0:0:0:0:0:0:1 - - [04/Jan/2016:13:04:12 +0800] "GET /StuScoManage/teacher_enterscore.html HTTP/1.1" 404 1066
+0:0:0:0:0:0:0:1 - - [04/Jan/2016:13:04:19 +0800] "POST /StuScoManage/logincheck HTTP/1.1" 200 9157
+0:0:0:0:0:0:0:1 - - [04/Jan/2016:13:04:44 +0800] "POST /StuScoManage/logincheck HTTP/1.1" 200 5133

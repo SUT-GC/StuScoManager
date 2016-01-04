@@ -1,0 +1,17 @@
+package dao;
+
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
+import util.HibernateUtil;
+import entity.Teacher;
+
+public class TeacherDao {
+	private static void insertTeacher(Teacher teacher){
+		Session session = HibernateUtil.currentSession();
+		Transaction transaction = session.beginTransaction();
+		session.save(teacher);
+		transaction.commit();
+		HibernateUtil.closeSession();
+	}
+}

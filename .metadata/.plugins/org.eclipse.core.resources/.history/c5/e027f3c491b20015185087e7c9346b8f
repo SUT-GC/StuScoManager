@@ -1,0 +1,26 @@
+package dao;
+
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
+import util.HibernateUtil;
+import entity.Teacher;
+/*
+ * 对Teacher进行数据库操作的类
+ */
+public class TeacherDao {
+	/*
+	 * 插入一个teacher
+	 * 1:插入成功
+	 */
+	private static int insertTeacher(Teacher teacher){
+		Session session = HibernateUtil.currentSession();
+		Transaction transaction = session.beginTransaction();
+		if(session.get(Teacher.class, teacher.getId()) == null){
+			session.save(teacher);
+			transaction.commit();
+		}else{
+			HibernateUtil.closeSession();
+		}
+	}
+}

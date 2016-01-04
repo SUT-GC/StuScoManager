@@ -1,0 +1,12 @@
+package test;
+
+import util.PatternUtil;
+
+public class TestPatternUtil {
+
+	public static void main(String[] args) {
+		boolean result = PatternUtil.noUpperAndLowerCasePattern("13040521a", "\\d{9}");
+		System.out.println(result);
+	}
+
+}

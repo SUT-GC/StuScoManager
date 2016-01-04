@@ -1,0 +1,100 @@
+package entity;
+
+import javax.persistence.Entity;
+
+@Entity
+@Table(name="STUCOURSE")
+public class Student {
+	@Columb(name="S_ID")
+	private String id;
+	@Columb(name="S_ID")
+	private String name;
+	@Columb(name="S_ID")
+	private String sex;
+	@Columb(name="S_ID")
+	private int age;
+	@Columb(name="S_ID")
+	private String password;
+	@Columb(name="S_ID")
+	private String collage;
+	@Columb(name="S_ID")
+	private String profession
+
+	public Student() {
+	}
+
+	public Student(String id, String name, String sex, int age,
+			String password, String collage, String profession) {
+		this.id = id;
+		this.name = name;
+		this.sex = sex;
+		this.age = age;
+		this.password = password;
+		this.collage = collage;
+		this.profession = profession;
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getSex() {
+		return sex;
+	}
+
+	public void setSex(String sex) {
+		this.sex = sex;
+	}
+
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getCollage() {
+		return collage;
+	}
+
+	public void setCollage(String collage) {
+		this.collage = collage;
+	}
+
+	public String getProfession() {
+		return profession;
+	}
+
+	public void setProfession(String profession) {
+		this.profession = profession;
+	}
+
+	@Override
+	public String toString() {
+		return "Student [id=" + id + ", name=" + name + ", sex=" + sex
+				+ ", age=" + age + ", password=" + password + ", collage="
+				+ collage + ", profession=" + profession + "]";
+	}
+
+}

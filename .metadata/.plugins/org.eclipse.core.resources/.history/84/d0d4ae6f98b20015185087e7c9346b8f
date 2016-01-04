@@ -1,0 +1,7 @@
+package util;
+
+public class PatternUtil {
+	public static boolean pattern(String src, String regEx){
+		
+	}
+}

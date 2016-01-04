@@ -8,25 +8,16 @@
     <constant name="struts.enable.DynamicMethodInvocation" value="false" />
     <constant name="struts.devMode" value="true" />
 
-    <package name="default" namespace="/" extends="struts-default">
-
-        <default-action-ref name="index" />
-
-        <global-results>
-            <result name="error">/WEB-INF/jsp/error.jsp</result>
-        </global-results>
-
-        <global-exception-mappings>
-            <exception-mapping exception="java.lang.Exception" result="error"/>
-        </global-exception-mappings>
-
-        <action name="login" class="action.LoginCheck">
-          <result name="success">/WEB-INF/jsp/login.jsp</result>
+    <package name="default" extends="struts-default">
+        <action name="login">
+          <result>/WEB-INF/jsp/login.jsp</result>
+        </action>
+        <action name="logincheck" class="action.LoginCheck">
+        	<result name="admin">/WEB-INF/jsp/admin_index.jsp</result>
+        	<result name="teacher">/WEB-INF/jsp/teacher_index.jsp</result>
+        	<result name="student">/WEB-INF/jsp/student_index.jsp</result>
+        	<result name="errorinfo">/WEB-INF/jsp/login.jsp</result>
         </action>
     </package>
-
-    <include file="example.xml"/>
-
-    <!-- Add packages here -->
 
 </struts>

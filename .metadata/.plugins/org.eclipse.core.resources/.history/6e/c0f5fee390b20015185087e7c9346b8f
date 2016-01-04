@@ -1,0 +1,89 @@
+package entity;
+
+import javax.persistence.*;
+
+@Entity
+@Table(name="TEACHER")
+public class Teacher {
+	
+	@Id
+	private String id;
+	@Column(name="T_NAME")
+	private String name;
+	@Column(name="T_SEX")
+	private String sex;
+	@Column(name="T_AGE")
+	private int age;
+	@Column(name="T_PASSWORD")
+	private String password;
+	private String academy;
+
+	public Teacher() {
+	}
+
+	public Teacher(String id, String name, String sex, int age,
+			String password, String academy) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.sex = sex;
+		this.age = age;
+		this.password = password;
+		this.academy = academy;
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getSex() {
+		return sex;
+	}
+
+	public void setSex(String sex) {
+		this.sex = sex;
+	}
+
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getAcademy() {
+		return academy;
+	}
+
+	public void setAcademy(String academy) {
+		this.academy = academy;
+	}
+
+	@Override
+	public String toString() {
+		return "Teacher [id=" + id + ", name=" + name + ", sex=" + sex
+				+ ", age=" + age + ", password=" + password + ", academy="
+				+ academy + "]";
+	}
+}

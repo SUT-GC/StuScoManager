@@ -6,8 +6,11 @@ import javax.persistence.*;
 @Table(name="MANAGER")
 public class Admin {
 	@Id
+	@Column(name="M_ID")
 	private String id;
+	@Column(name="M_NAME")
 	private String name;
+	@Column(name="M_PASSWORD")
 	private String password;
 
 	public Admin() {

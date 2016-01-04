@@ -44,8 +44,6 @@
 			  <li class="dropdown">
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown">管理员<b class="caret"></b></a>
 				<ul class="dropdown-menu">
-				  <li><a href="#">设置</a></li>
-				  <li><a href="#">个人资料</a></li>
 				  <li><a href="#">账户中心</a></li>
 				  <li class="divider"></li>
 				  <li><a href="#">退出登录</a></li>

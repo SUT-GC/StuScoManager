@@ -1,0 +1,11 @@
+package test;
+
+import util.PatternUtil;
+
+public class TestPatternUtil {
+
+	public static void main(String[] args) {
+		bollean result = PatternUtil.haveUpperAndLowerCasePattern("a", "a");
+	}
+
+}

@@ -14,6 +14,8 @@
         </action>
         <action name="logincheck" class="action.LoginCheck">
         	<result name="admin">/WEB-INF/jsp/admin_index.jsp</result>
+        	<result name="teacher">/WEB-INF/jsp/teacher_index.jsp</result>
+        	<result name="student">/WEB-INF/jsp/student_index.jsp</result>
         	<result name="errorinfo">/WEB-INF/jsp/login.jsp</result>
         </action>
     </package>

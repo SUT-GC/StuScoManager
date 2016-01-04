@@ -1,9 +1,15 @@
 package action;
 
+import util.PatternUtil;
+
 import com.opensymphony.xwork2.ActionSupport;
 
 import dao.AdminDao;
+import dao.StudentDao;
+import dao.TeacherDao;
 import entity.Admin;
+import entity.Student;
+import entity.Teacher;
 
 public class LoginCheck extends ActionSupport {
 
@@ -40,19 +46,58 @@ public class LoginCheck extends ActionSupport {
 
 	@Override
 	public String execute() throws Exception {
-		Admin admin = AdminDao.selectAdminById(username);
-		if(admin == null){
-			this.setTip("用户名不存在");
-			return "errorinfo";
-		}else{
-			if(!admin.getPassword().equals(password)){
-				this.setTip("密码错误");
+		/*
+		 * 验证是否是管理员
+		 */
+		if(PatternUtil.noUpperAndLowerCasePattern(this.getUsername(),"[a-z]*")){
+			Admin admin = AdminDao.selectAdminById(this.getUsername());
+			if(admin == null){
+				this.setTip("对不起，您的账号不存在");
 				return "errorinfo";
 			}else{
-				return "admin";
+				if(!this.getPassword().equals(admin.getPassword())){
+					this.setTip("对不起，您的密码错误");
+					return "errorinfo";
+				}else{
+					return "admin";
+				}
 			}
 		}
-		
-		
+		/*
+		 * 验证是否时老师
+		 */
+		if(PatternUtil.haveUpperAndLowerCasePattern(this.getUsername(),"\\d\\d\\d\\d\\d")){
+			Teacher teacher = TeacherDao.selectTeacherById(this.getUsername());
+			if(teacher == null){
+				this.setTip("对不起，您的账号不存在");
+				return "errorinfo";
+			}else{
+				if(!this.getPassword().equals(teacher.getPassword())){
+					this.setTip("对不起，您的密码错误");
+					return "errorinfo";
+				}else{
+					return "teacher";
+				}
+			}
+		}
+		/*
+		 * 验证是否是学生
+		 */
+		if(PatternUtil.haveUpperAndLowerCasePattern(this.getUsername(),"\\d{9}")){
+			Student student = StudentDao.selectStudentById(this.getUsername());
+			if(student == null){
+				this.setTip("对不起，您的账号不存在");
+				return "errorinfo";
+			}else{
+				if(!this.getPassword().equals(student.getPassword())){
+					this.setTip("对不起，您的密码错误");
+					return "errorinfo";
+				}else{
+					return "student";
+				}
+			}
+		}
+		this.setTip("对不起，您的账号不存在");
+		return "errorinfo";
 	}
 }

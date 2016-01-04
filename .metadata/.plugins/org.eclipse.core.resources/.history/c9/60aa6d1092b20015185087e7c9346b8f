@@ -1,0 +1,9 @@
+package test;
+
+public class TestTeacherDao {
+
+	public static void main(String[] args) {
+
+	}
+
+}
