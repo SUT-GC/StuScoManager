@@ -1,5 +1,9 @@
 package action;
 
+import javax.servlet.http.HttpSession;
+
+import org.apache.struts2.ServletActionContext;
+
 import util.PatternUtil;
 
 import com.opensymphony.xwork2.ActionSupport;
@@ -46,6 +50,7 @@ public class LoginCheck extends ActionSupport {
 
 	@Override
 	public String execute() throws Exception {
+		HttpSession session = ServletActionContext.getRequest().getSession();
 		/*
 		 * 验证是否是管理员
 		 */
@@ -59,6 +64,7 @@ public class LoginCheck extends ActionSupport {
 					this.setTip("对不起，您的密码错误");
 					return "errorinfo";
 				}else{
+					session.setAttribute("username", admin.getName());
 					return "admin";
 				}
 			}
@@ -76,6 +82,7 @@ public class LoginCheck extends ActionSupport {
 					this.setTip("对不起，您的密码错误");
 					return "errorinfo";
 				}else{
+					session.setAttribute("username", teacher.getName());
 					return "teacher";
 				}
 			}
@@ -93,6 +100,7 @@ public class LoginCheck extends ActionSupport {
 					this.setTip("对不起，您的密码错误");
 					return "errorinfo";
 				}else{
+					session.setAttribute("username", student.getName());
 					return "student";
 				}
 			}

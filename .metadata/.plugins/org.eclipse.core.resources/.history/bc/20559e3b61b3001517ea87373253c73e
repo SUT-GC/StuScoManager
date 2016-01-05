@@ -1,0 +1,39 @@
+package action;
+
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
+
+import com.opensymphony.xwork2.ActionSupport;
+
+import dao.StudentDao;
+import entity.Student;
+
+public class AddStudent extends ActionSupport {
+	private String studentid;
+	private String studentname;
+	private String studentsex;
+	private int studentage;
+	private String studentclass;
+	private String studentpassword;
+	private String studentcollage;
+	private String studentprofession;
+	private InputStream inputStream;
+
+
+	@Override
+	public String execute() throws Exception {
+		Student student = new Student(studentid, studentname, studentsex,
+				studentage, studentpassword, studentcollage, studentprofession);
+		
+		int result = StudentDao.insertStudent(student);
+		
+		if(result == 1){
+			inputStream = new ByteArrayInputStream("添加成功！".getBytes("utf-8"));
+		}
+		if(result == 0){
+			inputStream = new ByteArrayInputStream("添加成功失败，存在该学号的学生！".getBytes("utf-8"));
+		}
+		
+		return SUCCESS;
+	}
+}

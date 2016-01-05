@@ -1,0 +1,17 @@
+package action;
+
+import com.opensymphony.xwork2.ActionSupport;
+
+import entity.Student;
+
+public class AddStudent extends ActionSupport {
+	private String studentid;
+	private String studentname;
+	private String studentsex;
+	private int studengage;
+	private String studentclass;
+	private String studentpassword;
+	private String studentcollage;
+	private String studentprofession;
+	
+}

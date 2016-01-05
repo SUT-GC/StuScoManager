@@ -138,6 +138,29 @@ $(document).ready(function(){
 		scorestate.css("color","#00FF00");
 		scorestate.html("<span class='glyphicon glyphicon-ok form-control-feedback' aria-hidden='true'></span >&nbsp;&nbsp;&nbsp;&nbsp;录入成功");
 	});
+    
+    $(".submit_addstudent").click(function(){
+        var studentage = $(".studentage").val();
+        var studentid = $(".studentid").val();
+        var studentname = $(".studentname").val();
+        if(!isNaN(studentage) && studentage >= 10 && studentage <= 50){
+            if(!isNaN(studentid) && studentid >= 100000000 && studentid <= 999999999){
+                if(studentname != ""){
+                     $(".ajaxresult").load("addstudent",$(".addstudentform").serialize(),function(responseTxt,statusTxt,xhr){
+                             alert(responseTxt);
+                      });
+                }else{
+                    alert("学生姓名不能为空");
+                }
+                
+            }else{
+                alert("学号必须9未数字");
+            }
+        }else{
+            alert("年龄必须在10~50之间");
+        }
+    });
+    
 
 });
 

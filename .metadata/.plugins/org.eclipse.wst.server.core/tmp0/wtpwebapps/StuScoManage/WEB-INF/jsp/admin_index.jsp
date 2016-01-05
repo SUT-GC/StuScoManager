@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
     <head>
@@ -42,11 +43,11 @@
 		  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav navbar-right">
 			  <li class="dropdown">
-				<a href="#" class="dropdown-toggle" data-toggle="dropdown">管理员<b class="caret"></b></a>
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown">管理员 _ <s:property value="#session.username"/><b class="caret"></b></a>
 				<ul class="dropdown-menu">
 				  <li><a href="#">账户中心</a></li>
 				  <li class="divider"></li>
-				  <li><a href="#">退出登录</a></li>
+				  <li><a href="loginout">退出登录</a></li>
 				</ul>
 			  </li>
 			</ul>
@@ -75,7 +76,7 @@
                                 <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
                                   <div class="panel-body">
                                      <li >
-                                        <a href="admin_addstudent.html"><i class="glyphicon glyphicon-chevron-right"></i> 添加学生信息</a>
+                                        <a href="page_addstudent"><i class="glyphicon glyphicon-chevron-right"></i> 添加学生信息</a>
                                      </li>
                                      <hr/>
                                      <li >
@@ -138,7 +139,8 @@
 
                     <div class="row">
                         <div class="panel panel-default bootstrap-admin-no-table-panel">
-                            <div class="alert alert-success admin_loginsuccess" role="alert"><span>恭喜您登陆成功（登陆时间    2015-11-14  22：22）<span></div>
+                        	<s:bean var="now" name="java.util.Date"></s:bean>
+                            <div class="alert alert-success admin_loginsuccess" role="alert"><span>恭喜 <a><s:property value="#session.username"/> </a>登陆成功（登陆时间    <s:date name="#now" format="yyyy-MM-dd"/>）<span></div>
                         </div>
                     </div>
 

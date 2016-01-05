@@ -1,0 +1,8 @@
+package dao;
+
+/*
+ * 对TEACOURSE表进行操作
+ */
+public class TeaCourseDao {
+
+}

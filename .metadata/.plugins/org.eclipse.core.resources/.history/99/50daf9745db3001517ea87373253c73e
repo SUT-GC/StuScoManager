@@ -1,0 +1,103 @@
+package action;
+
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
+
+import com.opensymphony.xwork2.ActionSupport;
+
+import dao.StudentDao;
+import entity.Student;
+
+public class AddStudent extends ActionSupport {
+	private String studentid;
+	private String studentname;
+	private String studentsex;
+	private int studengage;
+	private String studentclass;
+	private String studentpassword;
+	private String studentcollage;
+	private String studentprofession;
+	private InputStream inputStream;
+
+	public InputStream getResult() {
+		return inputStream;
+	}
+
+	public String getStudentid() {
+		return studentid;
+	}
+
+	public void setStudentid(String studentid) {
+		this.studentid = studentid;
+	}
+
+	public String getStudentname() {
+		return studentname;
+	}
+
+	public void setStudentname(String studentname) {
+		this.studentname = studentname;
+	}
+
+	public String getStudentsex() {
+		return studentsex;
+	}
+
+	public void setStudentsex(String studentsex) {
+		this.studentsex = studentsex;
+	}
+
+	public int getStudengage() {
+		return studengage;
+	}
+
+	public void setStudengage(int studengage) {
+		this.studengage = studengage;
+	}
+
+	public String getStudentclass() {
+		return studentclass;
+	}
+
+	public void setStudentclass(String studentclass) {
+		this.studentclass = studentclass;
+	}
+
+	public String getStudentpassword() {
+		return studentpassword;
+	}
+
+	public void setStudentpassword(String studentpassword) {
+		this.studentpassword = studentpassword;
+	}
+
+	public String getStudentcollage() {
+		return studentcollage;
+	}
+
+	public void setStudentcollage(String studentcollage) {
+		this.studentcollage = studentcollage;
+	}
+
+	public String getStudentprofession() {
+		return studentprofession;
+	}
+
+	public void setStudentprofession(String studentprofession) {
+		this.studentprofession = studentprofession;
+	}
+
+	@Override
+	public String execute() throws Exception {
+		Student student = new Student(studentid, studentname, studentsex,
+				studengage, studentpassword, studentcollage, studentprofession);
+		
+		int result = StudentDao.insertStudent(student);
+		
+		if(result == 1){
+			inputStream = new ByteArrayInputStream("添加成功！".getBytes());
+		}
+		
+		return SUCCESS;
+	}
+}
