@@ -1,0 +1,43 @@
+package action;
+
+import java.io.InputStream;
+
+import com.opensymphony.xwork2.ActionSupport;
+
+import dao.AdminDao;
+import entity.Admin;
+
+public class AddAdmin extends ActionSupport {
+	private String adminid;
+	private String adminname;
+	private String adminpassword;
+	private InputStream inputStream;
+	public String getAdminid() {
+		return adminid;
+	}
+	public void setAdminid(String adminid) {
+		this.adminid = adminid;
+	}
+	public String getAdminname() {
+		return adminname;
+	}
+	public void setAdminname(String adminname) {
+		this.adminname = adminname;
+	}
+	public String getAdminpassword() {
+		return adminpassword;
+	}
+	public void setAdminpassword(String adminpassword) {
+		this.adminpassword = adminpassword;
+	}
+	
+	public InputStream getResult(){
+		return inputStream;
+	}
+	
+	@Override
+	public String execute() throws Exception {
+		Admin admin = new Admin(adminid, adminname, adminpassword);
+		AdminDao.insertAdmin(admin);
+	}
+}

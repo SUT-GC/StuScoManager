@@ -90,7 +90,7 @@
                                     </li>
                                     <hr/>
                                     <li>
-                                        <a href="admin_addadmin.html"><i class="glyphicon glyphicon-chevron-right"></i> 添加管理员</a>
+                                        <a href="page_addadmin"><i class="glyphicon glyphicon-chevron-right"></i> 添加管理员</a>
                                     </li>
                                     <hr/>
                                     <li>

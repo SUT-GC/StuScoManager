@@ -1,0 +1,8 @@
+package action;
+
+public class AddAdmin {
+	private String adminid;
+	private String adminname;
+	private String adminpassword;
+	
+}

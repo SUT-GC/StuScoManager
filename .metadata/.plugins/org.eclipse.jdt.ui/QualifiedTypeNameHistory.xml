@@ -15,7 +15,6 @@
 <fullyQualifiedTypeName name="util.PatternUtil"/>
 <fullyQualifiedTypeName name="javax.persistence.Table"/>
 <fullyQualifiedTypeName name="javax.annotation.Generated"/>
-<fullyQualifiedTypeName name="dao.CourseDao"/>
 <fullyQualifiedTypeName name="entity.SelectCourse"/>
 <fullyQualifiedTypeName name="dao.SelectCourseDao"/>
 <fullyQualifiedTypeName name="javax.persistence.Entity"/>
@@ -23,16 +22,17 @@
 <fullyQualifiedTypeName name="javax.persistence.GenerationType"/>
 <fullyQualifiedTypeName name="org.hibernate.Session"/>
 <fullyQualifiedTypeName name="org.hibernate.Transaction"/>
-<fullyQualifiedTypeName name="entity.Teacher"/>
-<fullyQualifiedTypeName name="entity.Course"/>
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="entity.TeaCourse"/>
 <fullyQualifiedTypeName name="util.HibernateUtil"/>
-<fullyQualifiedTypeName name="dao.TeacherDao"/>
 <fullyQualifiedTypeName name="dao.TeaCourseDao"/>
 <fullyQualifiedTypeName name="org.apache.struts2.ServletActionContext"/>
-<fullyQualifiedTypeName name="java.io.InputStream"/>
 <fullyQualifiedTypeName name="entity.Student"/>
 <fullyQualifiedTypeName name="dao.StudentDao"/>
+<fullyQualifiedTypeName name="entity.Teacher"/>
+<fullyQualifiedTypeName name="dao.TeacherDao"/>
+<fullyQualifiedTypeName name="java.io.InputStream"/>
+<fullyQualifiedTypeName name="entity.Course"/>
+<fullyQualifiedTypeName name="dao.CourseDao"/>
 <fullyQualifiedTypeName name="java.io.ByteArrayInputStream"/>
 </qualifiedTypeNameHistroy>

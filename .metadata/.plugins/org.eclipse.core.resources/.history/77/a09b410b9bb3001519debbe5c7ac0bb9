@@ -1,0 +1,11 @@
+package action;
+
+import java.io.InputStream;
+
+public class AddAdmin {
+	private String adminid;
+	private String adminname;
+	private String adminpassword;
+	private InputStream inputStream;
+	
+}

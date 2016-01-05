@@ -197,6 +197,28 @@ $(document).ready(function(){
     		alert("课程号必须全是数字");
     	}
     });
+    
+    $(".submit_addadmin").click(function(){
+    	var adminid = $(".adminid").val();
+    	var adminname= $("adminname").val();
+    	var adminpassword = $(".adminpassword").val();
+    	
+    	if(adminid != ""){
+    		if(adminname != ""){
+    			if(adminpassword != ""){
+    				$(".ajaxresult").load("addadmin",$(".form_addadmin").serialize(), function(responseTxt,statusTxt,xhr){
+    					alert(responseTxt);
+    				})
+    			}else{
+    				alert("密码不能为空");
+    			}
+    		}else{
+    			alert("名字不能为空");
+    		}
+    	}else{
+    		alert("账号不能为空");
+    	}
+    });
 });
 
 
