@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 
@@ -81,11 +82,11 @@
                                     </li>
                                     <hr/>
                                     <li>
-                                        <a href=""><i class="glyphicon glyphicon-chevron-right"></i> 添加教师信息</a>
+                                        <a href="page_addteacher"><i class="glyphicon glyphicon-chevron-right"></i> 添加教师信息</a>
                                     </li>
                                     <hr/>
                                     <li>
-                                        <a href="admin_addcourse.html"><i class="glyphicon glyphicon-chevron-right"></i> 添加课程信息</a>
+                                        <a href="page_addcourse"><i class="glyphicon glyphicon-chevron-right"></i> 添加课程信息</a>
                                     </li>
                                     <hr/>
                                     <li>

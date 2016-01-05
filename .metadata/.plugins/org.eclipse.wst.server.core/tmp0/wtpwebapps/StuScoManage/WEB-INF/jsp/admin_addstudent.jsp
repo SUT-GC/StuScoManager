@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 
@@ -81,11 +82,11 @@
                                     </li>
                                     <hr/>
                                     <li>
-                                        <a href=""><i class="glyphicon glyphicon-chevron-right"></i> 添加教师信息</a>
+                                        <a href="page_addteacher"><i class="glyphicon glyphicon-chevron-right"></i> 添加教师信息</a>
                                     </li>
                                     <hr/>
                                     <li>
-                                        <a href="admin_addcourse.html"><i class="glyphicon glyphicon-chevron-right"></i> 添加课程信息</a>
+                                        <a href="page_addcourse"><i class="glyphicon glyphicon-chevron-right"></i> 添加课程信息</a>
                                     </li>
                                     <hr/>
                                     <li>
@@ -229,7 +230,7 @@
                                             <span>学生密码</span>
                                         </div>
                                         <div class="col-md-10">
-                                            <input type="password" class="form-control" name="studentpassword" value="000000">
+                                            <input type="text" class="form-control" readonly name="studentpassword" value="000000">
                                         </div>
                                     </div>
                                 </div>
@@ -237,7 +238,7 @@
                                 <div class="button_submit_reset">
                                     <button class="btn btn-success submit_addstudent"  type="button">提交</button>
                                 </div>
-                                <div class="ajaxresult">
+                                <div class="ajaxresult" style="color:red; font-size:20px;">
                                 </div>
                             </div>
                             </form>

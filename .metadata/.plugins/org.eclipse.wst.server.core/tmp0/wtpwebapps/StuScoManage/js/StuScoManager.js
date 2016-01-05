@@ -140,13 +140,63 @@ $(document).ready(function(){
 	});
     
     $(".submit_addstudent").click(function(){
-       alert($(".addstudentform").serialize());
-       $(".ajaxresult").load("addstudent",$(".addstudentform").serialize(),function(responseTxt,statusTxt,xhr){
-    	   alert(responseTxt);
-       } );
+        var studentage = $(".studentage").val();
+        var studentid = $(".studentid").val();
+        var studentname = $(".studentname").val();
+        if(!isNaN(studentage) && studentage >= 10 && studentage <= 50){
+            if(!isNaN(studentid) && studentid >= 100000000 && studentid <= 999999999){
+                if(studentname != ""){
+                     $(".ajaxresult").load("addstudent",$(".addstudentform").serialize(),function(responseTxt,statusTxt,xhr){
+                             alert(responseTxt);
+                      });
+                }else{
+                    alert("学生姓名不能为空");
+                }
+                
+            }else{
+                alert("学号必须9未数字");
+            }
+        }else{
+            alert("年龄必须在10~50之间");
+        }
     });
     
-
+    $(".submit_addteacher").click(function(){
+        var teacherid = $(".teacherid").val();
+        var teachername = $(".teachername").val();
+        var teacherage = $(".teacherage").val();
+        if(!isNaN(teacherid) && teacherid >= 10000 && teacherid <= 99999){
+            if(teachername != ""){
+                if(!isNaN(teacherage) && teacherage >= 10 && teacherage <= 70){
+                    $(".ajaxresult").load("addteacher", $(".form_addteacher").serialize(), function(responseTxt,statusTxt,xhr){
+                        alert(responseTxt);
+                    })
+                }else{
+                    alert("教师年龄在10~70岁之间");
+                }
+            }else{
+                alert("教师的名字必须填写");
+            }
+        }else{
+            alert("教师的编号必须五位");
+        }
+    });
+    
+    $(".submit_addcourse").click(function(){
+    	var courseid = $(".courseid").val();
+    	var coursename=$(".coursename").val();
+    	if(!isNaN(courseid) && courseid > 0){
+    		if(coursename != ""){
+    			$(".ajaxresult").load("addcourse", $(".form_addcourse").serialize(), function(responseTxt,statusTxt,xhr){
+    				alert(responseTxt);
+    			});
+    		}else{
+    			alert("课程名称不能为空");
+    		}
+    	}else{
+    		alert("课程号必须全是数字");
+    	}
+    });
 });
 
 

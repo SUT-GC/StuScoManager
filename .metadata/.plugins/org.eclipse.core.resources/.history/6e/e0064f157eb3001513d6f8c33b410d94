@@ -1,0 +1,48 @@
+package action;
+
+import java.io.InputStream;
+
+import com.opensymphony.xwork2.ActionSupport;
+
+import entity.Course;
+
+public class AddCourse extends ActionSupport  {
+	private String courseid;
+	private String coursename;
+	private String courseattr;
+	private String coursediscription;
+	private InputStream inputStream;
+	public String getCourseid() {
+		return courseid;
+	}
+	public void setCourseid(String courseid) {
+		this.courseid = courseid;
+	}
+	public String getCoursename() {
+		return coursename;
+	}
+	public void setCoursename(String coursename) {
+		this.coursename = coursename;
+	}
+	public String getCourseattr() {
+		return courseattr;
+	}
+	public void setCourseattr(String courseattr) {
+		this.courseattr = courseattr;
+	}
+	public String getCoursediscription() {
+		return coursediscription;
+	}
+	public void setCoursediscription(String coursediscription) {
+		this.coursediscription = coursediscription;
+	}
+	public InputStream getResult() {
+		return inputStream;
+	}
+	@Override
+	public String execute() throws Exception {
+		Course course = new Course(courseid, coursename, courseattr, coursediscription);
+		return super.execute();
+	}
+	
+}

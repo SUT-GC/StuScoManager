@@ -1,0 +1,61 @@
+package action;
+
+import java.io.InputStream;
+
+import com.opensymphony.xwork2.ActionSupport;
+
+public class AddTeacher extends ActionSupport {
+	private String teacherid;
+	private String teachername;
+	private String teacherage;
+	private String teachersex;
+	private String teachercollage;
+	private String teacherpassword;
+	
+	private InputStream inputStream;
+	
+	public InputStream getResult(){
+		return inputStream;
+	}
+	public String getTeacherid() {
+		return teacherid;
+	}
+	public void setTeacherid(String teacherid) {
+		this.teacherid = teacherid;
+	}
+	public String getTeachername() {
+		return teachername;
+	}
+	public void setTeachername(String teachername) {
+		this.teachername = teachername;
+	}
+	public String getTeacherage() {
+		return teacherage;
+	}
+	public void setTeacherage(String teacherage) {
+		this.teacherage = teacherage;
+	}
+	public String getTeachersex() {
+		return teachersex;
+	}
+	public void setTeachersex(String teachersex) {
+		this.teachersex = teachersex;
+	}
+	public String getTeachercollage() {
+		return teachercollage;
+	}
+	public void setTeachercollage(String teachercollage) {
+		this.teachercollage = teachercollage;
+	}
+	public String getTeacherpassword() {
+		return teacherpassword;
+	}
+	public void setTeacherpassword(String teacherpassword) {
+		this.teacherpassword = teacherpassword;
+	}
+	
+	@Override
+	public String execute() throws Exception {
+		
+	}
+}
