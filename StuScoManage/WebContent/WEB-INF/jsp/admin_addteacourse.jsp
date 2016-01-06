@@ -157,16 +157,7 @@
                                     <div class="col-md-4">
                                         <input type="text" class="form-control input_teacher_name" name="inputteachername" placeholder="请输入教师的姓名">
                                         <div class="teacher_name_list">
-                                            <button>张三1 _ 1304052</button>
-                                            <button>张三2 _ 1304053</button>
-                                            <button>张三3 _ 1304051</button>
-                                            <button>张三4 _ 1304012</button>
-                                            <button>张三5 _ 130405312</button>
-                                            <button>张三6 _ 130412332</button>
-                                            <button>张三7 _ 130405232</button>
-                                            <button>张三8 _ 1304022</button>
-                                            <button>张三9 _ 13040513</button>
-                                            <button readonly></button>
+                                            <button  class="teacher_name_list_base"readonly></button>
                                         </div>
                                     </div>
                                     <div class="col-md-2">
@@ -209,7 +200,7 @@
                                 <button class="btn btn-success" type="submit">提交</button>
                             </div>
                         </div>
-                        <div class="ajaxresult"></div>
+                        <div class="ajaxresult"  style="visibility:hidden"></div>
                     </div>
                 </div>
             </div>
@@ -229,6 +220,7 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script type="text/javascript" src="/StuScoManage/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="/StuScoManage/js/StuScoManager.js"></script>
+    <script type="text/javascript" src="/StuScoManage/js/addteacourse.js"></script>
     <script type="text/javascript" src="/StuScoManage/js/twitter-bootstrap-hover-dropdown.min.js"></script>
     <script type="text/javascript" src="/StuScoManage/vendors/easypiechart/jquery.easy-pie-chart.js"></script>
     <script type="text/javascript" src="/StuScoManage/js/StuScoManager.js"></script>

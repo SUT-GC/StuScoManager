@@ -1,38 +1,42 @@
 $(document).ready(function(){
 	$(".teacher_name_list").hide();
 	$(".course_name_list").hide();
-	$(".input_teacher_name").keyup(function(){
-		$(".teacher_name_list").slideDown(300);
+	$(".input_teacher_name").bind('input propertychange',function(){
+
 		$(".ajaxresult").load("selectteacherbyname?inputteachername="+$(".input_teacher_name").val(), function(responseTxt,statusTxt,xhr){
+			$(".teacher_name_list").show();
+			if($(".ajaxresult").text() == 0){
+				$(".teacher_name_list").empty();
+				$(".teacher_name_list").html("<button readonly>没有搜到任何相关信息</button>"); 
+			}else{
+				var jsonarray = JSON.parse($(".ajaxresult").text());
+				$(".teacher_name_list").empty();
+				$(".teacher_name_list").html("<button class='teacher_name_list_base'></button>");
+				for(var teacher in jsonarray){
+					$(".teacher_name_list_base").prepend("<button class='teacher_name_list_button'>"+jsonarray[teacher].teachername+" _ "+jsonarray[teacher].teacherid+"</button>"); 
+				}
+		        console.log(jsonarray);
+			}
 		});
+		
 	});
 	$(".input_course_name").keyup(function(){
 		$(".course_name_list").slideDown(300);
 	});
+	
+	/*
+	 * test
+	 */
+//	$(".testchange").bind('input propertychange blur', function(){
+//		alert(1);
+//	})
 	// $(".input_teacher_name").blur(function(){
 	// 	$(".teacher_name_list").slideUp(1000);
 	// });
 	// $(".input_course_name").blur(function(){
 	// 	$(".course_name_list").slideUp(1000);
 	// });
-	$(".teacher_name_list button").click(function(){
-		$(".teacher_name_list").slideUp(300);
-		var context = $(this).html();
-		var info = context.split(" _ ");
-		var name = info[0];
-		var id = info[1];
-		$(".input_teacher_name").val(name);
-		$(".input_teacher_id").val(id);
-	});
-	$(".course_name_list button").click(function(){
-		$(".course_name_list").slideUp(300);
-		var context = $(this).html();
-		var info = context.split(" _ ");
-		var name = info[0];
-		var id = info[1];
-		$(".input_course_name").val(name);
-		$(".input_course_id").val(id);
-	});
+
 	/*admin_editadmin*/
 	$(".edit_oneadmin").hide();
 	$(".teacher_edit").click(function(){
