@@ -1,0 +1,31 @@
+package action;
+
+import java.io.InputStream;
+import java.util.List;
+
+import com.opensymphony.xwork2.ActionSupport;
+
+import dao.TeacherDao;
+
+public class SelectTeacherNameAndId extends ActionSupport {
+	private String input_teacher_name;
+	private InputStream inputStream;
+	
+	public InputStream getResult(){
+		return inputStream;
+	}
+
+	public String getInput_teacher_name() {
+		return input_teacher_name;
+	}
+
+	public void setInput_teacher_name(String input_teacher_name) {
+		this.input_teacher_name = input_teacher_name;
+	}
+	
+	@Override
+	public String execute() throws Exception {
+		List list = TeacherDao.selectTeacherByName(input_teacher_name);
+		return SUCCESS;
+	}
+}

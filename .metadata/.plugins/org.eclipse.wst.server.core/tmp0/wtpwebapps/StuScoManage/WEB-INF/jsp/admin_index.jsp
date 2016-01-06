@@ -92,7 +92,7 @@
                                      </li>
                                      <hr/>
                                       <li >
-                                        <a href="admin_addteacourse.html"><i class="glyphicon glyphicon-chevron-right"></i> 添加教课信息</a>
+                                        <a href="page_addteacourse"><i class="glyphicon glyphicon-chevron-right"></i> 添加教课信息</a>
                                      </li>
                                   </div>
                                 </div>

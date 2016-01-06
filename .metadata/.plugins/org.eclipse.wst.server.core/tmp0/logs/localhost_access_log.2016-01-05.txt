@@ -1263,3 +1263,8 @@
 0:0:0:0:0:0:0:1 - - [05/Jan/2016:19:26:27 +0800] "GET /StuScoManage/vendors/easypiechart/jquery.easy-pie-chart.js HTTP/1.1" 304 -
 0:0:0:0:0:0:0:1 - - [05/Jan/2016:19:26:27 +0800] "GET /StuScoManage/fonts/glyphicons-halflings-regular.woff HTTP/1.1" 304 -
 0:0:0:0:0:0:0:1 - - [05/Jan/2016:19:26:33 +0800] "GET /StuScoManage/addadmin?adminname=d&adminid=2&adminpassword=d HTTP/1.1" 200 53
+127.0.0.1 - - [05/Jan/2016:22:26:21 +0800] "GET / HTTP/1.1" 404 994
+0:0:0:0:0:0:0:1 - - [05/Jan/2016:22:26:49 +0800] "GET /StuScoManage/login HTTP/1.1" 200 2447
+0:0:0:0:0:0:0:1 - - [05/Jan/2016:22:26:49 +0800] "GET /StoScoManage/js/bootstrap.min.js HTTP/1.1" 404 1058
+0:0:0:0:0:0:0:1 - - [05/Jan/2016:22:26:55 +0800] "GET /favicon.ico HTTP/1.1" 404 1016
+0:0:0:0:0:0:0:1 - - [05/Jan/2016:22:27:03 +0800] "POST /StuScoManage/logincheck HTTP/1.1" 200 9177

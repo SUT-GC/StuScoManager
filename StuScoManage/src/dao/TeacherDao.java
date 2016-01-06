@@ -1,5 +1,7 @@
 package dao;
 
+import java.util.List;
+
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -38,5 +40,20 @@ public class TeacherDao {
 		transaction.commit();
 		HibernateUtil.closeSession();
 		return teacher;
+	}
+	
+	/*
+	 * 根据教师姓名查询记录
+	 */
+	public static List selectTeacherByName(String teachername){
+		Session session = HibernateUtil.currentSession();
+		Transaction transaction = session.beginTransaction();
+		
+		List list = session.createQuery("from Teacher t where t.name like ?").setString(0, "%"+teachername+"%").list();
+		
+		transaction.commit();
+		HibernateUtil.closeSession();
+		
+		return list;
 	}
 }

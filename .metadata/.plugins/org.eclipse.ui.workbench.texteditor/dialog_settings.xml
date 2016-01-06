@@ -8,6 +8,7 @@
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;"/>
 			<item value="StuScoManager"/>
 			<item value="studengage"/>
 			<item value="Columb"/>
@@ -24,7 +25,7 @@
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
 		<item value="289" key="DIALOG_WIDTH"/>
 		<item value="1|Ubuntu|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
-		<item value="432" key="DIALOG_HEIGHT"/>
+		<item value="460" key="DIALOG_HEIGHT"/>
 		<item value="907" key="DIALOG_X_ORIGIN"/>
 		<item value="79" key="DIALOG_Y_ORIGIN"/>
 	</section>

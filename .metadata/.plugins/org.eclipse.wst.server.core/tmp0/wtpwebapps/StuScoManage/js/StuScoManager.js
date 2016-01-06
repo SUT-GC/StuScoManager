@@ -3,6 +3,8 @@ $(document).ready(function(){
 	$(".course_name_list").hide();
 	$(".input_teacher_name").keyup(function(){
 		$(".teacher_name_list").slideDown(300);
+		$(".ajaxresult").load("selectteacherbyname?inputteachername="+$(".input_teacher_name").val(), function(responseTxt,statusTxt,xhr){
+		});
 	});
 	$(".input_course_name").keyup(function(){
 		$(".course_name_list").slideDown(300);

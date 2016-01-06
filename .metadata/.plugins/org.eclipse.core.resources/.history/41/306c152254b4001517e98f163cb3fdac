@@ -1,0 +1,14 @@
+package test;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+public class TestJson {
+	public static void main(String[] args) throws JSONException {
+		JSONObject json = new JSONObject();
+		JSONArray jsonarray = new JSONArray();
+		json.put("username", "gc");
+		
+	}
+}
