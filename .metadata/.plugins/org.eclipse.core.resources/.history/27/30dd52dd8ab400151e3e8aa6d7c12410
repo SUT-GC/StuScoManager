@@ -1,0 +1,37 @@
+package action;
+
+import java.io.InputStream;
+
+import com.opensymphony.xwork2.ActionSupport;
+
+public class AddTeaCourse extends ActionSupport {
+	private String input_teacher_id;
+	private String input_course_id;
+	private InputStream inputStream;
+
+	public String getInput_teacher_id() {
+		return input_teacher_id;
+	}
+
+	public void setInput_teacher_id(String input_teacher_id) {
+		this.input_teacher_id = input_teacher_id;
+	}
+
+	public String getInput_course_id() {
+		return input_course_id;
+	}
+
+	public void setInput_course_id(String input_course_id) {
+		this.input_course_id = input_course_id;
+	}
+
+	public InputStream getResult() {
+		return inputStream;
+	}
+
+	@Override
+	public String execute() throws Exception {
+		// TODO Auto-generated method stub
+		return super.execute();
+	}
+}

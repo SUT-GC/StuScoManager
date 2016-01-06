@@ -8,7 +8,7 @@ $(document).ready(function(){
 		$(".input_teacher_id").val(id);
 		$(".teacher_name_list").slideUp(300);
 	});
-	$(".course_name_list button").live('click',function(){
+	$(".course_name_list_button").live('click',function(){
 		var context = $(this).html();
 		var info = context.split(" _ ");
 		var name = info[0];

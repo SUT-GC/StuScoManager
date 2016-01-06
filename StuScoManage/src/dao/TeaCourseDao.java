@@ -16,10 +16,7 @@ import entity.Teacher;
 public class TeaCourseDao {
 
 	/*
-	 * 插入TeaCourse
-	  * 1:插入成功
-	  * -1:Teacher_id不存在
-	  * -2:course_id不存在
+	 * 插入TeaCourse 1:插入成功 -1:Teacher_id不存在 -2:course_id不存在 0:该记录已经存在
 	 */
 	public static int insertTeaCourse(TeaCourse teaCourse) {
 		Session session = HibernateUtil.currentSession();
@@ -33,6 +30,15 @@ public class TeaCourseDao {
 		if (session.get(Course.class, teaCourse.getCourse_id()) == null) {
 			HibernateUtil.closeSession();
 			return -2;
+		}
+
+		if (session
+				.createQuery(
+						"from TeaCourse tc where tc.teacher_id = ? and tc.course_id = ?")
+				.setString(0, teaCourse.getTeacher_id())
+				.setString(1, teaCourse.getCourse_id()).list().size() != 0) {
+			HibernateUtil.closeSession();
+			return 0;
 		}
 
 		session.save(teaCourse);
@@ -55,7 +61,7 @@ public class TeaCourseDao {
 
 		transaction.commit();
 		HibernateUtil.closeSession();
-		
+
 		return tc;
 	}
 
@@ -72,7 +78,7 @@ public class TeaCourseDao {
 
 		transaction.commit();
 		HibernateUtil.closeSession();
-		
+
 		return tc;
 	}
 

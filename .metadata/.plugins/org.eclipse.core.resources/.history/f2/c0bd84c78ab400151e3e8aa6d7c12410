@@ -1,0 +1,8 @@
+package action;
+
+import com.opensymphony.xwork2.ActionSupport;
+
+public class AddTeaCourse extends ActionSupport {
+	private String input_teacher_id;
+	private String input_course_id;
+}

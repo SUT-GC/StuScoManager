@@ -20,10 +20,26 @@ $(document).ready(function(){
 		});
 		
 	});
-	$(".input_course_name").keyup(function(){
-		$(".course_name_list").slideDown(300);
-	});
 	
+	$(".input_course_name").bind('input propertychange',function(){
+
+		$(".ajaxresult").load("selectcoursebyname?coursename="+$(".input_course_name").val(), function(responseTxt,statusTxt,xhr){
+			$(".course_name_list").show();
+			if($(".ajaxresult").text() == 0){
+				$(".course_name_list").empty();
+				$(".course_name_list").html("<button readonly>没有搜到任何相关信息</button>"); 
+			}else{
+				var jsonarray = JSON.parse($(".ajaxresult").text());
+				$(".course_name_list").empty();
+				$(".course_name_list").html("<button class='course_name_list_base'></button>");
+				for(var course in jsonarray){
+					$(".course_name_list_base").prepend("<button class='course_name_list_button'>"+jsonarray[course].coursename+" _ "+jsonarray[course].courseid+"</button>"); 
+				}
+		        console.log(jsonarray);
+			}
+		});
+		
+	});
 	/*
 	 * test
 	 */
@@ -223,6 +239,23 @@ $(document).ready(function(){
     		}
     	}else{
     		alert("账号不能为空");
+    	}
+    });
+    
+    $(".submit_addteacourse").click(function(){
+    	var inputcourseid = $(".input_course_id").val();
+    	var inputteacherid= $(".input_teacher_id").val();
+    	
+    	if(inputcourseid != ""){
+    		if(inputteacherid != ""){
+    				$(".ajaxresult2").load("addteacourse?input_course_id="+inputcourseid+"&input_teacher_id="+inputteacherid, function(responseTxt,statusTxt,xhr){
+    					alert(responseTxt);
+    				})
+    		}else{
+    			alert("教师姓名没找到");
+    		}
+    	}else{
+    		alert("课程名称没找到");
     	}
     });
 });

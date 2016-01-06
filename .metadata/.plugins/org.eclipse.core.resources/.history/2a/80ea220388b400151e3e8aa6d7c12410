@@ -1,0 +1,11 @@
+package action;
+
+import java.io.InputStream;
+
+import com.opensymphony.xwork2.ActionSupport;
+
+public class SelectCourseNameAndId extends ActionSupport {
+	private String coursename;
+	private InputStream inputStream;
+	
+}

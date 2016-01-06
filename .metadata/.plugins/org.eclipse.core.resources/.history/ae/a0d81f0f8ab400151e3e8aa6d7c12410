@@ -1,0 +1,20 @@
+$(document).ready(function(){
+	$(".teacher_name_list_button").live('click',function(){
+		var context = $(this).html();
+		var info = context.split(" _ ");
+		var name = info[0];
+		var id = info[1];
+		$(".input_teacher_name").val(name);
+		$(".input_teacher_id").val(id);
+		$(".teacher_name_list").slideUp(300);
+	});
+	$(".course_name_list button").live('click',function(){
+		var context = $(this).html();
+		var info = context.split(" _ ");
+		var name = info[0];
+		var id = info[1];
+		$(".input_course_name").val(name);
+		$(".input_course_id").val(id);
+		$(".course_name_list").slideUp(300);
+	});
+});
