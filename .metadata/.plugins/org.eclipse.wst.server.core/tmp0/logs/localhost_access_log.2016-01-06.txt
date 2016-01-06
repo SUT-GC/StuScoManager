@@ -3883,3 +3883,7 @@
 0:0:0:0:0:0:0:1 - - [06/Jan/2016:23:55:19 +0800] "GET /StuScoManage/page_addteacher HTTP/1.1" 200 14140
 0:0:0:0:0:0:0:1 - - [06/Jan/2016:23:55:20 +0800] "GET /StuScoManage/page_addstudent HTTP/1.1" 200 15598
 0:0:0:0:0:0:0:1 - - [06/Jan/2016:23:55:21 +0800] "GET /StuScoManage/page_addteacourse HTTP/1.1" 200 8720
+0:0:0:0:0:0:0:1 - - [06/Jan/2016:23:56:37 +0800] "GET /StuScoManage/selectteacherbyname?inputteachername= HTTP/1.1" 200 222
+0:0:0:0:0:0:0:1 - - [06/Jan/2016:23:56:38 +0800] "GET /StuScoManage/selectteacherbyname?inputteachername= HTTP/1.1" 200 222
+0:0:0:0:0:0:0:1 - - [06/Jan/2016:23:56:41 +0800] "GET /StuScoManage/selectcoursebyname?coursename= HTTP/1.1" 200 138
+0:0:0:0:0:0:0:1 - - [06/Jan/2016:23:56:41 +0800] "GET /StuScoManage/selectcoursebyname?coursename= HTTP/1.1" 200 138
