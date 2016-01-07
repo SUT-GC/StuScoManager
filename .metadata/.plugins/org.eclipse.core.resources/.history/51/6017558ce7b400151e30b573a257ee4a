@@ -1,0 +1,284 @@
+$(document).ready(function(){
+	$(".teacher_name_list").hide();
+	$(".course_name_list").hide();
+	$(".input_teacher_name").bind('input propertychange',function(){
+
+		$(".ajaxresult").load("selectteacherbyname?inputteachername="+$(".input_teacher_name").val(), function(responseTxt,statusTxt,xhr){
+			$(".teacher_name_list").show();
+			if($(".ajaxresult").text() == 0){
+				$(".teacher_name_list").empty();
+				$(".teacher_name_list").html("<button readonly>没有搜到任何相关信息</button>"); 
+			}else{
+				var jsonarray = JSON.parse($(".ajaxresult").text());
+				$(".teacher_name_list").empty();
+				$(".teacher_name_list").html("<button class='teacher_name_list_base'></button>");
+				for(var teacher in jsonarray){
+					$(".teacher_name_list_base").prepend("<button class='teacher_name_list_button'>"+jsonarray[teacher].teachername+" _ "+jsonarray[teacher].teacherid+"</button>"); 
+				}
+		        console.log(jsonarray);
+			}
+		});
+		
+	});
+	
+	$(".input_course_name").bind('input propertychange',function(){
+
+		$(".ajaxresult").load("selectcoursebyname?coursename="+$(".input_course_name").val(), function(responseTxt,statusTxt,xhr){
+			$(".course_name_list").show();
+			if($(".ajaxresult").text() == 0){
+				$(".course_name_list").empty();
+				$(".course_name_list").html("<button readonly>没有搜到任何相关信息</button>"); 
+			}else{
+				var jsonarray = JSON.parse($(".ajaxresult").text());
+				$(".course_name_list").empty();
+				$(".course_name_list").html("<button class='course_name_list_base'></button>");
+				for(var course in jsonarray){
+					$(".course_name_list_base").prepend("<button class='course_name_list_button'>"+jsonarray[course].coursename+" _ "+jsonarray[course].courseid+"</button>"); 
+				}
+		        console.log(jsonarray);
+			}
+		});
+		
+	});
+	/*
+	 * test
+	 */
+//	$(".testchange").bind('input propertychange blur', function(){
+//		alert(1);
+//	})
+	// $(".input_teacher_name").blur(function(){
+	// 	$(".teacher_name_list").slideUp(1000);
+	// });
+	// $(".input_course_name").blur(function(){
+	// 	$(".course_name_list").slideUp(1000);
+	// });
+
+	/*admin_editadmin*/
+	$(".edit_oneadmin").hide();
+	$(".teacher_edit").click(function(){
+		$(".show_alladmin").hide();
+		$(".edit_oneadmin").slideDown(200);
+		var parenttr = $(this).parent();
+		var newadminnum = parenttr.find(".teacher_num").text();
+		var newadminname = parenttr.find(".teacher_name").text();
+		$(".new_adminname").val(newadminname);
+		$(".new_adminnum").val(newadminnum);
+	});
+	$(".return_show_alladmin").click(function(){
+		$(".edit_oneadmin").hide();
+		$(".show_alladmin").slideDown(200);
+	});
+	/*admin_editcourse*/
+	$(".edit_onecourse").hide();
+	$(".course_edit").click(function(){
+		$(".show_allcourse").hide();
+		$(".edit_onecourse").slideDown(200);
+		var parenttr = $(this).parent();
+		var newcoursenum = parenttr.find(".course_num").text();
+		var newcoursename = parenttr.find(".course_name").text();
+		var newcourseattr = parenttr.find(".course_attr").text();
+		$(".new_coursename").val(newcoursename);
+		$(".new_coursenum").val(newcoursenum);
+		if(newcourseattr == "选修"){
+			$(".course_attr_notrequired").attr("selected", "selected");
+		}else{
+			$(".course_attr_required").attr("selected","selected");
+		}
+	});
+	$(".return_show_allcourse").click(function(){
+		$(".edit_onecourse").hide();
+		$(".show_allcourse").slideDown(200);
+	});
+	/*admin_editstudent*/
+	$(".show_onestudent").hide();
+	$(".student_edit").click(function(){
+		$(".show_allstudent").hide();
+		$(".show_onestudent").slideDown(200);
+		var parenttr = $(this).parent();
+		var newstudentnum = parenttr.find(".student_num").text();
+		var newstudentname = parenttr.find(".student_name").text();
+		var newstudentsex = parenttr.find(".student_sex").text();
+		var newstudentage = parenttr.find(".student_age").text();
+		var newstudentcollage = parenttr.find(".student_collage").text();
+		var newstudentmajor = parenttr.find(".student_major").text();
+		var newstudentclass = parenttr.find(".student_class").text();
+		$(".newstudentnum").val(newstudentnum);
+		$(".newstudentname").val(newstudentname);
+		$(".newstudentage").val(newstudentage);
+		if(newstudentsex == "女"){
+			$("#inlineRadio2").removeAttr("checked");
+			$("#inlineRadio1").removeAttr("checked");
+			$("#inlineRadio2").attr("checked","checked");
+		}else{
+			$("#inlineRadio2").removeAttr("checked");
+			$("#inlineRadio1").removeAttr("checked");
+			$("#inlineRadio1").attr("checked","checked");
+		}
+		if(newstudentclass == "1301"){
+			$(".class_t1").attr("selected","selected");
+		}else if(newstudentclass == "1302"){
+			$(".class_t2").attr("selected","selected");
+		}else{
+			$(".class_t3").attr("selected","selected");
+		}
+	});
+	$(".return_show_allstudent").click(function(){
+		$(".show_onestudent").hide();
+		$(".show_allstudent").slideDown(200);
+	});
+	/*admin_editteacher*/
+	$(".show_oneteacher").hide();
+	$(".teacher_edit").click(function(){
+		$(".show_oneteacher").slideDown(200);
+		$(".show_allteacher").hide();
+		var parenttr = $(this).parent();
+		var newteachernum = parenttr.find(".teacher_num").text();
+		var newteachername = parenttr.find(".teacher_name").text();
+		var newteachersex = parenttr.find(".teacher_sex").text();
+		var newteachercollage = parenttr.find(".teacher_collage").text();
+		var newteacherage = parenttr.find(".teacher_age").text();
+		$(".newteachernum").val(newteachernum);
+		$(".newteachername").val(newteachername);
+		$(".newteacherage").val(newteacherage);
+		if(newteachersex == "女"){
+			$("#inlineRadio2").removeAttr("checked");
+			$("#inlineRadio1").removeAttr("checked");
+			$("#inlineRadio2").attr("checked","true");
+		}else{
+			$("#inlineRadio2").removeAttr("checked");
+			$("#inlineRadio1").removeAttr("checked");
+			$("#inlineRadio1").attr("checked","true");
+		}
+	});
+	$(".return_show_allteacher").click(function(){
+		$(".show_allteacher").slideDown(200);
+		$(".show_oneteacher").hide();
+	});
+	/*teacher_enterscore*/
+	$(".inputtext_score").blur(function(){
+		var scorestate = $(this).parent().parent().find(".input_scorestate");
+		scorestate.css("color","#00FF00");
+		scorestate.html("<span class='glyphicon glyphicon-ok form-control-feedback' aria-hidden='true'></span >&nbsp;&nbsp;&nbsp;&nbsp;录入成功");
+	});
+    
+    $(".submit_addstudent").click(function(){
+        var studentage = $(".studentage").val();
+        var studentid = $(".studentid").val();
+        var studentname = $(".studentname").val();
+        if(!isNaN(studentage) && studentage >= 10 && studentage <= 50){
+            if(!isNaN(studentid) && studentid >= 100000000 && studentid <= 999999999){
+                if(studentname != ""){
+                     $(".ajaxresult").load("addstudent",$(".addstudentform").serialize(),function(responseTxt,statusTxt,xhr){
+                             alert(responseTxt);
+                      });
+                }else{
+                    alert("学生姓名不能为空");
+                }
+                
+            }else{
+                alert("学号必须9未数字");
+            }
+        }else{
+            alert("年龄必须在10~50之间");
+        }
+    });
+    
+    $(".submit_addteacher").click(function(){
+        var teacherid = $(".teacherid").val();
+        var teachername = $(".teachername").val();
+        var teacherage = $(".teacherage").val();
+        if(!isNaN(teacherid) && teacherid >= 10000 && teacherid <= 99999){
+            if(teachername != ""){
+                if(!isNaN(teacherage) && teacherage >= 10 && teacherage <= 70){
+                    $(".ajaxresult").load("addteacher", $(".form_addteacher").serialize(), function(responseTxt,statusTxt,xhr){
+                        alert(responseTxt);
+                    })
+                }else{
+                    alert("教师年龄在10~70岁之间");
+                }
+            }else{
+                alert("教师的名字必须填写");
+            }
+        }else{
+            alert("教师的编号必须五位");
+        }
+    });
+    
+    $(".submit_addcourse").click(function(){
+    	var courseid = $(".courseid").val();
+    	var coursename=$(".coursename").val();
+    	if(!isNaN(courseid) && courseid > 0){
+    		if(coursename != ""){
+    			$(".ajaxresult").load("addcourse", $(".form_addcourse").serialize(), function(responseTxt,statusTxt,xhr){
+    				alert(responseTxt);
+    			});
+    		}else{
+    			alert("课程名称不能为空");
+    		}
+    	}else{
+    		alert("课程号必须全是数字");
+    	}
+    });
+    
+    $(".submit_addadmin").click(function(){
+    	var adminid = $(".adminid").val();
+    	var adminname= $("adminname").val();
+    	var adminpassword = $(".adminpassword").val();
+    	
+    	if(adminid != ""){
+    		if(adminname != ""){
+    			if(adminpassword != ""){
+    				$(".ajaxresult").load("addadmin",$(".form_addadmin").serialize(), function(responseTxt,statusTxt,xhr){
+    					alert(responseTxt);
+    				})
+    			}else{
+    				alert("密码不能为空");
+    			}
+    		}else{
+    			alert("名字不能为空");
+    		}
+    	}else{
+    		alert("账号不能为空");
+    	}
+    });
+    
+    $(".submit_addteacourse").click(function(){
+    	var inputcourseid = $(".input_course_id").val();
+    	var inputteacherid= $(".input_teacher_id").val();
+    	
+    	if(inputcourseid != ""){
+    		if(inputteacherid != ""){
+    				$(".ajaxresult2").load("addteacourse?input_course_id="+inputcourseid+"&input_teacher_id="+inputteacherid, function(responseTxt,statusTxt,xhr){
+    					alert(responseTxt);
+    				})
+    		}else{
+    			alert("教师姓名没找到");
+    		}
+    	}else{
+    		alert("课程名称没找到");
+    	}
+    });
+    
+    $(".submit_editadmin").click(function(){
+    	var newadminname = $(".new_adminname").val();
+    	var newadminnum= $(".new_adminnum").val();
+    	var newadminpass = $(".new_adminpass")
+    	if(adminid != ""){
+    		if(adminname != ""){
+    			if(adminpassword != ""){
+    				$(".ajaxresult").load("addadmin",$(".form_addadmin").serialize(), function(responseTxt,statusTxt,xhr){
+    					alert(responseTxt);
+    				})
+    			}else{
+    				alert("密码不能为空");
+    			}
+    		}else{
+    			alert("名字不能为空");
+    		}
+    	}else{
+    		alert("账号不能为空");
+    	}}
+    });
+});
+
+

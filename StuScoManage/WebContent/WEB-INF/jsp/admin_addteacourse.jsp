@@ -55,10 +55,8 @@
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-right">
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
-						data-toggle="dropdown">管理员<b class="caret"></b></a>
+						data-toggle="dropdown">管理员 _ <s:property value="#session.username"/><b class="caret"></b></a>
 						<ul class="dropdown-menu">
-							<li><a href="#">设置</a></li>
-							<li><a href="#">个人资料</a></li>
 							<li><a href="#">账户中心</a></li>
 							<li class="divider"></li>
 							<li><a href="#">退出登录</a></li>
@@ -91,20 +89,25 @@
 							<div id="collapseOne" class="panel-collapse collapse in"
 								role="tabpanel" aria-labelledby="headingOne">
 								<div class="panel-body">
-									<li><a href="page_addstudent"><i
-											class="glyphicon glyphicon-chevron-right"></i> 添加学生信息</a></li>
-									<hr />
-									<li><a href="page_addteacher"><i
-											class="glyphicon glyphicon-chevron-right"></i> 添加教师信息</a></li>
-									<hr />
-									<li><a href="page_addcourse"><i
-											class="glyphicon glyphicon-chevron-right"></i> 添加课程信息</a></li>
-									<hr />
-									<li><a href="page_addadmin"><i
-											class="glyphicon glyphicon-chevron-right"></i> 添加管理员</a></li>
-									<hr />
-									<li class="active"><a href="#"><i
-											class="glyphicon glyphicon-chevron-right"></i> 添加教课信息</a></li>
+									<li >
+                                        <a href="page_addstudent"><i class="glyphicon glyphicon-chevron-right"></i> 添加学生信息</a>
+                                     </li>
+                                     <hr/>
+                                     <li class="active">
+                                        <a href="#"><i class="glyphicon glyphicon-chevron-right"></i> 添加教师信息</a>
+                                     </li>
+                                     <hr/>
+                                    <li >
+                                        <a href="page_addcourse"><i class="glyphicon glyphicon-chevron-right"></i> 添加课程信息</a>
+                                     </li>
+                                     <hr/>
+                                    <li >
+                                        <a href="page_addadmin"><i class="glyphicon glyphicon-chevron-right"></i> 添加管理员</a>
+                                     </li>
+                                     <hr/>
+                                     <li >
+                                        <a href="page_addteacourse"><i class="glyphicon glyphicon-chevron-right"></i> 添加教课信息</a>
+                                     </li>
 								</div>
 							</div>
 						</div>
@@ -119,20 +122,25 @@
 							<div id="collapseTwo" class="panel-collapse collapse"
 								role="tabpanel" aria-labelledby="headingTwo">
 								<div class="panel-body">
-									<li><a href="admin_editstudent.html"><i
-											class="glyphicon glyphicon-chevron-right"></i> 编辑学生信息</a></li>
-									<hr />
-									<li><a href="admin_editteacher.html"><i
-											class="glyphicon glyphicon-chevron-right"></i> 编辑教师信息</a></li>
-									<hr />
-									<li><a href="admin_editcourse.html"><i
-											class="glyphicon glyphicon-chevron-right"></i> 编辑课程信息</a></li>
-									<hr />
-									<li><a href="admin_editadmin.html"><i
-											class="glyphicon glyphicon-chevron-right"></i> 编辑管理员</a></li>
-									<hr />
-									<li><a href="admin_editteacourse.html"><i
-											class="glyphicon glyphicon-chevron-right"></i> 编辑教课信息</a></li>
+									<li >
+                                        <a href="page_editstudent"><i class="glyphicon glyphicon-chevron-right"></i> 编辑学生信息</a>
+                                     </li>
+                                     <hr/>
+                                     <li >
+                                        <a href="page_editteacher"><i class="glyphicon glyphicon-chevron-right"></i> 编辑教师信息</a>
+                                     </li>
+                                     <hr/>
+                                    <li >
+                                        <a href="page_editcourse"><i class="glyphicon glyphicon-chevron-right"></i> 编辑课程信息</a>
+                                     </li>
+                                     <hr/>
+                                    <li class="active">
+                                        <a href="page_editadmin"><i class="glyphicon glyphicon-chevron-right"></i> 编辑管理员</a>
+                                     </li>
+                                     <hr/>
+                                     <li >
+                                        <a href="page_editteacourse"><i class="glyphicon glyphicon-chevron-right"></i> 编辑教课信息</a>
+                                     </li>
 								</div>
 							</div>
 						</div>

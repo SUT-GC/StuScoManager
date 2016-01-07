@@ -1,5 +1,6 @@
 package dao;
 
+import java.util.List;
 
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -11,11 +12,27 @@ import entity.Admin;
  * 对MANAGER表进行操作
  */
 public class AdminDao {
-	
+
+	/*
+	 * 查询所有的Admin
+	 */
+	public static List selectAllAdmin() {
+		List list = null;
+		Session session = HibernateUtil.currentSession();
+		Transaction transaction = session.beginTransaction();
+
+		list = session.createQuery("from Admin").list();
+
+		transaction.commit();
+		HibernateUtil.closeSession();
+
+		return list;
+	}
+
 	/*
 	 * 根据ID查询Admin
 	 */
-	public static Admin selectAdminById(String ID){
+	public static Admin selectAdminById(String ID) {
 		Admin admin = null;
 		Session session = HibernateUtil.currentSession();
 		Transaction transaction = session.beginTransaction();
@@ -24,23 +41,59 @@ public class AdminDao {
 		HibernateUtil.closeSession();
 		return admin;
 	}
-	
+
 	/*
-	 * 插入管理员
-	 * 1:插入成功
-	 * 0:插入失败，已存在该账号
+	 * 插入管理员 1:插入成功 0:插入失败，已存在该账号
 	 */
-	public static int insertAdmin(Admin admin){
+	public static int insertAdmin(Admin admin) {
 		Session session = HibernateUtil.currentSession();
 		Transaction transaction = session.beginTransaction();
-		if(session.get(Admin.class, admin.getId()) == null){
+		if (session.get(Admin.class, admin.getId()) == null) {
 			session.save(admin);
 			transaction.commit();
 			HibernateUtil.closeSession();
 			return 1;
-		}else{
+		} else {
 			HibernateUtil.closeSession();
 			return 0;
 		}
+	}
+
+	/*
+	 * 根据id更新Admin 1:更新成功 0:该新id已经存在
+	 */
+	public static int updateAdminById(String oldid, Admin newAdmin) {
+
+		Session session = HibernateUtil.currentSession();
+		Transaction transaction = session.beginTransaction();
+
+		int c = 0;
+		Admin admin = null;
+		if ((admin = (Admin)session.get(Admin.class, oldid)) != null) {
+			if(newAdmin.getPassword().length() == 0){
+				newAdmin.setPassword(admin.getPassword());
+			}
+			c = 1;
+			session.delete(admin);
+		}
+		
+		transaction.commit();
+		HibernateUtil.closeSession();
+
+		int result = 0;
+		if (c == 1) {
+			result = AdminDao.insertAdmin(newAdmin);
+		}
+
+		return result;
+		// admin.setId(newAdmin.getId());
+		// admin.setName(newAdmin.getName());
+		// if(newAdmin.getPassword() != ""){
+		// admin.setPassword(newAdmin.getPassword());
+		// }
+		// session.update(admin);
+		// transaction.commit();
+		// HibernateUtil.closeSession();
+		// return 1;
 	}
 }

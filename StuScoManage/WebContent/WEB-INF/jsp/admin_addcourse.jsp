@@ -108,23 +108,23 @@
                                 <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
                                   <div class="panel-body">
                                      <li >
-                                        <a href="admin_editstudent.html"><i class="glyphicon glyphicon-chevron-right"></i> 编辑学生信息</a>
+                                        <a href="page_editstudent"><i class="glyphicon glyphicon-chevron-right"></i> 编辑学生信息</a>
                                      </li>
                                      <hr/>
                                      <li >
-                                        <a href="admin_editteacher.html"><i class="glyphicon glyphicon-chevron-right"></i> 编辑教师信息</a>
+                                        <a href="page_editteacher"><i class="glyphicon glyphicon-chevron-right"></i> 编辑教师信息</a>
                                      </li>
                                      <hr/>
                                     <li >
-                                        <a href="admin_editcourse.html"><i class="glyphicon glyphicon-chevron-right"></i> 编辑课程信息</a>
+                                        <a href="page_editcourse"><i class="glyphicon glyphicon-chevron-right"></i> 编辑课程信息</a>
                                      </li>
                                      <hr/>
-                                    <li >
-                                        <a href="admin_editadmin.html"><i class="glyphicon glyphicon-chevron-right"></i> 编辑管理员</a>
+                                    <li class="active">
+                                        <a href="page_editadmin"><i class="glyphicon glyphicon-chevron-right"></i> 编辑管理员</a>
                                      </li>
                                      <hr/>
                                      <li >
-                                        <a href="admin_editteacourse.html"><i class="glyphicon glyphicon-chevron-right"></i> 编辑教课信息</a>
+                                        <a href="page_editteacourse"><i class="glyphicon glyphicon-chevron-right"></i> 编辑教课信息</a>
                                      </li>
                                   </div>
                                 </div>

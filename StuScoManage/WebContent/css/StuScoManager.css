@@ -2,6 +2,10 @@ hr{
 	margin-top: 10px;
 	margin-bottom: 10px;
 }
+.ajaxresult{
+	color:red;
+	font-size:20px;
+}
 /*addadmin_context start*/
 .addadmin_context{
 	margin-left: 20px;

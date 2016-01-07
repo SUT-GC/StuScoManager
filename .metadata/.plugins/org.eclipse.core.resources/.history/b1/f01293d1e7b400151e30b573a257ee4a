@@ -1,0 +1,34 @@
+package action;
+
+import java.io.InputStream;
+
+import com.opensymphony.xwork2.ActionSupport;
+
+public class EditAdminUpdateAdmin extends ActionSupport {
+	private String newadminnum;
+	private String newadminname;
+	private String newadminpass;
+	private InputStream inputStream;
+	public String getNewadminnum() {
+		return newadminnum;
+	}
+	public void setNewadminnum(String newadminnum) {
+		this.newadminnum = newadminnum;
+	}
+	public String getNewadminname() {
+		return newadminname;
+	}
+	public void setNewadminname(String newadminname) {
+		this.newadminname = newadminname;
+	}
+	public String getNewadminpass() {
+		return newadminpass;
+	}
+	public void setNewadminpass(String newadminpass) {
+		this.newadminpass = newadminpass;
+	}
+	
+	private InputStream getResult(){
+		return InputStream;
+	}
+}

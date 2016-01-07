@@ -1,0 +1,10 @@
+package action;
+
+import com.opensymphony.xwork2.ActionSupport;
+
+public class EditAdminUpdateAdmin extends ActionSupport {
+	private String newadminnum;
+	private String newadminname;
+	private String newadminpass;
+	
+}

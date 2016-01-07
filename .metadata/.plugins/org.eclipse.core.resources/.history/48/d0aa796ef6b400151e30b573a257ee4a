@@ -1,0 +1,72 @@
+package action;
+
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
+
+import com.opensymphony.xwork2.ActionSupport;
+
+import dao.AdminDao;
+import entity.Admin;
+
+public class EditAdminUpdateAdmin extends ActionSupport {
+	private String new_adminnum;
+	private String new_adminname;
+	private String new_adminpass;
+	private String oldadminnum;
+	private InputStream inputStream;
+
+
+	public String getNew_adminnum() {
+		return new_adminnum;
+	}
+
+	public void setNew_adminnum(String new_adminnum) {
+		this.new_adminnum = new_adminnum;
+	}
+
+	public String getNew_adminname() {
+		return new_adminname;
+	}
+
+	public void setNew_adminname(String new_adminname) {
+		this.new_adminname = new_adminname;
+	}
+
+	public String getNew_adminpass() {
+		return new_adminpass;
+	}
+
+	public void setNew_adminpass(String new_adminpass) {
+		this.new_adminpass = new_adminpass;
+	}
+
+	public String getOldadminnum() {
+		return oldadminnum;
+	}
+
+	public void setOldadminnum(String oldadminnum) {
+		this.oldadminnum = oldadminnum;
+	}
+
+	public InputStream getResult() {
+		return inputStream;
+	}
+
+	public void setInputStream(InputStream inputStream) {
+		this.inputStream = inputStream;
+	}
+
+	@Override
+	public String execute() throws Exception {
+		Admin admin = new Admin(new_adminnum, new_adminname, new_adminpass);
+		System.out.println(admin);
+		int result = AdminDao.updateAdminById(oldadminnum, admin);
+		if(result == 0){
+			inputStream = new ByteArrayInputStream("更新失败".getBytes("utf-8"));
+		}else{
+			inputStream = new ByteArrayInputStream("更新成功".getBytes("utf-8"));
+		}
+		
+		return SUCCESS;
+	}
+}

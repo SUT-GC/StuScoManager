@@ -61,6 +61,7 @@ $(document).ready(function(){
 		var parenttr = $(this).parent();
 		var newadminnum = parenttr.find(".teacher_num").text();
 		var newadminname = parenttr.find(".teacher_name").text();
+		$(".oldadminnum").val(newadminnum);
 		$(".new_adminname").val(newadminname);
 		$(".new_adminnum").val(newadminnum);
 	});
@@ -256,6 +257,23 @@ $(document).ready(function(){
     		}
     	}else{
     		alert("课程名称没找到");
+    	}
+    });
+    
+    $(".submit_editadmin").click(function(){
+    	var newadminname = $(".new_adminname").val();
+    	var newadminnum= $(".new_adminnum").val();
+    	var newadminpass = $(".new_adminpass").val();
+    	if(newadminnum != ""){
+    		if(newadminname != ""){
+    				$(".ajaxresult").load("editadminupdateadmin",$(".form_editadmin").serialize(), function(responseTxt,statusTxt,xhr){
+    					alert(responseTxt);
+    				})
+    		}else{
+    			alert("名字不能为空");
+    		}
+    	}else{
+    		alert("账号不能为空");
     	}
     });
 });
