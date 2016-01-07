@@ -93,7 +93,7 @@
                                         <a href="page_addstudent"><i class="glyphicon glyphicon-chevron-right"></i> 添加学生信息</a>
                                      </li>
                                      <hr/>
-                                     <li class="active">
+                                     <li>
                                         <a href="#"><i class="glyphicon glyphicon-chevron-right"></i> 添加教师信息</a>
                                      </li>
                                      <hr/>
@@ -105,7 +105,7 @@
                                         <a href="page_addadmin"><i class="glyphicon glyphicon-chevron-right"></i> 添加管理员</a>
                                      </li>
                                      <hr/>
-                                     <li >
+                                     <li class="active">
                                         <a href="page_addteacourse"><i class="glyphicon glyphicon-chevron-right"></i> 添加教课信息</a>
                                      </li>
 								</div>
@@ -134,7 +134,7 @@
                                         <a href="page_editcourse"><i class="glyphicon glyphicon-chevron-right"></i> 编辑课程信息</a>
                                      </li>
                                      <hr/>
-                                    <li class="active">
+                                    <li >
                                         <a href="page_editadmin"><i class="glyphicon glyphicon-chevron-right"></i> 编辑管理员</a>
                                      </li>
                                      <hr/>

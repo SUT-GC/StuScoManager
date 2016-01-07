@@ -1,0 +1,16 @@
+package action;
+
+import com.opensymphony.xwork2.ActionSupport;
+
+public class EditCourseUpdateCourse extends ActionSupport {
+	
+	private String oldcourseid;
+	private String newcourseid;
+	private String newcoursename;
+	private String newcourseattr;
+	private String newcoursedescription;
+	@Override
+	public String execute() throws Exception {
+		return super.execute();
+	}
+}

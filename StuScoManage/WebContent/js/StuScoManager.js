@@ -78,6 +78,9 @@ $(document).ready(function(){
 		var newcoursenum = parenttr.find(".course_num").text();
 		var newcoursename = parenttr.find(".course_name").text();
 		var newcourseattr = parenttr.find(".course_attr").text();
+		var newdis = parenttr.find(".course_dis").text();
+		$(".new_coursedescribe").val(newdis);
+		$(".old_courseid").val(newcoursenum);
 		$(".new_coursename").val(newcoursename);
 		$(".new_coursenum").val(newcoursenum);
 		if(newcourseattr == "选修"){
@@ -274,6 +277,22 @@ $(document).ready(function(){
     		}
     	}else{
     		alert("账号不能为空");
+    	}
+    });
+    
+    $(".submit_editcourse").click(function(){
+    	var courseid = $(".new_coursenum").val();
+    	var coursename=$(".new_coursename").val();
+    	if(!isNaN(courseid) && courseid > 0){
+    		if(coursename != ""){
+    			$(".ajaxresult").load("editcourseupdatecourse", $(".form_editcourse").serialize(), function(responseTxt,statusTxt,xhr){
+    				alert(responseTxt);
+    			});
+    		}else{
+    			alert("课程名称不能为空");
+    		}
+    	}else{
+    		alert("课程号必须全是数字");
     	}
     });
 });

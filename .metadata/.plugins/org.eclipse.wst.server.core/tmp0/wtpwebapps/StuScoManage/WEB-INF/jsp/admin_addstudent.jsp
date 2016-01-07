@@ -121,7 +121,7 @@
                                         <a href="page_editcourse"><i class="glyphicon glyphicon-chevron-right"></i> 编辑课程信息</a>
                                      </li>
                                      <hr/>
-                                    <li class="active">
+                                    <li >
                                         <a href="page_editadmin"><i class="glyphicon glyphicon-chevron-right"></i> 编辑管理员</a>
                                      </li>
                                      <hr/>

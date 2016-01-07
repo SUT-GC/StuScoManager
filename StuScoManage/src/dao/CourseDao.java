@@ -55,5 +55,43 @@ public class CourseDao {
 		HibernateUtil.closeSession();
 		return list;
 	}
-
+	
+	/*
+	 * 查询所有的Course
+	 */
+	public static List selectAllCourse(){
+		List list = null;
+		Session session = HibernateUtil.currentSession();
+		Transaction transaction = session.beginTransaction();
+		
+		list = session.createQuery("from Course").list();
+		
+		transaction.commit();
+		HibernateUtil.closeSession();
+		
+		return list;
+	}
+	
+	/*
+	 * 根据旧的id更新Course
+	 * 1:添加成功
+	 * 0:该记录已经存在
+	 * -1:服务器数据库操作出错，账号被异常删除
+	 */
+	public static int updateCourseById(String oldid, Course newCourse){
+		Session session = HibernateUtil.currentSession();
+		Transaction transaction = session.beginTransaction();
+		
+		Course course = (Course) session.get(Course.class, oldid);
+		if(course == null){
+			return -1;
+		}else{
+			session.delete(course);
+		}
+		transaction.commit();
+		HibernateUtil.closeSession();
+		
+		int result = CourseDao.insertCourse(newCourse);
+		return result;
+	}
 }
