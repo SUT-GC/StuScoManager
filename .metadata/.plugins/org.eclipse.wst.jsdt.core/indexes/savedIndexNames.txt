@@ -6,4 +6,3 @@ INDEX VERSION 1.3+/home/gc/web/StuScoManager/.metadata/.plugins/org.eclipse.wst.
 557116866.index
 1952306987.index
 2321075513.index
-557116866.index

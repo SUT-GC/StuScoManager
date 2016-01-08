@@ -96,4 +96,32 @@ public class AdminDao {
 		// HibernateUtil.closeSession();
 		// return 1;
 	}
+	
+	/*
+	 * 根据id删除Admin记录
+	 * 1:删除成功
+	 * 0:id没有找到
+	 */
+	public static int deleteAdminById(String adminid){
+		Session session = HibernateUtil.currentSession();
+		Transaction transaction = session.beginTransaction();
+		
+		Admin admin = null;
+		
+		admin = (Admin) session.get(Admin.class, adminid);
+		
+
+		
+		if(admin == null){
+			transaction.commit();
+			HibernateUtil.closeSession();
+			return 0;
+		}else{
+			session.delete(admin);
+			transaction.commit();
+			HibernateUtil.closeSession();
+			return 1;
+		}
+		
+	}
 }

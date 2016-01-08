@@ -94,4 +94,30 @@ public class CourseDao {
 		int result = CourseDao.insertCourse(newCourse);
 		return result;
 	}
+	
+	/*
+	 * 根据id删除Course
+	 * 0:删除失败，id不存在
+	 * 1:删除成功
+	 */
+	
+	public static int deleteCourseById(String courseid){
+		Session session = HibernateUtil.currentSession();
+		Transaction transaction = session.beginTransaction();
+		
+		Course course = null;
+		
+		course = (Course) session.get(Course.class, courseid);
+		
+		if(courseid == null){
+			transaction.commit();
+			HibernateUtil.closeSession();
+			return 0;
+		}else{
+			session.delete(course);
+			transaction.commit();
+			HibernateUtil.closeSession();
+			return 1;
+		}
+	}
 }

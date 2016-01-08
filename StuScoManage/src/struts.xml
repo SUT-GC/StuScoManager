@@ -97,6 +97,12 @@
         		<param name="inputName">result</param>
         	</result>
         </action>
+        <action name="deleteinformation" class="action.DeleteAdminTeacherCourseTeaCourse">
+        	<result type = "stream">
+        		<param name="contentType"> text/html </param>
+        		<param name="inputName"> inputStream  </param>
+        	</result>
+        </action>
     </package>
 
 </struts>

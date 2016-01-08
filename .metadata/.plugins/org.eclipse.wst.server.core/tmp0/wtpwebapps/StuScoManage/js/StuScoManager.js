@@ -295,6 +295,28 @@ $(document).ready(function(){
     		alert("课程号必须全是数字");
     	}
     });
+    
+    $(".button_deleteadmin").click(function(){
+    	var parentt = $(this).parent().parent();
+    	var deleteid = parentt.find(".teacher_num").text();
+    	$.post("deleteinformation?deleteName=Admin&deleteId="+deleteid, function(responseTxt,statusTxt,xhr){
+    		alert(responseTxt);
+    		if(responseTxt == "删除成功"){
+        		parentt.hide(500);
+    		}
+    	});
+    });
+    
+    $(".button_deletecourse").click(function(){
+    	var parentt = $(this).parent().parent();
+    	var deleteid = parentt.find(".course_num").text();
+    	$.post("deleteinformation?deleteName=Course&deleteId="+deleteid, function(responseTxt,statusTxt,xhr){
+    		alert(responseTxt);
+    		if(responseTxt == "删除成功"){
+        		parentt.hide(500);
+    		}
+    	});
+    });
 });
 
 

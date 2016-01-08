@@ -1,0 +1,51 @@
+package action;
+
+import java.io.InputStream;
+
+import com.opensymphony.xwork2.ActionSupport;
+
+public class DeleteAdminTeacherCourseTeaCourse extends ActionSupport {
+	private String deleteName;
+	private String deleteId;
+	private InputStream inputStream;
+
+	public String getDeleteName() {
+		return deleteName;
+	}
+
+	public void setDeleteName(String deleteName) {
+		this.deleteName = deleteName;
+	}
+
+	public String getDeleteId() {
+		return deleteId;
+	}
+
+	public void setDeleteId(String deleteId) {
+		this.deleteId = deleteId;
+	}
+
+	public InputStream getResult() {
+		return inputStream;
+	}
+
+	@Override
+	public String execute() throws Exception {
+		if (deleteName.equals("Admin")) {
+			
+		}
+		if (deleteName.equals("Teacher")) {
+
+		}
+		if (deleteName.equals("Student")) {
+
+		}
+		if (deleteName.equals("Course")) {
+
+		}
+		if (deleteName.equals("TeaCourse")) {
+
+		}
+		return SUCCESS;
+	}
+}

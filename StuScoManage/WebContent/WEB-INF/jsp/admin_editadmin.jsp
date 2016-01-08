@@ -162,7 +162,7 @@
                               <tbody>
                               	<s:iterator value="list"  status="st">
                               		 <tr>
-                                    	<td class="teacher_id"><s:property value="#st.index"/> </td><td class="teacher_num"><s:property value="id"/></td><td class="teacher_name"><s:property value="name"/></td><td class="teacher_edit"><button class="btn btn-primary" type="submit">edit</button></td><td class="teacher_delete"><button class="btn btn-danger" type="submit">delete</button></td>
+                                    	<td class="teacher_id"><s:property value="#st.index"/> </td><td class="teacher_num"><s:property value="id"/></td><td class="teacher_name"><s:property value="name"/></td><td class="teacher_edit"><button class="btn btn-primary" type="submit">edit</button></td><td class="teacher_delete"><button class="btn btn-danger button_deleteadmin" type="button">delete</button></td>
                               		</tr>
                               	</s:iterator>
                                

@@ -183,7 +183,7 @@
 	                                            <button class="btn btn-primary" type="submit">edit</button>
 	                                        </td>
 	                                        <td class="course_delete">
-	                                            <button class="btn btn-danger" type="submit">delete</button>
+	                                            <button class="btn btn-danger button_deletecourse" type="submit">delete</button>
 	                                        </td>
 	                                    </tr>
                                     </s:iterator>
