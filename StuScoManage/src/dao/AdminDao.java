@@ -54,6 +54,7 @@ public class AdminDao {
 			HibernateUtil.closeSession();
 			return 1;
 		} else {
+			transaction.commit();
 			HibernateUtil.closeSession();
 			return 0;
 		}

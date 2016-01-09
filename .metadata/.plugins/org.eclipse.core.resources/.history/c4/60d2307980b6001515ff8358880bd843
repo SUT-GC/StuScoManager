@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+    <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+    <constant name="struts.devMode" value="true" />
+	<constant name="struts.ognl.allowStaticMethodAccess" value="true"/>
+	
+    <package name="default" extends="struts-default">
+        <action name="login">
+          <result>/WEB-INF/jsp/login.jsp</result>
+        </action>
+        <action name="logincheck" class="action.LoginCheck">
+        	<result name="admin">/WEB-INF/jsp/admin_index.jsp</result>
+        	<result name="teacher">/WEB-INF/jsp/teacher_index.jsp</result>
+        	<result name="student">/WEB-INF/jsp/student_index.jsp</result>
+        	<result name="errorinfo">/WEB-INF/jsp/login.jsp</result>
+        </action>
+        <action name="loginout" class="action.LoginOut">
+        	<result name="success">/WEB-INF/jsp/login.jsp</result>
+        </action>
+        <action name="page_addstudent">	
+        	<result>/WEB-INF/jsp/admin_addstudent.jsp</result>
+        </action>
+        <action name="page_addteacher">
+        	<result>/WEB-INF/jsp/admin_addteacher.jsp</result>
+        </action>
+        <action name="page_addcourse">
+        	<result>/WEB-INF/jsp/admin_addcourse.jsp</result>
+        </action>
+        <action name="page_addadmin">
+        	<result>/WEB-INF/jsp/admin_addadmin.jsp</result>
+        </action>
+        <action name="page_addteacourse">
+        	<result>/WEB-INF/jsp/admin_addteacourse.jsp</result>
+        </action>
+        <action name="page_editadmin" class="action.EditAdminShowAdmin">
+        	<result name="success">/WEB-INF/jsp/admin_editadmin.jsp</result>
+        </action>
+        <action name="page_editcourse" class="action.EditCourseShowCourse">
+        	<result name="success">/WEB-INF/jsp/admin_editcourse.jsp</result>
+        </action>
+        <action name="page_editteacher" class="action.EditCourseShowCourse">
+        	<result name="success">/WEB-INF/jsp/admin_editcourse.jsp</result>
+        </action>
+        <action name="addstudent" class="action.AddStudent">
+        	<result type="stream">
+        		<param name="contentType">text/html</param>
+        		<param name="inputName">result</param>
+        	</result>
+        </action>
+        <action name="addteacher" class="action.AddTeacher">
+        	<result type = "stream">
+        		<param name="contentType"> text/html</param>
+        		<param name="inputName">result</param>
+        	</result>
+        </action>
+        <action name="addcourse" class="action.AddCourse">
+        	<result type = "stream">
+        		<param name="contentType"> text/html</param>
+        		<param name="inputName">result</param>
+        	</result>
+        </action>
+        <action name="addadmin" class="action.AddAdmin">
+        	<result type = "stream">
+        		<param name="contentType"> text/html</param>
+        		<param name="inputName">result</param>
+        	</result>
+        </action>
+        <action name="selectteacherbyname" class="action.SelectTeacherNameAndId">
+        	<result type = "stream">
+        		<param name="contentType"> text/html</param>
+        		<param name="inputName">result</param>
+        	</result>
+        </action>
+        <action name="selectcoursebyname" class="action.SelectCourseNameAndId">
+        	<result type = "stream">
+        		<param name="contentType"> text/html</param>
+        		<param name="inputName">result</param>
+        	</result>
+        </action>
+        <action name="addteacourse" class="action.AddTeaCourse">
+        	<result type = "stream">
+        		<param name="contentType"> text/html</param>
+        		<param name="inputName">result</param>
+        	</result>
+        </action>
+        <action name="editadminupdateadmin" class="action.EditAdminUpdateAdmin">
+        	<result type = "stream">
+        		<param name="contentType"> text/html</param>
+        		<param name="inputName">result</param>
+        	</result>
+        </action>
+        <action name="editcourseupdatecourse" class="action.EditCourseUpdateCourse">
+        	<result type = "stream">
+        		<param name="contentType"> text/html</param>
+        		<param name="inputName">result</param>
+        	</result>
+        </action>
+        <action name="deleteinformation" class="action.DeleteAdminTeacherCourseTeaCourse">
+        	<result type = "stream">
+        		<param name="contentType"> text/html </param>
+        		<param name="inputName"> inputStream  </param>
+        	</result>
+        </action>
+    </package>
+
+</struts>

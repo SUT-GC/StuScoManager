@@ -56,4 +56,82 @@ public class TeacherDao {
 		
 		return list;
 	}
+	
+	/*
+	 * 根据教师id删除教师
+	 * 0:未找到该id的教师
+	 * 1:删除成功
+	 */
+	
+	public static int deleteTeacherById(String teacherid){
+		Session session = HibernateUtil.currentSession();
+		Transaction transaction = session.beginTransaction();
+		
+		Teacher teacher = null;
+		
+		teacher = (Teacher)session.get(Teacher.class, teacherid);
+		
+		if(teacher == null){
+			transaction.commit();
+			HibernateUtil.closeSession();
+			return 0;
+		}else{
+			session.delete(teacher);
+			transaction.commit();
+			HibernateUtil.closeSession();
+			return 1;
+		}
+	}
+	
+	/*
+	 * 查询所有的Teacher
+	 */
+	public static List selectAllTeacher(){
+		Session session = HibernateUtil.currentSession();
+		Transaction transaction = session.beginTransaction();
+		List list = session.createQuery("from Teacher").list();
+		transaction.commit();
+		HibernateUtil.closeSession();
+		return list;
+	}
+	
+	/*
+	 * 根据旧的id更新teacher
+	 * -1:没有查到该id的teacher
+	 * 1:更新成功
+	 * 0:该id冲突
+	 */
+	public static int updateTeacherById(String oldteachername, Teacher newTeacher){
+		Session session = HibernateUtil.currentSession();
+		Transaction transaction = session.beginTransaction();
+		
+		int result = -1;
+		
+		Teacher teacher = null;
+		if((teacher = (Teacher) session.get(Teacher.class, oldteachername)) != null){
+			if(newTeacher.getPassword().equals("")){
+				newTeacher.setPassword(teacher.getPassword());
+			}
+			if(newTeacher.getId().equals(oldteachername) ||  session.get(Teacher.class, newTeacher.getId()) == null){
+				session.delete(teacher);
+				transaction.commit();
+				HibernateUtil.closeSession();
+				
+				result = TeacherDao.insertTeacher(newTeacher);
+			}else{
+				result = 0;
+				transaction.commit();
+				HibernateUtil.closeSession();
+			}
+			
+		}else{
+			transaction.commit();
+			HibernateUtil.closeSession();
+		}
+		
+
+		
+		
+		return result;
+	}
 }

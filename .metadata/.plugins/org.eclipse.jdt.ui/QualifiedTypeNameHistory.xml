@@ -8,7 +8,6 @@
 <fullyQualifiedTypeName name="org.apache.commons.codec.binary.Hex"/>
 <fullyQualifiedTypeName name="util.StringToMD5Util"/>
 <fullyQualifiedTypeName name="javax.persistence.Column"/>
-<fullyQualifiedTypeName name="dao.AdminDao"/>
 <fullyQualifiedTypeName name="entity.Admin"/>
 <fullyQualifiedTypeName name="java.util.regex.Matcher"/>
 <fullyQualifiedTypeName name="java.util.regex.Pattern"/>
@@ -32,12 +31,13 @@
 <fullyQualifiedTypeName name="org.json.JSONArray"/>
 <fullyQualifiedTypeName name="entity.TeaCourse"/>
 <fullyQualifiedTypeName name="dao.TeaCourseDao"/>
-<fullyQualifiedTypeName name="java.io.ByteArrayInputStream"/>
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="java.lang.Class"/>
-<fullyQualifiedTypeName name="util.HibernateUtil"/>
 <fullyQualifiedTypeName name="com.opensymphony.xwork2.ActionSupport"/>
 <fullyQualifiedTypeName name="java.io.InputStream"/>
-<fullyQualifiedTypeName name="entity.Course"/>
+<fullyQualifiedTypeName name="dao.AdminDao"/>
+<fullyQualifiedTypeName name="java.io.ByteArrayInputStream"/>
 <fullyQualifiedTypeName name="dao.CourseDao"/>
+<fullyQualifiedTypeName name="entity.Course"/>
+<fullyQualifiedTypeName name="util.HibernateUtil"/>
 </qualifiedTypeNameHistroy>

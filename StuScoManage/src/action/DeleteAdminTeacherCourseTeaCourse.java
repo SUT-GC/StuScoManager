@@ -7,6 +7,8 @@ import com.opensymphony.xwork2.ActionSupport;
 
 import dao.AdminDao;
 import dao.CourseDao;
+import dao.TeaCourseDao;
+import dao.TeacherDao;
 
 public class DeleteAdminTeacherCourseTeaCourse extends ActionSupport {
 	private String deleteName;
@@ -45,7 +47,7 @@ public class DeleteAdminTeacherCourseTeaCourse extends ActionSupport {
 			result = AdminDao.deleteAdminById(deleteId);
 		}
 		if (deleteName.equals("Teacher")) {
-			
+			result = TeacherDao.deleteTeacherById(deleteId);
 		}
 		if (deleteName.equals("Student")) {
 			

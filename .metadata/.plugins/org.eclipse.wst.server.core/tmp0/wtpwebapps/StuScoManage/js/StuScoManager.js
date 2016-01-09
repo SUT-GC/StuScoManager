@@ -141,6 +141,7 @@ $(document).ready(function(){
 		var newteachersex = parenttr.find(".teacher_sex").text();
 		var newteachercollage = parenttr.find(".teacher_collage").text();
 		var newteacherage = parenttr.find(".teacher_age").text();
+		$(".oldteacherid").val(newteachernum);
 		$(".newteachernum").val(newteachernum);
 		$(".newteachername").val(newteachername);
 		$(".newteacherage").val(newteacherage);
@@ -153,6 +154,7 @@ $(document).ready(function(){
 			$("#inlineRadio1").removeAttr("checked");
 			$("#inlineRadio1").attr("checked","true");
 		}
+		$(".newteacherpassword").val("");
 	});
 	$(".return_show_allteacher").click(function(){
 		$(".show_allteacher").slideDown(200);
@@ -316,6 +318,38 @@ $(document).ready(function(){
         		parentt.hide(500);
     		}
     	});
+    });
+    
+    $(".button_deleteteacher").click(function(){
+    	var parentt = $(this).parent().parent();
+    	var deleteid = parentt.find(".teacher_num").text();
+    	$.post("deleteinformation?deleteName=Teacher&deleteId="+deleteid, function(responseTxt,statusTxt,xhr){
+    		alert(responseTxt);
+    		if(responseTxt == "删除成功"){
+        		parentt.hide(500);
+    		}
+    	});
+    });
+    
+    $(".submit_editteacher").click(function(){
+        var teacherid = $(".newteachernum").val();
+        var teachername = $(".newteachername").val();
+        var teacherage = $(".newteacherage").val();
+        if(!isNaN(teacherid) && teacherid >= 10000 && teacherid <= 99999){
+            if(teachername != ""){
+                if(!isNaN(teacherage) && teacherage >= 10 && teacherage <= 70){
+                   $(".ajaxresult").load("editteacherupdateteacher",$(".form_editteacher").serialize(),function(responseTxt,statusTxt,xhr){
+                	   alert(responseTxt);
+                   });
+                }else{
+                    alert("教师年龄在10~70岁之间");
+                }
+            }else{
+                alert("教师的名字必须填写");
+            }
+        }else{
+            alert("教师的编号必须五位");
+        }
     });
 });
 

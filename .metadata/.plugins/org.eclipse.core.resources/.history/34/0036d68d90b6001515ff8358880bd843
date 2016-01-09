@@ -1,0 +1,59 @@
+package action;
+
+import java.io.InputStream;
+
+import com.opensymphony.xwork2.ActionSupport;
+
+public class EditTeacherUpdateTeacher extends ActionSupport {
+	private String newteacherid;
+	private String newteachercollage;
+	private int newteacherage;
+	private String newteachername;
+	private String newteacherpassword;
+	private String newteachersex;
+	private InputStream inputStream;
+	public String getNewteacherid() {
+		return newteacherid;
+	}
+	public void setNewteacherid(String newteacherid) {
+		this.newteacherid = newteacherid;
+	}
+	public String getNewteachercollage() {
+		return newteachercollage;
+	}
+	public void setNewteachercollage(String newteachercollage) {
+		this.newteachercollage = newteachercollage;
+	}
+	public int getNewteacherage() {
+		return newteacherage;
+	}
+	public void setNewteacherage(int newteacherage) {
+		this.newteacherage = newteacherage;
+	}
+	public String getNewteachername() {
+		return newteachername;
+	}
+	public void setNewteachername(String newteachername) {
+		this.newteachername = newteachername;
+	}
+	public String getNewteacherpassword() {
+		return newteacherpassword;
+	}
+	public void setNewteacherpassword(String newteacherpassword) {
+		this.newteacherpassword = newteacherpassword;
+	}
+	public String getNewteachersex() {
+		return newteachersex;
+	}
+	public void setNewteachersex(String newteachersex) {
+		this.newteachersex = newteachersex;
+	}
+	public InputStream getInputStream() {
+		return inputStream;
+	}
+	public void setInputStream(InputStream inputStream) {
+		this.inputStream = inputStream;
+	}
+	
+	
+}
