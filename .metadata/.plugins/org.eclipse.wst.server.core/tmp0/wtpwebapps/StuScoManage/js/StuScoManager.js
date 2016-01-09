@@ -106,10 +106,13 @@ $(document).ready(function(){
 		var newstudentcollage = parenttr.find(".student_collage").text();
 		var newstudentmajor = parenttr.find(".student_major").text();
 		var newstudentclass = parenttr.find(".student_class").text();
-		$(".newstudentnum").val(newstudentnum);
+		$(".oldstudentid").val(newstudentnum);
+		$(".newstudentid").val(newstudentnum);
 		$(".newstudentname").val(newstudentname);
 		$(".newstudentage").val(newstudentage);
-		if(newstudentsex == "女"){
+		$(".newstudentpassword").val("");
+
+		if(newstudentsex == "女 "){
 			$("#inlineRadio2").removeAttr("checked");
 			$("#inlineRadio1").removeAttr("checked");
 			$("#inlineRadio2").attr("checked","checked");
@@ -118,11 +121,17 @@ $(document).ready(function(){
 			$("#inlineRadio1").removeAttr("checked");
 			$("#inlineRadio1").attr("checked","checked");
 		}
-		if(newstudentclass == "1301"){
+		if(newstudentclass == 1301){
+			$(".class_t2").removeAttr("selected");
+			$(".class_t3").removeAttr("selected");
 			$(".class_t1").attr("selected","selected");
-		}else if(newstudentclass == "1302"){
+		}else if(newstudentclass ==1302){
+			$(".class_t1").removeAttr("selected");
+			$(".class_t3").removeAttr("selected");
 			$(".class_t2").attr("selected","selected");
 		}else{
+			$(".class_t2").removeAttr("selected");
+			$(".class_t1").removeAttr("selected");
 			$(".class_t3").attr("selected","selected");
 		}
 	});
@@ -350,6 +359,52 @@ $(document).ready(function(){
         }else{
             alert("教师的编号必须五位");
         }
+    });
+    
+    
+    $(".submit_editstudent").click(function(){
+    	var studentage = $(".newstudentage").val();
+        var studentid = $(".newstudentid").val();
+        var studentname = $(".studentname").val();
+        if(!isNaN(studentage) && studentage >= 10 && studentage <= 50){
+            if(!isNaN(studentid) && studentid >= 100000000 && studentid <= 999999999){
+                if(studentname != ""){
+                     $(".ajaxresult").load("editstudentupdatestudent",$(".form_editstudent").serialize(),function(responseTxt,statusTxt,xhr){
+                             alert(responseTxt);
+                      });
+                }else{
+                    alert("学生姓名不能为空");
+                }
+                
+            }else{
+                alert("学号必须9未数字");
+            }
+        }else{
+            alert("年龄必须在10~50之间");
+        }
+    });
+    
+    
+    $(".button_deletestudent").click(function(){
+    	var parentt = $(this).parent().parent();
+    	var deleteid = parentt.find(".student_num").text();
+    	$.post("deleteinformation?deleteName=Student&deleteId="+deleteid, function(responseTxt,statusTxt,xhr){
+    		alert(responseTxt);
+    		if(responseTxt == "删除成功"){
+        		parentt.hide(500);
+    		}
+    	});
+    });
+    
+    $(".button_deleteteacourse").click(function(){
+    	var parentt = $(this).parent().parent();
+    	var deleteid = parentt.find(".teacourseid").text();
+    	$.post("deleteinformation?deleteName=TeaCourse&deleteId="+deleteid, function(responseTxt,statusTxt,xhr){
+    		alert(responseTxt);
+    		if(responseTxt == "删除成功"){
+        		parentt.hide(500);
+    		}
+    	});
     });
 });
 

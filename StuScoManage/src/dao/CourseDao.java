@@ -2,6 +2,8 @@ package dao;
 
 import java.util.List;
 
+import javax.management.Query;
+
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -114,6 +116,8 @@ public class CourseDao {
 			HibernateUtil.closeSession();
 			return 0;
 		}else{
+			org.hibernate.Query query = session.createQuery("delete from TeaCourse tc where tc.course_id = "+courseid);
+			query.executeUpdate();
 			session.delete(course);
 			transaction.commit();
 			HibernateUtil.closeSession();

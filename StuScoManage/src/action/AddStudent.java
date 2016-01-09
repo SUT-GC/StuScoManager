@@ -18,6 +18,7 @@ public class AddStudent extends ActionSupport {
 	private String studentcollage;
 	private String studentprofession;
 	private InputStream inputStream;
+	
 
 	public String getStudentid() {
 		return studentid;
@@ -90,9 +91,7 @@ public class AddStudent extends ActionSupport {
 
 	@Override
 	public String execute() throws Exception {
-		Student student = new Student(studentid, studentname, studentsex,
-				studentage, studentpassword, studentcollage, studentprofession);
-
+		Student student = new Student(studentid, studentname, studentsex, studentage, studentpassword,studentcollage ,studentprofession, studentclass);
 		int result = StudentDao.insertStudent(student);
 
 		if (result == 1) {

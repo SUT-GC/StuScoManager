@@ -2,6 +2,8 @@ package dao;
 
 import java.util.List;
 
+import javax.persistence.Query;
+
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -76,6 +78,8 @@ public class TeacherDao {
 			HibernateUtil.closeSession();
 			return 0;
 		}else{
+			org.hibernate.Query query =  session.createQuery("delete from TeaCourse tc where tc.teacher_id = "+teacherid);
+			query.executeUpdate();
 			session.delete(teacher);
 			transaction.commit();
 			HibernateUtil.closeSession();

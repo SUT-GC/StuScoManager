@@ -1,0 +1,16 @@
+package action;
+
+import java.util.List;
+
+public class EditStudentShowStudent {
+	private List list;
+
+	public List getList() {
+		return list;
+	}
+
+	public void setList(List list) {
+		this.list = list;
+	}
+	
+}

@@ -23,12 +23,25 @@ public class Student {
 	private String collage;
 	@Column(name="S_PROFESSION")
 	private String profession;
+	@Column(name="S_GRATE")
+	private String grate;
+	
+	public String getGrate() {
+		return grate;
+	}
+
+	public void setGrate(String grate) {
+		this.grate = grate;
+	}
 
 	public Student() {
 	}
 
+
+
 	public Student(String id, String name, String sex, int age,
-			String password, String collage, String profession) {
+			String password, String collage, String profession, String grate) {
+		super();
 		this.id = id;
 		this.name = name;
 		this.sex = sex;
@@ -36,6 +49,7 @@ public class Student {
 		this.password = password;
 		this.collage = collage;
 		this.profession = profession;
+		this.grate = grate;
 	}
 
 	public String getId() {
@@ -98,7 +112,9 @@ public class Student {
 	public String toString() {
 		return "Student [id=" + id + ", name=" + name + ", sex=" + sex
 				+ ", age=" + age + ", password=" + password + ", collage="
-				+ collage + ", profession=" + profession + "]";
+				+ collage + ", profession=" + profession + ", grate=" + grate
+				+ "]";
 	}
+
 
 }

@@ -1,0 +1,14 @@
+package test;
+
+import dao.TeaCourseDao;
+import dao.TeacherDao;
+import entity.TeaCourse;
+
+public class TestTeaCourseDao {
+
+	public static void main(String[] args) {
+
+		System.out.println(TeaCourseDao.selectCIDCNAMETIDTNAME().size);
+	}
+
+}

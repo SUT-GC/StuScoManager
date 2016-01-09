@@ -7,6 +7,7 @@ import com.opensymphony.xwork2.ActionSupport;
 
 import dao.AdminDao;
 import dao.CourseDao;
+import dao.StudentDao;
 import dao.TeaCourseDao;
 import dao.TeacherDao;
 
@@ -50,13 +51,13 @@ public class DeleteAdminTeacherCourseTeaCourse extends ActionSupport {
 			result = TeacherDao.deleteTeacherById(deleteId);
 		}
 		if (deleteName.equals("Student")) {
-			
+			result = StudentDao.deleteStudentById(deleteId);
 		}
 		if (deleteName.equals("Course")) {
 			result = CourseDao.deleteCourseById(deleteId);
 		}
 		if (deleteName.equals("TeaCourse")) {
-
+			result = TeaCourseDao.deleteTeaCourseById(Integer.parseInt(deleteId));
 		}
 		
 		if(result == 0){

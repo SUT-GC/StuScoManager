@@ -7,10 +7,13 @@ import entity.TeaCourse;
 public class TestTeaCourseDao {
 
 	public static void main(String[] args) {
-//		TeaCourse teaCourse = new TeaCourse("16001", "1003");
-//		int result = TeaCourseDao.insertTeaCourse(teaCourse);
-//		System.out.println(result);
-		System.out.println(TeaCourseDao.selectTeaCourseById(2));
+
+//		for(Object o: TeaCourseDao.selectCIDCNAMETIDTNAME()){
+//			Object[] a = (Object[]) o;
+//			System.out.println(a[0]+","+a[1]+","+a[2]+","+a[3]);
+//		}
+		
+		System.out.println(TeacherDao.deleteTeacherById("16002"));
 	}
 
 }

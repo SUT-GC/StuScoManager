@@ -1,0 +1,55 @@
+package dao;
+
+import java.util.List;
+
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
+import util.HibernateUtil;
+import entity.Student;
+
+/*
+ * 对STUDENT表进行操作的类
+ */
+public class StudentDao {
+	/*
+	 * 插入Student
+	 * 1:插入成功
+	 * 0:该id已经存在
+	 */
+	public static int insertStudent(Student student){
+		Session session = HibernateUtil.currentSession();
+		Transaction transaction = session.beginTransaction();
+		if(session.get(Student.class, student.getId()) == null){
+			session.save(student);
+			transaction.commit();
+			HibernateUtil.closeSession();
+			return 1;
+		}else{
+			HibernateUtil.closeSession();
+			return 0;
+		}
+	}
+	
+	/*
+	 * 根据id查询Student
+	 */
+	public static Student selectStudentById(String id){
+		Student student = null;
+		Session session = HibernateUtil.currentSession();
+		Transaction transaction = session.beginTransaction();
+		student = (Student) session.get(Student.class, id);
+		return student;
+	}
+	
+	/*
+	 * 查询出所有的Student
+	 */
+	
+	public static List selectAllStudent(){
+		Session session = HibernateUtil.currentSession();
+		Transaction transaction = session.beginTransaction();
+		
+	}
+	
+}

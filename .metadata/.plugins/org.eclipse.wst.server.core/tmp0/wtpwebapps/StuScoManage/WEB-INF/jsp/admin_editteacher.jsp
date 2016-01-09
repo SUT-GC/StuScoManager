@@ -253,12 +253,8 @@
 										</div>
 										<div class="col-md-3">
 											<label class="radio-inline"> <input type="radio"
-												name="newteachersex" id="inlineRadio1" value="1">
-												男
-											</label> <label class="radio-inline"> <input type="radio"
-												name="newteachersex" id="inlineRadio2" value="0">
-												女
-											</label>
+												name="newteachersex" id="inlineRadio1" value="1">男</label> <label class="radio-inline"> <input type="radio"
+												name="newteachersex" id="inlineRadio2" value="0">女</label>
 										</div>
 									</div>
 								</div>
@@ -303,7 +299,7 @@
 			<hr>
 			<footer role="contentinfo">
 			<p>
-				&copy; 2016 <a href="#" target="_blank">GC & ZTT & GSM</a>
+				&copy; 2016 <a href="#" target="_blank">GC & ZTT & GSM	</a>
 			</p>
 			</footer>
 		</div>

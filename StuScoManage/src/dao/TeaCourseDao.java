@@ -93,4 +93,44 @@ public class TeaCourseDao {
 		HibernateUtil.closeSession();
 		return teaCourse;
 	}
+
+	/*
+	 * 查询出记录的教师号，教师姓名，课程号，课程名称
+	 */
+	public static List selectCIDCNAMETIDTNAME() {
+		Session session = HibernateUtil.currentSession();
+		Transaction transaction = session.beginTransaction();
+
+		List list = null;
+		list = session
+				.createSQLQuery(
+						"select teacourse.TC_ID, teacher.T_ID, teacher.T_NAME ,course.C_ID ,course.C_NAME FROM TEACOURSE teacourse, COURSE course, TEACHER teacher where  teacourse.T_ID = teacher.T_ID and course.C_ID = teacourse.C_ID;")
+				.list();
+		
+		transaction.commit();
+		HibernateUtil.closeSession();
+		return list;
+	}
+	
+	/*
+	 * 根据id删除TeaCourse
+	 */
+	public static int deleteTeaCourseById(int tcid){
+		int result = 0;
+		Session session = HibernateUtil.currentSession();
+		Transaction transaction = session.beginTransaction();
+		
+		TeaCourse teaCourse = null;
+		teaCourse = (TeaCourse) session.get(TeaCourse.class, tcid);
+		if(teaCourse == null){
+			result = 0;
+		}else{
+			session.delete(teaCourse);
+			result = 1;
+		}
+		transaction.commit();
+		HibernateUtil.closeSession();
+		return result;
+	}
 }
+
