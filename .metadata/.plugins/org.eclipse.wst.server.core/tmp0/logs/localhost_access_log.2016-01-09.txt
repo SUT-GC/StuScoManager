@@ -2497,3 +2497,12 @@
 0:0:0:0:0:0:0:1 - - [09/Jan/2016:20:54:06 +0800] "GET /StuScoManage/page_editcourse HTTP/1.1" 200 14916
 0:0:0:0:0:0:0:1 - - [09/Jan/2016:20:54:07 +0800] "POST /StuScoManage/deleteinformation?deleteName=Course&deleteId=1001 HTTP/1.1" 200 22
 0:0:0:0:0:0:0:1 - - [09/Jan/2016:20:54:09 +0800] "GET /StuScoManage/page_editteacourse HTTP/1.1" 200 7580
+0:0:0:0:0:0:0:1 - - [09/Jan/2016:20:54:31 +0800] "GET /StuScoManage/page_editadmin HTTP/1.1" 200 13176
+0:0:0:0:0:0:0:1 - - [09/Jan/2016:20:54:32 +0800] "GET /StuScoManage/page_editcourse HTTP/1.1" 200 13931
+0:0:0:0:0:0:0:1 - - [09/Jan/2016:20:54:33 +0800] "GET /StuScoManage/page_editteacher HTTP/1.1" 200 11665
+0:0:0:0:0:0:0:1 - - [09/Jan/2016:20:54:35 +0800] "GET /StuScoManage/page_editstudent HTTP/1.1" 200 13121
+0:0:0:0:0:0:0:1 - - [09/Jan/2016:20:54:37 +0800] "GET /StuScoManage/page_addteacourse HTTP/1.1" 200 9735
+0:0:0:0:0:0:0:1 - - [09/Jan/2016:20:54:38 +0800] "GET /StuScoManage/page_addadmin HTTP/1.1" 200 10929
+0:0:0:0:0:0:0:1 - - [09/Jan/2016:20:54:38 +0800] "GET /StuScoManage/page_addcourse HTTP/1.1" 200 11365
+0:0:0:0:0:0:0:1 - - [09/Jan/2016:20:54:39 +0800] "GET /StuScoManage/page_addteacher HTTP/1.1" 200 14129
+0:0:0:0:0:0:0:1 - - [09/Jan/2016:20:54:40 +0800] "GET /StuScoManage/page_addstudent HTTP/1.1" 200 15584

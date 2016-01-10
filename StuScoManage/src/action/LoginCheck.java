@@ -83,6 +83,7 @@ public class LoginCheck extends ActionSupport {
 					return "errorinfo";
 				}else{
 					session.setAttribute("username", teacher.getName());
+					session.setAttribute("userid", teacher.getId());
 					return "teacher";
 				}
 			}
@@ -101,6 +102,7 @@ public class LoginCheck extends ActionSupport {
 					return "errorinfo";
 				}else{
 					session.setAttribute("username", student.getName());
+					session.setAttribute("userid", student.getId());
 					return "student";
 				}
 			}

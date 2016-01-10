@@ -1,0 +1,74 @@
+package action;
+
+import java.io.InputStream;
+import java.util.List;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import com.opensymphony.xwork2.ActionSupport;
+
+import dao.TeacherDao;
+
+public class TeacherSelectScoreSelect extends ActionSupport {
+	private String courseid;
+	private String teacherid;
+	private String studentclass;
+	private InputStream inputStream;
+	private List list;
+
+	public String getCourseid() {
+		return courseid;
+	}
+
+	public void setCourseid(String courseid) {
+		this.courseid = courseid;
+	}
+
+	public String getTeacherid() {
+		return teacherid;
+	}
+
+	public void setTeacherid(String teacherid) {
+		this.teacherid = teacherid;
+	}
+
+	public String getStudentclass() {
+		return studentclass;
+	}
+
+	public void setStudentclass(String studentclass) {
+		this.studentclass = studentclass;
+	}
+
+	public List getList() {
+		return list;
+	}
+
+	public void setList(List list) {
+		this.list = list;
+	}
+
+	public InputStream getInputStream() {
+		return inputStream;
+	}
+
+	public void setInputStream(InputStream inputStream) {
+		this.inputStream = inputStream;
+	}
+
+	@Override
+	public String execute() throws Exception {
+		list = TeacherDao.selectAllStudent(courseid, studentclass, teacherid);
+		JSONArray jsonArray = new JSONArray();
+		JSONObject jsonObject = null;
+		for(Object o : list){
+			Object[] r = (Object[]) o;
+			jsonObject = new JSONObject();
+			jsonObject.put("studentid", r[0]);
+			jsonObject.put("studentname", r[1]);
+			jsonObject.put("studentscore", r[2]);
+		}
+		return SUCCESS;
+	}
+}

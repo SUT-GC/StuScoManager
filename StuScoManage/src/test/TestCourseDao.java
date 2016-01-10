@@ -13,7 +13,7 @@ public class TestCourseDao {
 //		System.out.println(result);
 //		List list = CourseDao.selectCourseByName("s");
 //		for(Object c : list){
-//			System.out.println(c);
+//			System.out.println(c);cd 
 //		}
 		System.out.println(CourseDao.deleteCourseById("1000"));
 	}

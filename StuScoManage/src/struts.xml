@@ -37,8 +37,17 @@
         <action name="page_addteacourse">
         	<result>/WEB-INF/jsp/admin_addteacourse.jsp</result>
         </action>
+        <action name="page_studentindex">
+        	<result>/WEB-INF/jsp/student_index.jsp</result>
+        </action>
         <action name="page_editteacher">
         	<result name="success">/WEB-INF/jsp/admin_editteacher.jsp</result>
+        </action>
+        <action name="page_teacherindex">
+        	<result name="success">/WEB-INF/jsp/teacher_index.jsp</result>
+        </action>
+        <action name="page_teacherselectscore" class="action.TeacherSelectScoreShow">
+        	<result name="success">/WEB-INF/jsp/teacher_selectscore.jsp</result>
         </action>
         <action name="page_editadmin" class="action.EditAdminShowAdmin">
         	<result name="success">/WEB-INF/jsp/admin_editadmin.jsp</result>
@@ -54,6 +63,12 @@
         </action>
         <action name="page_editteacourse" class="action.EditTeacourseShowTeacourse">
         	<result name="success">/WEB-INF/jsp/admin_editteacourse.jsp</result>
+        </action>
+        <action name="page_studentselectcourse" class="action.StudentSelectCourseShow" >
+        	<result name="success">/WEB-INF/jsp/student_selectcourse.jsp</result>
+        </action>
+        <action name="page_studentselectscore" class="action.StudentSelectScoreShow">
+        	<result name="success">/WEB-INF/jsp/student_selectscore.jsp</result>
         </action>
         <action name="addstudent" class="action.AddStudent">
         	<result type="stream">
@@ -122,6 +137,18 @@
         	</result>
         </action>
         <action name="editstudentupdatestudent" class="action.EditStudentUpdateStudent">
+        	<result type="stream">
+        		<param name="contentType">text/html</param>
+        		<param name="inputName">inputStream</param>
+        	</result>
+        </action>
+        <action name="studentselectcourseedit" class="action.StudentSelectCourseEdit">
+        	<result type="stream">
+        		<param name="contentType">text/html</param>
+        		<param name="inputName">inputStream</param>
+        	</result>
+        </action>
+        <action name="teacherselectscoreselect" class="action.TeacherSelectScoreSelect">
         	<result type="stream">
         		<param name="contentType">text/html</param>
         		<param name="inputName">inputStream</param>

@@ -1,8 +1,8 @@
 package test;
 
+import java.util.List;
+
 import dao.TeaCourseDao;
-import dao.TeacherDao;
-import entity.TeaCourse;
 
 public class TestTeaCourseDao {
 
@@ -13,7 +13,12 @@ public class TestTeaCourseDao {
 //			System.out.println(a[0]+","+a[1]+","+a[2]+","+a[3]);
 //		}
 		
-		System.out.println(TeacherDao.deleteTeacherById("16002"));
+//		System.out.println(TeacherDao.deleteTeacherById("16002"));
+		
+		List list = TeaCourseDao.selectCIDCNAMECATTRTNAME();;
+		for(Object o: list){
+			System.out.println(o);
+		}
 	}
 
 }

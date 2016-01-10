@@ -1,0 +1,23 @@
+package action;
+
+import java.util.List;
+
+import com.opensymphony.xwork2.ActionSupport;
+
+public class StudentSelectScoreShow extends ActionSupport {
+	private List listisok;
+
+	public List getList() {
+		return list;
+	}
+
+	public void setList(List list) {
+		this.list = list;
+	}
+	
+	@Override
+	public String execute() throws Exception {
+		System.out.println("这里走了StudentSelectScoreShow");
+		return SUCCESS;
+	}
+}

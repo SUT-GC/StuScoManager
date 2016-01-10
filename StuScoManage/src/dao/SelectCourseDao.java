@@ -2,6 +2,7 @@ package dao;
 
 import java.util.List;
 
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -73,7 +74,7 @@ public class SelectCourseDao {
 	}
 
 	/*
-	 * 根据Teacher_id查询SelectCourse
+	 * 根据course_id查询SelectCourse
 	 */
 	public static List selectSelectCourseByCourseId(String id) {
 		Session session = HibernateUtil.currentSession();
@@ -87,5 +88,56 @@ public class SelectCourseDao {
 		HibernateUtil.closeSession();
 
 		return sc;
+	}
+
+	/*
+	 * 根据教师id，学生id，课程id删除记录
+	 */
+	public static int deleteSelectCourse(String teacherid, String studentid,
+			String courseid) {
+		Session session = HibernateUtil.currentSession();
+		Transaction transaction = session.beginTransaction();
+
+		Query query = session.createSQLQuery(
+				"DELETE from STUCOURSE where STUCOURSE.C_ID='"+courseid+"' and STUCOURSE.S_ID='"+studentid+"' and  STUCOURSE.T_ID='"+teacherid+"';");
+				
+		int result = query.executeUpdate();
+		transaction.commit();
+		HibernateUtil.closeSession();
+		return result;
+	}
+	
+	/*
+	 * 查询合格的成绩
+	 */
+	public static List selectScoreIsOk(){
+		Session session = HibernateUtil.currentSession();
+		Transaction transaction = session.beginTransaction();
+		
+		List list = null;
+		
+		list = session.createSQLQuery("select  course.C_ID, course.C_NAME, course.C_ATTR, teacher.T_NAME, stucourse.GRADE from TEACHER teacher, STUCOURSE stucourse, COURSE course where teacher.T_ID = stucourse.T_ID and course.C_ID = stucourse.C_ID and stucourse.GRADE >= '60';").list();
+		
+		transaction.commit();
+		HibernateUtil.closeSession();
+		
+		return list;
+	}
+	
+	/*
+	 * 查询不合格的成绩
+	 */
+	public static List selectScoreIsNotOk(){
+		Session session = HibernateUtil.currentSession();
+		Transaction transaction = session.beginTransaction();
+		
+		List list = null;
+		
+		list = session.createSQLQuery("select  course.C_ID, course.C_NAME, course.C_ATTR, teacher.T_NAME, stucourse.GRADE from TEACHER teacher, STUCOURSE stucourse, COURSE course where teacher.T_ID = stucourse.T_ID and course.C_ID = stucourse.C_ID and stucourse.GRADE < '60';").list();
+		
+		transaction.commit();
+		HibernateUtil.closeSession();
+		
+		return list;
 	}
 }

@@ -138,4 +138,34 @@ public class TeacherDao {
 		
 		return result;
 	}
+	
+	/*
+	 * 根据教师id查出所教课程
+	 */
+	public static List selectAllCourse(String teacherid){
+		List list = null;
+		
+		Session session = HibernateUtil.currentSession();
+		Transaction transaction = session.beginTransaction();
+		
+		list = session.createSQLQuery("SELECT COURSE.C_ID,COURSE.C_NAME from TEACOURSE, COURSE where TEACOURSE.T_ID = '"+teacherid+"';").list();
+		
+		transaction.commit();
+		HibernateUtil.closeSession();
+		
+		return list;
+	}
+	
+	public static List selectAllStudent(String courseid, String studentclass, String teacherid){
+		List list = null;
+		Session session = HibernateUtil.currentSession();
+		Transaction transaction = session.beginTransaction();
+		
+		list = session.createSQLQuery("SELECT STUDENT.S_ID, STUDENT.S_NAME, STUCOURSE.GRADE from STUCOURSE, STUDENT  WHERE STUCOURSE.S_ID = STUDENT.S_ID and STUDENT.S_GRATE = '"+studentclass+"' and STUCOURSE.C_ID = '"+courseid+"' and STUCOURSE.T_ID = '"+teacherid+"';").list();
+		
+		transaction.commit();
+		HibernateUtil.closeSession();
+		
+		return list;
+	}
 }

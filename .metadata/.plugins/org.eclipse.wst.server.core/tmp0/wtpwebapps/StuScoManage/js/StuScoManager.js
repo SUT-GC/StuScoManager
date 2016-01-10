@@ -406,6 +406,34 @@ $(document).ready(function(){
     		}
     	});
     });
+    
+    $(".checkbox_checkcourse").change(function(){
+    	parentt = $(this).parent().parent();
+    	studentid = parentt.find(".student_num").text();
+    	courseid = parentt.find(".course_num").text();
+    	teacherid = parentt.find(".teacher_num").text();
+    	if($(this).prop("checked")){
+    		$.post("studentselectcourseedit?studentid="+studentid+"&teacherid="+teacherid+"&courseid="+courseid+"&check=1", function(data){
+    			alert(data);
+    		});
+    	}else{
+    		$.post("studentselectcourseedit?studentid="+studentid+"&teacherid="+teacherid+"&courseid="+courseid+"&check=0", function(data){
+    			alert(data);
+    		});
+    	}
+    });
+    
+    $(".button_selectstudent").click(function(){
+    	
+    	var courseid = $(".courseid").val();
+    	var studentclass = $(".studentclass").val();
+    	var teacherid = $(".teacherid").val();
+    	alert(courseid+", "+studentclass+", "+teacherid);
+    	$.post("teacherselectscoreselect?courseid="+courseid+"&studentclass="+studentclass+"&teacherid="+teacher, function(data){
+    		alert(data);
+    	})
+    });
+    
 });
 
 

@@ -1,0 +1,31 @@
+package action;
+
+import java.util.List;
+
+import com.opensymphony.xwork2.ActionSupport;
+
+import dao.SelectCourseDao;
+
+public class TeacherSelectScoreShow extends ActionSupport {
+	private List courselist;
+	private List showlist;
+	private String username;
+	public List getCourselist() {
+		return courselist;
+	}
+	public void setCourselist(List courselist) {
+		this.courselist = courselist;
+	}
+	public List getShowlist() {
+		return showlist;
+	}
+	public void setShowlist(List showlist) {
+		this.showlist = showlist;
+	}
+	
+	@Override
+	public String execute() throws Exception {
+		courselist = SelectCourseDao.selectSelectCourseByTeacherId(username);
+		return SUCCESS;
+	}
+}

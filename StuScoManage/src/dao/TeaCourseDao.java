@@ -2,6 +2,7 @@ package dao;
 
 import java.util.List;
 
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -106,25 +107,25 @@ public class TeaCourseDao {
 				.createSQLQuery(
 						"select teacourse.TC_ID, teacher.T_ID, teacher.T_NAME ,course.C_ID ,course.C_NAME FROM TEACOURSE teacourse, COURSE course, TEACHER teacher where  teacourse.T_ID = teacher.T_ID and course.C_ID = teacourse.C_ID;")
 				.list();
-		
+
 		transaction.commit();
 		HibernateUtil.closeSession();
 		return list;
 	}
-	
+
 	/*
 	 * 根据id删除TeaCourse
 	 */
-	public static int deleteTeaCourseById(int tcid){
+	public static int deleteTeaCourseById(int tcid) {
 		int result = 0;
 		Session session = HibernateUtil.currentSession();
 		Transaction transaction = session.beginTransaction();
-		
+
 		TeaCourse teaCourse = null;
 		teaCourse = (TeaCourse) session.get(TeaCourse.class, tcid);
-		if(teaCourse == null){
+		if (teaCourse == null) {
 			result = 0;
-		}else{
+		} else {
 			session.delete(teaCourse);
 			result = 1;
 		}
@@ -132,5 +133,19 @@ public class TeaCourseDao {
 		HibernateUtil.closeSession();
 		return result;
 	}
-}
 
+	/*
+	 * 查询出课程号， 课程名称，课程属性，教师
+	 */
+	public static List selectCIDCNAMECATTRTNAME(){
+		List list = null;
+		Session session = HibernateUtil.currentSession();
+		Transaction transaction = session.beginTransaction();
+		
+		list = session.createSQLQuery("select  course.C_ID, course.C_NAME, course.C_ATTR, teacher.T_NAME, teacher.T_ID from COURSE course, TEACOURSE teacourse , TEACHER teacher where course.C_ID = teacourse.C_ID and teacher.T_ID = teacourse.T_ID;").list();
+		transaction.commit();
+		HibernateUtil.closeSession();
+		
+		return list;
+	}
+}
