@@ -985,3 +985,12 @@
 0:0:0:0:0:0:0:1 - - [11/Jan/2016:10:48:29 +0800] "POST /StuScoManage/teacherenterscore?teacherid=16001&studentid=130405215%20%20&courseid=1000&score=99 HTTP/1.1" 200 9634
 0:0:0:0:0:0:0:1 - - [11/Jan/2016:10:48:30 +0800] "POST /StuScoManage/teacherenterscore?teacherid=16001&studentid=130405215%20%20&courseid=1000&score=99 HTTP/1.1" 200 11
 0:0:0:0:0:0:0:1 - - [11/Jan/2016:10:48:32 +0800] "POST /StuScoManage/teacherenterscore?teacherid=16001&studentid=130405215%20%20&courseid=1000&score=99 HTTP/1.1" 200 11
+0:0:0:0:0:0:0:1 - - [11/Jan/2016:10:50:52 +0800] "GET /StuScoManage/page_teacherindex HTTP/1.1" 200 5148
+0:0:0:0:0:0:0:1 - - [11/Jan/2016:10:50:54 +0800] "GET /StuScoManage/page_teacherselectscore HTTP/1.1" 200 9691
+0:0:0:0:0:0:0:1 - - [11/Jan/2016:10:50:58 +0800] "GET /StuScoManage/loginout HTTP/1.1" 200 2447
+0:0:0:0:0:0:0:1 - - [11/Jan/2016:10:50:58 +0800] "GET /StoScoManage/js/bootstrap.min.js HTTP/1.1" 404 1058
+0:0:0:0:0:0:0:1 - - [11/Jan/2016:10:51:00 +0800] "GET /StuScoManage/page_studentselectscore HTTP/1.1" 200 6522
+0:0:0:0:0:0:0:1 - - [11/Jan/2016:10:51:01 +0800] "GET /StuScoManage/page_studentselectcourse HTTP/1.1" 200 6187
+0:0:0:0:0:0:0:1 - - [11/Jan/2016:10:51:01 +0800] "GET /StuScoManage/js/StuScoManager.js HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [11/Jan/2016:10:51:03 +0800] "GET /StuScoManage/loginout HTTP/1.1" 200 2447
+0:0:0:0:0:0:0:1 - - [11/Jan/2016:10:51:03 +0800] "GET /StoScoManage/js/bootstrap.min.js HTTP/1.1" 404 1058

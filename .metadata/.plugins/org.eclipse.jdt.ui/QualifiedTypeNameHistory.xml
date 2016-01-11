@@ -33,17 +33,17 @@
 <fullyQualifiedTypeName name="entity.TeaCourse"/>
 <fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="entity.SelectCourse"/>
-<fullyQualifiedTypeName name="org.hibernate.Query"/>
-<fullyQualifiedTypeName name="org.apache.struts2.ServletActionContext"/>
 <fullyQualifiedTypeName name="dao.CourseDao"/>
-<fullyQualifiedTypeName name="dao.SelectCourseDao"/>
-<fullyQualifiedTypeName name="dao.TeaCourseDao"/>
-<fullyQualifiedTypeName name="util.HibernateUtil"/>
-<fullyQualifiedTypeName name="java.io.InputStream"/>
-<fullyQualifiedTypeName name="java.util.List"/>
-<fullyQualifiedTypeName name="dao.TeacherDao"/>
-<fullyQualifiedTypeName name="org.json.JSONArray"/>
 <fullyQualifiedTypeName name="java.lang.Object"/>
 <fullyQualifiedTypeName name="org.json.JSONObject"/>
+<fullyQualifiedTypeName name="org.json.JSONArray"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="dao.TeacherDao"/>
+<fullyQualifiedTypeName name="org.apache.struts2.ServletActionContext"/>
+<fullyQualifiedTypeName name="java.io.InputStream"/>
+<fullyQualifiedTypeName name="dao.TeaCourseDao"/>
+<fullyQualifiedTypeName name="util.HibernateUtil"/>
+<fullyQualifiedTypeName name="org.hibernate.Query"/>
+<fullyQualifiedTypeName name="dao.SelectCourseDao"/>
 <fullyQualifiedTypeName name="java.io.ByteArrayInputStream"/>
 </qualifiedTypeNameHistroy>
