@@ -145,7 +145,7 @@
 												<td><s:if test="listisnotok[#st.index][2] == 1">必修</s:if>
 													<s:else>选修</s:else></td>
 												<td><s:property value="listisnotok[#st.index][3]" /></td>
-												<td><s:if test="listisnotok[#st.index][4] == -1">成绩为录入</s:if>
+												<td><s:if test="listisnotok[#st.index][4] == -1">成绩未录入</s:if>
 													<s:else>
 														<s:if test="listisnotok[#st.index][2] == 1">
 															<s:property value="listisnotok[#st.index][4]" />

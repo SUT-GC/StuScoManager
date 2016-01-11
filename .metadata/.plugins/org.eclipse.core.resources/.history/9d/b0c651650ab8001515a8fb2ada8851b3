@@ -1,0 +1,10 @@
+package action;
+
+import com.opensymphony.xwork2.ActionSupport;
+
+public class TeacherEnterScore extends ActionSupport {
+	private String teacherid;
+	private String studentid;
+	private String courseid;
+	private int score;
+}

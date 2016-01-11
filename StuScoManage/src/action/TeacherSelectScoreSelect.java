@@ -62,18 +62,23 @@ public class TeacherSelectScoreSelect extends ActionSupport {
 	public String execute() throws Exception {
 		System.out.println("这里走了TeacherSelectScoreSelect");
 		list = TeacherDao.selectAllStudent(courseid, studentclass, teacherid);
-		JSONArray jsonArray = new JSONArray();
-		JSONObject jsonObject = null;
-		for(Object o : list){
-			Object[] r = (Object[]) o;
-			jsonObject = new JSONObject();
-			jsonObject.put("studentid", r[0]);
-			jsonObject.put("studentname", r[1]);
-			jsonObject.put("studentscore", r[2]);
-			jsonArray.put(jsonObject);
+		if(list.size()==0){
+			inputStream = new ByteArrayInputStream("没有学生".getBytes("utf-8"));
+		}else{
+			JSONArray jsonArray = new JSONArray();
+			JSONObject jsonObject = null;
+			for(Object o : list){
+				Object[] r = (Object[]) o;
+				jsonObject = new JSONObject();
+				jsonObject.put("studentid", r[0]);
+				jsonObject.put("studentname", r[1]);
+				jsonObject.put("studentscore", r[2]);
+				jsonArray.put(jsonObject);
+			}
+			System.out.println(jsonObject.toString());
+			inputStream = new ByteArrayInputStream(jsonArray.toString().getBytes("utf-8"));
 		}
-		System.out.println(jsonObject.toString());
-		inputStream = new ByteArrayInputStream(jsonObject.toString().getBytes("utf-8"));
+		
 		return SUCCESS;
 	}
 }

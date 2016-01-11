@@ -17,4 +17,6 @@ $(document).ready(function(){
 		$(".input_course_id").val(id);
 		$(".course_name_list").slideUp(300);
 	});
+	
+
 });

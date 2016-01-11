@@ -150,14 +150,7 @@
 										<th>成绩</th>
 										<th>状态</th>
 									</thead>
-									<tbody>
-										<tr>
-											<td class="input_scoreid">1</td>
-											<td class="input_studentnum">130405211</td>
-											<td class="input_studentname">GC</td>
-											<td class="input_score">88</td>
-											<td class="input_scorestate" style="color: #FF6600">未录入</td>
-										</tr>
+									<tbody class="tbody_studentscore">
 									</tbody> 	
 								</table>
 							</div>

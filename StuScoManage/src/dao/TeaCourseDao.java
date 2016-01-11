@@ -148,4 +148,20 @@ public class TeaCourseDao {
 		
 		return list;
 	}
+	
+	/*
+	 * 根据teacherid， courseid， studentid 更新成绩
+	 */
+	public static int updateScoreByTeacheridStudentidCourseid(String teacherid, String studentid, String courseid, int score){
+		int result = 0;
+		Session session = HibernateUtil.currentSession();
+		Transaction transaction = session.beginTransaction();
+		
+		Query query = session.createSQLQuery("UPDATE STUCOURSE SET STUCOURSE.GRADE = '"+score+"' WHERE STUCOURSE.C_ID = '"+courseid+"' AND STUCOURSE.T_ID = '"+teacherid+"' AND STUCOURSE.S_ID = '"+studentid+"';");
+		
+		result = query.executeUpdate();
+		transaction.commit();
+		
+		return result;
+	}
 }

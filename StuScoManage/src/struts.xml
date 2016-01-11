@@ -70,6 +70,9 @@
         <action name="page_studentselectscore" class="action.StudentSelectScoreShow">
         	<result name="success">/WEB-INF/jsp/student_selectscore.jsp</result>
         </action>
+        <action name="page_teacherenterscore" class="action.TeacherEnterScoreShow">
+        	<result name="success">/WEB-INF/jsp/teacher_enterscore.jsp</result>
+        </action>
         <action name="addstudent" class="action.AddStudent">
         	<result type="stream">
         		<param name="contentType">text/html</param>
@@ -149,6 +152,18 @@
         	</result>
         </action>
         <action name="teacherselectscoreselect" class="action.TeacherSelectScoreSelect">
+        	<result type="stream">
+        		<param name="contentType">text/html</param>
+        		<param name="inputName">inputStream</param>
+        	</result>
+        </action>
+        <action name="teacherenterscoreselect" class="action.TeacherEnterScoreSelect">
+        	<result type="stream">
+        		<param name="contentType">text/html</param>
+        		<param name="inputName">inputStream</param>
+        	</result>
+        </action>
+        <action name="teacherenterscore" class="action.TeacherEnterScore">
         	<result type="stream">
         		<param name="contentType">text/html</param>
         		<param name="inputName">inputStream</param>
