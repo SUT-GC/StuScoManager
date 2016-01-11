@@ -23,10 +23,10 @@ public class CourseDao {
 		if (session.get(Course.class, course.getId()) == null) {
 			session.save(course);
 			transaction.commit();
-			HibernateUtil.closeSession();
+			HibernateUtil.closeSession(session);
 			return 1;
 		} else {
-			HibernateUtil.closeSession();
+			HibernateUtil.closeSession(session);
 			return 0;
 		}
 	}
@@ -38,7 +38,11 @@ public class CourseDao {
 		Course course = null;
 		Session session = HibernateUtil.currentSession();
 		Transaction transaction = session.beginTransaction();
+
 		course = (Course) session.get(Course.class, id);
+		
+		transaction.commit();
+		HibernateUtil.closeSession(session);
 		return course;
 	}
 
@@ -54,7 +58,7 @@ public class CourseDao {
 				.setString(0, "%" + coursename + "%").list();
 
 		transaction.commit();
-		HibernateUtil.closeSession();
+		HibernateUtil.closeSession(session);
 		return list;
 	}
 	
@@ -69,7 +73,7 @@ public class CourseDao {
 		list = session.createQuery("from Course").list();
 		
 		transaction.commit();
-		HibernateUtil.closeSession();
+		HibernateUtil.closeSession(session);
 		
 		return list;
 	}
@@ -91,7 +95,7 @@ public class CourseDao {
 			session.delete(course);
 		}
 		transaction.commit();
-		HibernateUtil.closeSession();
+		HibernateUtil.closeSession(session);
 		
 		int result = CourseDao.insertCourse(newCourse);
 		return result;
@@ -113,14 +117,14 @@ public class CourseDao {
 		
 		if(courseid == null){
 			transaction.commit();
-			HibernateUtil.closeSession();
+			HibernateUtil.closeSession(session);
 			return 0;
 		}else{
 			org.hibernate.Query query = session.createQuery("delete from TeaCourse tc where tc.course_id = "+courseid);
 			query.executeUpdate();
 			session.delete(course);
 			transaction.commit();
-			HibernateUtil.closeSession();
+			HibernateUtil.closeSession(session);
 			return 1;
 		}
 	}

@@ -24,12 +24,14 @@ public class TeaCourseDao {
 		Transaction transaction = session.beginTransaction();
 
 		if (session.get(Teacher.class, teaCourse.getTeacher_id()) == null) {
-			HibernateUtil.closeSession();
+			transaction.commit();
+			HibernateUtil.closeSession(session);
 			return -1;
 		}
 
 		if (session.get(Course.class, teaCourse.getCourse_id()) == null) {
-			HibernateUtil.closeSession();
+			transaction.commit();
+			HibernateUtil.closeSession(session);
 			return -2;
 		}
 
@@ -38,13 +40,14 @@ public class TeaCourseDao {
 						"from TeaCourse tc where tc.teacher_id = ? and tc.course_id = ?")
 				.setString(0, teaCourse.getTeacher_id())
 				.setString(1, teaCourse.getCourse_id()).list().size() != 0) {
-			HibernateUtil.closeSession();
+			transaction.commit();
+			HibernateUtil.closeSession(session);
 			return 0;
 		}
 
 		session.save(teaCourse);
 		transaction.commit();
-		HibernateUtil.closeSession();
+		HibernateUtil.closeSession(session);
 		return 1;
 	}
 
@@ -61,8 +64,7 @@ public class TeaCourseDao {
 				.setString("teacherid", teacherid).list();
 
 		transaction.commit();
-		HibernateUtil.closeSession();
-
+		HibernateUtil.closeSession(session);
 		return tc;
 	}
 
@@ -78,7 +80,7 @@ public class TeaCourseDao {
 				.setString("courseid", courseid).list();
 
 		transaction.commit();
-		HibernateUtil.closeSession();
+		HibernateUtil.closeSession(session);
 
 		return tc;
 	}
@@ -91,7 +93,7 @@ public class TeaCourseDao {
 		Transaction transaction = session.beginTransaction();
 		TeaCourse teaCourse = (TeaCourse) session.get(TeaCourse.class, id);
 		transaction.commit();
-		HibernateUtil.closeSession();
+		HibernateUtil.closeSession(session);
 		return teaCourse;
 	}
 
@@ -109,7 +111,7 @@ public class TeaCourseDao {
 				.list();
 
 		transaction.commit();
-		HibernateUtil.closeSession();
+		HibernateUtil.closeSession(session);
 		return list;
 	}
 
@@ -130,7 +132,7 @@ public class TeaCourseDao {
 			result = 1;
 		}
 		transaction.commit();
-		HibernateUtil.closeSession();
+		HibernateUtil.closeSession(session);
 		return result;
 	}
 
@@ -144,7 +146,7 @@ public class TeaCourseDao {
 		
 		list = session.createSQLQuery("select  course.C_ID, course.C_NAME, course.C_ATTR, teacher.T_NAME, teacher.T_ID from COURSE course, TEACOURSE teacourse , TEACHER teacher where course.C_ID = teacourse.C_ID and teacher.T_ID = teacourse.T_ID;").list();
 		transaction.commit();
-		HibernateUtil.closeSession();
+		HibernateUtil.closeSession(session);
 		
 		return list;
 	}

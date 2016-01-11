@@ -15,7 +15,7 @@ public class TestUtilAndAdmin {
 		Admin a = (Admin) session.get(Admin.class, "11111");
 		
 		transaction.commit();
-		HibernateUtil.closeSession();
+		HibernateUtil.closeSession(session);
 		System.out.println(a);
 	}
 }

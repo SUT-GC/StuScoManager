@@ -24,7 +24,7 @@ public class AdminDao {
 		list = session.createQuery("from Admin").list();
 
 		transaction.commit();
-		HibernateUtil.closeSession();
+		HibernateUtil.closeSession(session);
 
 		return list;
 	}
@@ -38,7 +38,7 @@ public class AdminDao {
 		Transaction transaction = session.beginTransaction();
 		admin = (Admin) session.get(Admin.class, ID);
 		transaction.commit();
-		HibernateUtil.closeSession();
+		HibernateUtil.closeSession(session);
 		return admin;
 	}
 
@@ -51,11 +51,11 @@ public class AdminDao {
 		if (session.get(Admin.class, admin.getId()) == null) {
 			session.save(admin);
 			transaction.commit();
-			HibernateUtil.closeSession();
+			HibernateUtil.closeSession(session);
 			return 1;
 		} else {
 			transaction.commit();
-			HibernateUtil.closeSession();
+			HibernateUtil.closeSession(session);
 			return 0;
 		}
 	}
@@ -79,7 +79,7 @@ public class AdminDao {
 		}
 		
 		transaction.commit();
-		HibernateUtil.closeSession();
+		HibernateUtil.closeSession(session);
 
 		int result = 0;
 		if (c == 1) {
@@ -115,12 +115,12 @@ public class AdminDao {
 		
 		if(admin == null){
 			transaction.commit();
-			HibernateUtil.closeSession();
+			HibernateUtil.closeSession(session);
 			return 0;
 		}else{
 			session.delete(admin);
 			transaction.commit();
-			HibernateUtil.closeSession();
+			HibernateUtil.closeSession(session);
 			return 1;
 		}
 		

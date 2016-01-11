@@ -24,10 +24,11 @@ public class TeacherDao {
 		if(session.get(Teacher.class, teacher.getId()) == null){
 			session.save(teacher);
 			transaction.commit();
-			HibernateUtil.closeSession();
+			HibernateUtil.closeSession(session);
 			return 1;
 		}else{
-			HibernateUtil.closeSession();
+			transaction.commit();
+			HibernateUtil.closeSession(session);
 			return 0;
 		}
 	}
@@ -40,7 +41,7 @@ public class TeacherDao {
 		Teacher teacher = null;
 		teacher = (Teacher) session.get(Teacher.class, id);
 		transaction.commit();
-		HibernateUtil.closeSession();
+		HibernateUtil.closeSession(session);
 		return teacher;
 	}
 	
@@ -54,8 +55,7 @@ public class TeacherDao {
 		List list = session.createQuery("from Teacher t where t.name like ?").setString(0, "%"+teachername+"%").list();
 		
 		transaction.commit();
-		HibernateUtil.closeSession();
-		
+		HibernateUtil.closeSession(session);
 		return list;
 	}
 	
@@ -75,14 +75,14 @@ public class TeacherDao {
 		
 		if(teacher == null){
 			transaction.commit();
-			HibernateUtil.closeSession();
+			HibernateUtil.closeSession(session);
 			return 0;
 		}else{
 			org.hibernate.Query query =  session.createQuery("delete from TeaCourse tc where tc.teacher_id = "+teacherid);
 			query.executeUpdate();
 			session.delete(teacher);
 			transaction.commit();
-			HibernateUtil.closeSession();
+			HibernateUtil.closeSession(session);
 			return 1;
 		}
 	}
@@ -95,7 +95,7 @@ public class TeacherDao {
 		Transaction transaction = session.beginTransaction();
 		List list = session.createQuery("from Teacher").list();
 		transaction.commit();
-		HibernateUtil.closeSession();
+		HibernateUtil.closeSession(session);
 		return list;
 	}
 	
@@ -119,18 +119,18 @@ public class TeacherDao {
 			if(newTeacher.getId().equals(oldteachername) ||  session.get(Teacher.class, newTeacher.getId()) == null){
 				session.delete(teacher);
 				transaction.commit();
-				HibernateUtil.closeSession();
+				HibernateUtil.closeSession(session);
 				
 				result = TeacherDao.insertTeacher(newTeacher);
 			}else{
 				result = 0;
 				transaction.commit();
-				HibernateUtil.closeSession();
+				HibernateUtil.closeSession(session);
 			}
 			
 		}else{
 			transaction.commit();
-			HibernateUtil.closeSession();
+			HibernateUtil.closeSession(session);
 		}
 		
 
@@ -148,10 +148,10 @@ public class TeacherDao {
 		Session session = HibernateUtil.currentSession();
 		Transaction transaction = session.beginTransaction();
 		
-		list = session.createSQLQuery("SELECT COURSE.C_ID,COURSE.C_NAME from TEACOURSE, COURSE where TEACOURSE.T_ID = '"+teacherid+"';").list();
+		list = session.createSQLQuery("SELECT COURSE.C_ID,COURSE.C_NAME from TEACOURSE, COURSE where TEACOURSE.T_ID = '"+teacherid+"'AND TEACOURSE.C_ID = COURSE.C_ID;").list();
 		
 		transaction.commit();
-		HibernateUtil.closeSession();
+		HibernateUtil.closeSession(session);
 		
 		return list;
 	}
@@ -164,7 +164,7 @@ public class TeacherDao {
 		list = session.createSQLQuery("SELECT STUDENT.S_ID, STUDENT.S_NAME, STUCOURSE.GRADE from STUCOURSE, STUDENT  WHERE STUCOURSE.S_ID = STUDENT.S_ID and STUDENT.S_GRATE = '"+studentclass+"' and STUCOURSE.C_ID = '"+courseid+"' and STUCOURSE.T_ID = '"+teacherid+"';").list();
 		
 		transaction.commit();
-		HibernateUtil.closeSession();
+		HibernateUtil.closeSession(session);
 		
 		return list;
 	}

@@ -23,20 +23,20 @@ public class SelectCourseDao {
 		Session session = HibernateUtil.currentSession();
 		Transaction transaction = session.beginTransaction();
 		if (session.get(Course.class, selectCourse.getCourse_id()) == null) {
-			HibernateUtil.closeSession();
+			HibernateUtil.closeSession(session);
 			return -2;
 		}
 		if (session.get(Student.class, selectCourse.getStudent_id()) == null) {
-			HibernateUtil.closeSession();
+			HibernateUtil.closeSession(session);
 			return -1;
 		}
 		if (session.get(Teacher.class, selectCourse.getTeacher_id()) == null) {
-			HibernateUtil.closeSession();
+			HibernateUtil.closeSession(session);
 			return -3;
 		}
 		session.save(selectCourse);
 		transaction.commit();
-		HibernateUtil.closeSession();
+		HibernateUtil.closeSession(session);
 		return 1;
 	}
 
@@ -51,7 +51,7 @@ public class SelectCourseDao {
 				"from SelectCourse sc where sc.student_id = " + id).list();
 
 		transaction.commit();
-		HibernateUtil.closeSession();
+		HibernateUtil.closeSession(session);
 
 		return sc;
 	}
@@ -68,7 +68,7 @@ public class SelectCourseDao {
 				.setString("id", id).list();
 
 		transaction.commit();
-		HibernateUtil.closeSession();
+		HibernateUtil.closeSession(session);
 
 		return sc;
 	}
@@ -85,7 +85,7 @@ public class SelectCourseDao {
 				.setString("id", id).list();
 
 		transaction.commit();
-		HibernateUtil.closeSession();
+		HibernateUtil.closeSession(session);
 
 		return sc;
 	}
@@ -103,7 +103,7 @@ public class SelectCourseDao {
 				
 		int result = query.executeUpdate();
 		transaction.commit();
-		HibernateUtil.closeSession();
+		HibernateUtil.closeSession(session);
 		return result;
 	}
 	
@@ -119,7 +119,7 @@ public class SelectCourseDao {
 		list = session.createSQLQuery("select  course.C_ID, course.C_NAME, course.C_ATTR, teacher.T_NAME, stucourse.GRADE from TEACHER teacher, STUCOURSE stucourse, COURSE course where teacher.T_ID = stucourse.T_ID and course.C_ID = stucourse.C_ID and stucourse.GRADE >= '60';").list();
 		
 		transaction.commit();
-		HibernateUtil.closeSession();
+		HibernateUtil.closeSession(session);
 		
 		return list;
 	}
@@ -136,7 +136,7 @@ public class SelectCourseDao {
 		list = session.createSQLQuery("select  course.C_ID, course.C_NAME, course.C_ATTR, teacher.T_NAME, stucourse.GRADE from TEACHER teacher, STUCOURSE stucourse, COURSE course where teacher.T_ID = stucourse.T_ID and course.C_ID = stucourse.C_ID and stucourse.GRADE < '60';").list();
 		
 		transaction.commit();
-		HibernateUtil.closeSession();
+		HibernateUtil.closeSession(session);
 		
 		return list;
 	}
@@ -152,8 +152,9 @@ public class SelectCourseDao {
 		Query query = session.createSQLQuery("UPDATE STUCOURSE SET STUCOURSE.GRADE = '"+score+"' WHERE STUCOURSE.C_ID = '"+courseid+"' AND STUCOURSE.T_ID = '"+teacherid+"' AND STUCOURSE.S_ID = '"+studentid+"';");
 		
 		result = query.executeUpdate();
-		transaction.commit();
 		
+		transaction.commit();
+		HibernateUtil.closeSession(session);
 		return result;
 	}
 }

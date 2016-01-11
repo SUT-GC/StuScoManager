@@ -22,10 +22,11 @@ public class StudentDao {
 		if (session.get(Student.class, student.getId()) == null) {
 			session.save(student);
 			transaction.commit();
-			HibernateUtil.closeSession();
+			HibernateUtil.closeSession(session);
 			return 1;
 		} else {
-			HibernateUtil.closeSession();
+			transaction.commit();
+			HibernateUtil.closeSession(session);
 			return 0;
 		}
 	}
@@ -38,6 +39,8 @@ public class StudentDao {
 		Session session = HibernateUtil.currentSession();
 		Transaction transaction = session.beginTransaction();
 		student = (Student) session.get(Student.class, id);
+		transaction.commit();
+		HibernateUtil.closeSession(session);
 		return student;
 	}
 
@@ -51,7 +54,7 @@ public class StudentDao {
 		List list = session.createQuery("from Student").list();
 
 		transaction.commit();
-		HibernateUtil.closeSession();
+		HibernateUtil.closeSession(session);
 
 		return list;
 	}
@@ -76,18 +79,18 @@ public class StudentDao {
 			if(newStudent.getId().equals(oldstudentid) ||  session.get(Student.class, newStudent.getId()) == null){
 				session.delete(student);
 				transaction.commit();
-				HibernateUtil.closeSession();
+				HibernateUtil.closeSession(session);
 				
 				result = StudentDao.insertStudent(newStudent);
 			}else{
 				result = 0;
 				transaction.commit();
-				HibernateUtil.closeSession();
+				HibernateUtil.closeSession(session);
 			}
 			
 		}else{
 			transaction.commit();
-			HibernateUtil.closeSession();
+			HibernateUtil.closeSession(session);
 		}
 		
 		return result;
@@ -110,7 +113,7 @@ public class StudentDao {
 		}
 		
 		transaction.commit();
-		HibernateUtil.closeSession();
+		HibernateUtil.closeSession(session);
 		
 		return result;
 				

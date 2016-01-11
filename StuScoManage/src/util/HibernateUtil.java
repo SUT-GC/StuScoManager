@@ -22,31 +22,19 @@ public class HibernateUtil{
 		}
 	}
 	
-	// ThreadLocal可以隔离多个线程的数据共享，因此不再需要对线程同步
-	public static final ThreadLocal<Session> session
-		= new ThreadLocal<Session>();
+
 
 	public static Session currentSession()
 		throws HibernateException
 	{
-		Session s = session.get();
-		// 如果该线程还没有Session,则创建一个新的Session
-		if (s == null)
-		{
-			s = sessionFactory.openSession();
-			// 将获得的Session变量存储在ThreadLocal变量session里
-			session.set(s);
-		}
-		return s;
+		Session session = sessionFactory.openSession();
+		return session;
 	}
 
-	public static void closeSession()
+	public static void closeSession(Session session)
 		throws HibernateException
 	{
-		Session s = session.get();
-		if (s != null)
-			s.close();
-		session.set(null);
+		session.close();
 	}
 	
 }
